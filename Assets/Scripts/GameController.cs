@@ -8,9 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public Transform left;
-    public Transform right;
-
     [Header("Game States")] [SerializeField]
     private bool isPaused;
 
@@ -74,26 +71,7 @@ public class GameControlTestEditor : Editor
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-
         var gct = target as GameController;
-
-        EditorGUILayout.BeginHorizontal();
-        if (GUILayout.Button("*click left*") && gct.left != null)
-        {
-            AudioController.Instance.PlaySound("click", gct.left);
-        }
-
-        if (GUILayout.Button("*click*"))
-        {
-            AudioController.Instance.PlaySound("click");
-        }
-
-        if (GUILayout.Button("*click right*") && gct.right != null)
-        {
-            AudioController.Instance.PlaySound("click", gct.right);
-        }
-
-        EditorGUILayout.EndHorizontal();
 
         if (GUILayout.Button("Restart"))
         {
