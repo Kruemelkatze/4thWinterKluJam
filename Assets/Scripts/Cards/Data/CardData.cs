@@ -6,5 +6,7 @@ public abstract class CardData : ScriptableObject
     public string text;
     public Sprite icon;
 
+    public int pointsOnSolve = 10;
+
     public AudioClip narratorLines;
 }

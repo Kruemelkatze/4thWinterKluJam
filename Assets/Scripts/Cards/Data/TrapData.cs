@@ -2,7 +2,7 @@
 
 namespace Cards.Data
 {
-    [CreateAssetMenu(fileName = "Trap Card", menuName = "Cards")]
+    [CreateAssetMenu(fileName = "Trap Card", menuName = "Cards/Trap Card")]
     public class TrapData : CardData
     {
     }
