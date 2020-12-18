@@ -6,7 +6,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     [SerializeField] private float cardSpacingX = 2;
-    [SerializeField] private float cardSpacingY = 3;
+    [SerializeField] private float cardSpacingY = 2.5f;
 
     [SerializeField] private int sizeX = 4;
     [SerializeField] private int sizeY = 3;
@@ -34,9 +34,9 @@ public class Grid : MonoBehaviour
         {
             for (var y = 0; y < grid.GetLength(1); y++)
             {
-                var pos = transform.position - new Vector3(
-                    x * cardSpacingX,
-                    y * cardSpacingY,
+                var pos = transform.position + new Vector3(
+                    (x -(sizeX - 1) / 2f) * cardSpacingX,
+                    ((sizeY - 1) / 2f - y) * cardSpacingY,
                     0);
                 grid[x, y] = SpawnDeck(x, y, pos);
             }
@@ -46,7 +46,7 @@ public class Grid : MonoBehaviour
     private Deck SpawnDeck(int a, int b, Vector3 position)
     {
         var spawned = Instantiate(deckPrefab, transform, false);
-        spawned.name = $"Deck {a + 1}-{b + 1}";
+        spawned.name = $"Deck {b + 1}-{a + 1}";
         spawned.transform.position = position;
 
         var deck = spawned.GetComponent<Deck>();
@@ -69,6 +69,7 @@ public class Grid : MonoBehaviour
             }
         }
 
+        grid = new Deck[sizeX, sizeY];
         SpawnDecks();
     }
 
