@@ -6,6 +6,7 @@ namespace General
     public class Audio : ScriptableObject
     {
         public AudioClip audioClip;
+        public string subtitle;
 
         public bool uiSound = false;
         public bool loop = false;

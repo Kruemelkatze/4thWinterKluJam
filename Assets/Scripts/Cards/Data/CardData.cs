@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General;
+using UnityEngine;
 
 public abstract class CardData : ScriptableObject
 {
@@ -8,5 +9,5 @@ public abstract class CardData : ScriptableObject
 
     public int pointsOnSolve = 10;
 
-    public AudioClip narratorLines;
+    public Audio[] narratorLines;
 }
