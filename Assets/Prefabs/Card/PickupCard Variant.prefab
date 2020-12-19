@@ -16,9 +16,10 @@ MonoBehaviour:
   cardNumber: 0
   cardData: {fileID: 0}
   canBeDestroyed: 1
-  attack: 0
-  armor: 0
-  health: 0
+  stats:
+    attack: 0
+    armor: 0
+    health: 0
 --- !u!1001 &4009989110587544627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4978024390676040377, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6167951905565273515, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_fontAsset

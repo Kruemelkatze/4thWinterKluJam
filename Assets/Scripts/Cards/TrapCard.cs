@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Cards
 {
-    public class TrapCard : Card
+    public class TrapCard : PickupCard
     {
     }
 }
