@@ -52,13 +52,13 @@ public class Deck : MonoBehaviour, IDropHandler
 
         CardType cardType;
         CardData cardVariant;
-        if (type != null)
+        if (type == null)
         {
             (cardType, cardVariant) = _availableCards.GetRandom();
         }
         else
         {
-            cardType = CardTypes.FreelySpawnable.RandomEntry();
+            cardType = type.Value;
             cardVariant = _availableCards.GetRandomVariantForType(cardType);
         }
 

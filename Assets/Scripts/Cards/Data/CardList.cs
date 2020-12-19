@@ -104,7 +104,7 @@ namespace Cards.Data
             var random = Random.Range(0f, 1f);
 
             var chosen = 0;
-            for (int i = 1; i < percentageSums.Length; i++)
+            for (int i = 0; i < percentageSums.Length; i++)
             {
                 if (percentageSums[i] > random)
                 {
