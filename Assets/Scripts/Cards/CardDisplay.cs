@@ -31,7 +31,7 @@ namespace Cards
 
         private void Awake()
         {
-            ResetPreview();
+            ResetPreview(true);
         }
 
         public void ShowFields(bool attack, bool armor, bool health)
