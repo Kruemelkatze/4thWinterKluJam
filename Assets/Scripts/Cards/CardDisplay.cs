@@ -32,13 +32,13 @@ namespace Cards
         public void UpdateFields()
         {
             if (attackField)
-                attackField.SetText(card.attack.ToString());
+                attackField.SetText(card.stats.attack.ToString());
 
             if (armorField)
-                armorField.SetText(card.armor.ToString());
+                armorField.SetText(card.stats.armor.ToString());
 
             if (healthField)
-                healthField.SetText(card.health.ToString());
+                healthField.SetText(card.stats.health.ToString());
         }
 
         public void Init()
@@ -63,13 +63,13 @@ namespace Cards
                 cardName.SetText(data.name);
 
             UpdateFields();
-            if (attackField && card.attack == 0)
+            if (attackField && card.stats.attack == 0)
                 attackField.enabled = false;
 
-            if (armorField && card.armor == 0)
+            if (armorField && card.stats.armor == 0)
                 armorField.enabled = false;
 
-            if (healthField && card.health == 0)
+            if (healthField && card.stats.health == 0)
                 healthField.enabled = false;
 
             // if (cardBackBody)

@@ -38,7 +38,7 @@ public class Deck : MonoBehaviour, IDropHandler
         for (var i = 0; i < numberCards; i++)
         {
             CardType? type = i != 0 ? (CardType?) null : (hasDoor ? CardType.Door : CardType.Trap);
-            var card = SpawnCard(i, type, i == 0);
+            var card = SpawnCard(i, type, i != 0);
             cards.Add(card);
         }
 
@@ -104,14 +104,27 @@ public class Deck : MonoBehaviour, IDropHandler
         if (!valid)
             return;
 
+        // Execute Top Card
+        var topCard = cards.LastOrDefault();
+        if (!topCard || topCard == null)
+            return;
+
+        var (playerCanEnter, destroyCard) = topCard.ExecuteCardAction();
         var dndScript = draggedObj.GetComponent<DragDrop>();
 
-        var pos = GetTopCardPosition();
-        playerCard.transform.position = pos;
+        if (destroyCard)
+        {
+            cards.Remove(topCard);
+            topCard.DestroyCard();
+        }
 
-        dndScript.SetValidDrop(x, y, pos);
-        Debug.Log("Dropped " + playerCard.name);
+        if (playerCanEnter)
+        {
+            var pos = GetTopCardPosition();
+            dndScript.SetValidDrop(x, y, pos);
+        }
     }
+
 
     public void ResetDropValidity()
     {
@@ -124,6 +137,13 @@ public class Deck : MonoBehaviour, IDropHandler
         SetNotAvailableHover(valid);
     }
 
+    public bool IsValidDropForPlayer()
+    {
+        var p = GameController.Instance.playerCard;
+        var distance = Mathf.Abs(x - p.x) + Mathf.Abs(y - p.y);
+        return distance == 1;
+    }
+
     private void SetNotAvailableHover(bool valid)
     {
         if (!notAvailableHover)
@@ -132,18 +152,10 @@ public class Deck : MonoBehaviour, IDropHandler
         notAvailableHover.DOFade(valid ? 0 : notAvailableAlpha, 0.3f);
     }
 
-    public bool IsValidDropForPlayer()
-    {
-        var p = GameController.Instance.playerCard;
-        var distance = Mathf.Abs(x - p.x) + Mathf.Abs(y - p.y);
-        return distance == 1;
-    }
-
     private Vector3 GetTopCardPosition()
     {
         return !cards.Any() ? transform.position : cards.Last().transform.position;
     }
-
 
 #if UNITY_EDITOR
     [CustomEditor(typeof(Deck))]

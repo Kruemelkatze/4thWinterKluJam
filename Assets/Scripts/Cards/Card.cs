@@ -1,5 +1,6 @@
 using System;
 using Extensions;
+using Logics;
 using UnityEngine;
 
 namespace Cards
@@ -10,12 +11,10 @@ namespace Cards
 
         [ReadOnly] public int cardNumber;
         [ReadOnly] public CardData cardData;
-        
+
         public bool canBeDestroyed = true;
 
-        public int attack;
-        public int armor;
-        public int health;
+        public Stats stats;
 
         protected virtual void Awake()
         {
@@ -37,14 +36,30 @@ namespace Cards
             cardNumber = cn;
 
             canBeDestroyed = destroyable;
-            attack = cardData.attack;
-            armor = cardData.armor;
-            health = cardData.health;
+            stats.attack = cardData.attack;
+            stats.armor = cardData.armor;
+            stats.health = cardData.health;
 
 
             cardDisplay.Init();
 
             transform.name = $"({cn}) {data.name}";
+        }
+
+        public virtual void UpdateStats(Stats newStats)
+        {
+            stats = newStats;
+            cardDisplay.UpdateFields();
+        }
+
+        public virtual (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
+        {
+            return (true, canBeDestroyed);
+        }
+
+        public void DestroyCard()
+        {
+            Destroy(gameObject);
         }
     }
 }

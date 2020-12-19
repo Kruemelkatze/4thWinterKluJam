@@ -650,34 +650,12 @@ Transform:
   m_Father: {fileID: 86015367}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1800080214 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7009751144138951494, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
-  m_PrefabInstance: {fileID: 681502776148265763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1800080215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800080214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5763ee4c06649f2b608cf8d2f110544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragAlpha: 0.7
-  dragging: 0
-  hadValidDrop: 0
-  dragStartPosition: {x: 0, y: 0, z: 0}
-  playerCard: {fileID: 1800080218}
 --- !u!114 &1800080218 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1800080215, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
   m_PrefabInstance: {fileID: 681502776148265763}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800080214}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca52ba0b882a4a52981e1e45888ce5ae, type: 3}
@@ -796,8 +774,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCard
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 71317313474935527, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
 --- !u!1001 &1212594850787549226
 PrefabInstance:

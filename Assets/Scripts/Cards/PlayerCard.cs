@@ -1,5 +1,4 @@
-﻿using System;
-using Cards.Data;
+﻿using Cards.Data;
 using UnityEngine;
 
 namespace Cards
@@ -27,9 +26,9 @@ namespace Cards
             cardData = data;
 
             canBeDestroyed = false;
-            attack = cardData.attack;
-            armor = cardData.armor;
-            health = cardData.health;
+            stats.attack = cardData.attack;
+            stats.armor = cardData.armor;
+            stats.health = cardData.health;
 
             cardDisplay.Init();
         }

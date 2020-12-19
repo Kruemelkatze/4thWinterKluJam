@@ -20,18 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61761842-170c-4868-9375-956c597cb3b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/PlayerDragDrop.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/PlayerDragDrop.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/Fight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/Fight.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/FightResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/FightResult.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/Stats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logics/Stats.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/CardDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/CardDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/EnemyCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/EnemyCard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +60,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/PlayerDragDrop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logics/Stats.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/CardDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logics/FightResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/EnemyCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logics/Fight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" />
       </list>
     </option>
@@ -111,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608375928172</updated>
-      <workItem from="1608375937074" duration="7939000" />
+      <workItem from="1608375937074" duration="12913000" />
     </task>
     <servers />
   </component>
@@ -133,42 +142,74 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1577" height="534" key="GridCell.Tab.0.bottom" timestamp="1608377950287">
+    <state width="1577" height="320" key="GridCell.Tab.0.bottom" timestamp="1608390552258">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="534" key="GridCell.Tab.0.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
-    <state width="1577" height="534" key="GridCell.Tab.0.center" timestamp="1608377950287">
+    <state width="1577" height="320" key="GridCell.Tab.0.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552258" />
+    <state width="1577" height="320" key="GridCell.Tab.0.center" timestamp="1608390552258">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="534" key="GridCell.Tab.0.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
-    <state width="1577" height="534" key="GridCell.Tab.0.left" timestamp="1608377950286">
+    <state width="1577" height="320" key="GridCell.Tab.0.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552258" />
+    <state width="1577" height="320" key="GridCell.Tab.0.left" timestamp="1608390552258">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="534" key="GridCell.Tab.0.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950286" />
-    <state width="1577" height="534" key="GridCell.Tab.0.right" timestamp="1608377950287">
+    <state width="1577" height="320" key="GridCell.Tab.0.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552258" />
+    <state width="1577" height="320" key="GridCell.Tab.0.right" timestamp="1608390552258">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="534" key="GridCell.Tab.0.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
-    <state width="1577" height="320" key="GridCell.Tab.1.bottom" timestamp="1608380534406">
+    <state width="1577" height="320" key="GridCell.Tab.0.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552258" />
+    <state width="1577" height="320" key="GridCell.Tab.1.bottom" timestamp="1608390552202">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="320" key="GridCell.Tab.1.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
-    <state width="1577" height="320" key="GridCell.Tab.1.center" timestamp="1608380534406">
+    <state width="1577" height="320" key="GridCell.Tab.1.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.1.center" timestamp="1608390552202">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="320" key="GridCell.Tab.1.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
-    <state width="1577" height="320" key="GridCell.Tab.1.left" timestamp="1608380534406">
+    <state width="1577" height="320" key="GridCell.Tab.1.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.1.left" timestamp="1608390552202">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="320" key="GridCell.Tab.1.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
-    <state width="1577" height="320" key="GridCell.Tab.1.right" timestamp="1608380534406">
+    <state width="1577" height="320" key="GridCell.Tab.1.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.1.right" timestamp="1608390552202">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state width="1577" height="320" key="GridCell.Tab.1.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
-    <state x="2435" y="440" key="RiderGenerateDialog" timestamp="1608384995990">
+    <state width="1577" height="320" key="GridCell.Tab.1.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.2.bottom" timestamp="1608390552202">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state x="2435" y="440" key="RiderGenerateDialog/194.0.3246.1440@194.0.3246.1440" timestamp="1608384995990" />
+    <state width="1577" height="320" key="GridCell.Tab.2.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.2.center" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.2.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.2.left" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.2.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.2.right" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.2.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.3.bottom" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.3.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.3.center" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.3.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.3.left" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.3.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state width="1577" height="320" key="GridCell.Tab.3.right" timestamp="1608390552202">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.3.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608390552202" />
+    <state x="2435" y="440" key="RiderGenerateDialog" timestamp="1608389378477">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state x="2435" y="440" key="RiderGenerateDialog/194.0.3246.1440@194.0.3246.1440" timestamp="1608389378477" />
     <state x="1910" y="100" width="1437" height="1247" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608380443008">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
@@ -177,9 +218,41 @@
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
     <state x="1478" y="453" width="678" height="534" key="find.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608384850601" />
-    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608384680951">
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608390129580">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608384680951" />
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608390129580" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Logics/Fight.cs</url>
+          <line>9</line>
+          <properties documentPath="C:\Users\schob\Projects\Games\4thWinterKluJam\Assets\Scripts\Logics\Fight.cs" initialLine="9">
+            <startOffsets>
+              <option value="232" />
+            </startOffsets>
+            <endOffsets>
+              <option value="260" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Cards/EnemyCard.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\Users\schob\Projects\Games\4thWinterKluJam\Assets\Scripts\Cards\EnemyCard.cs" initialLine="22">
+            <startOffsets>
+              <option value="612" />
+            </startOffsets>
+            <endOffsets>
+              <option value="637" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

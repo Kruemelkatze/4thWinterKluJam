@@ -102,6 +102,11 @@
             <e p="Deck.cs" t="Include" />
             <e p="Grid.cs" t="Include" />
           </e>
+          <e p="Logics" t="Include">
+            <e p="Fight.cs" t="Include" />
+            <e p="FightResult.cs" t="Include" />
+            <e p="Stats.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="BaseMenuManager.cs" t="Include" />
           </e>
