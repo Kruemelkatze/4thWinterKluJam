@@ -15,9 +15,10 @@ MonoBehaviour:
   cardDisplay: {fileID: 6398193516383470577}
   cardNumber: 0
   cardData: {fileID: 0}
+  canBeDestroyed: 1
   attack: 0
-  health: 0
   armor: 0
+  health: 0
 --- !u!1001 &3528710729668315328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,9 +34,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6167951905565273515, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6167951905565273515, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6286111077977068138, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194659251920695384, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7194659251920695384, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7508218202644794160, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_Name
