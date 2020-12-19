@@ -10,7 +10,7 @@ namespace Cards
 
         [ReadOnly] public int cardNumber;
         [ReadOnly] public CardData cardData;
-
+        
         public bool canBeDestroyed = true;
 
         public int attack;

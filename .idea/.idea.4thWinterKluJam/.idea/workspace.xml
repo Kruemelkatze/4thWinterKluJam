@@ -20,36 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61761842-170c-4868-9375-956c597cb3b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero/hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero/hero.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PlayerCard Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PlayerCard Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cards/Player Card.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cards/Player Card.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.4thWinterKluJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/Card.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/DoorCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/DoorCard Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/EnemyCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/EnemyCard Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/EventCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/EventCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/PickupCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PickupCard Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/TrapCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/TrapCard Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +41,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAC3A832-EC42-49A4-9C4D-A1051848DDE5/22/8d5ec59c/DragAndDrop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/schob/Projects/Games/4thWinterKluJam/Assets/Scripts/Grid/Deck.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" />
       </list>
     </option>
@@ -83,6 +73,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34993532" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30012935" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -116,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608375928172</updated>
-      <workItem from="1608375937074" duration="2117000" />
+      <workItem from="1608375937074" duration="5420000" />
     </task>
     <servers />
   </component>
@@ -154,17 +146,37 @@
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
     <state width="1577" height="534" key="GridCell.Tab.0.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
+    <state width="1577" height="320" key="GridCell.Tab.1.bottom" timestamp="1608380534406">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.1.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
+    <state width="1577" height="320" key="GridCell.Tab.1.center" timestamp="1608380534406">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.1.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
+    <state width="1577" height="320" key="GridCell.Tab.1.left" timestamp="1608380534406">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.1.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
+    <state width="1577" height="320" key="GridCell.Tab.1.right" timestamp="1608380534406">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="320" key="GridCell.Tab.1.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608380534406" />
     <state x="2435" y="440" key="RiderGenerateDialog" timestamp="1608377540388">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
     <state x="2435" y="440" key="RiderGenerateDialog/194.0.3246.1440@194.0.3246.1440" timestamp="1608377540388" />
+    <state x="1910" y="100" width="1437" height="1247" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608380443008">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state x="1910" y="100" width="1437" height="1247" key="com.intellij.history.integration.ui.views.FileHistoryDialog/194.0.3246.1440@194.0.3246.1440" timestamp="1608380443008" />
     <state x="1478" y="453" width="678" height="534" key="find.popup" timestamp="1608376033981">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
     <state x="1478" y="453" width="678" height="534" key="find.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608376033981" />
-    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608376851229">
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608379903480">
       <screen x="194" y="0" width="3246" height="1440" />
     </state>
-    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608376851229" />
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608379903480" />
   </component>
 </project>

@@ -1,11 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cards;
 using Cards.Data;
+using Cards.DragDrop;
 using Extensions;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Deck : MonoBehaviour
+public class Deck : MonoBehaviour, IDropHandler
 {
     [SerializeField] private List<Card> cards; // down-top
     [SerializeField] private float cardOffset = 0.05f;
@@ -38,7 +41,7 @@ public class Deck : MonoBehaviour
 
     private Card SpawnCard(int number, CardType? type = null, bool destroyable = true)
     {
-        var offset = (_startedWithCards - number) * cardOffset;
+        var offset = number * cardOffset;
 
         CardType cardType;
         CardData cardVariant;
@@ -58,7 +61,7 @@ public class Deck : MonoBehaviour
         var card = cardGo.GetComponent<Card>();
         card.Init(cardVariant, number + 1, destroyable);
 
-        card.transform.position -= new Vector3(-offset, -offset, 0);
+        card.transform.position += new Vector3(-offset, -offset, 0);
 
 
         return card;
@@ -78,6 +81,31 @@ public class Deck : MonoBehaviour
 
         InitWithCards(_availableCards, _startedWithCards, _hasDoor);
     }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        var draggedObj = eventData.pointerDrag;
+        if (!draggedObj)
+            return;
+
+        var dndScript = draggedObj.GetComponent<DragDrop>();
+        dndScript.SetValidDrop();
+        
+        var playerCard = draggedObj.GetComponent<PlayerCard>();
+
+        if (!playerCard)
+            return;
+
+        var pos = GetTopCardPosition();
+        playerCard.transform.position = pos;
+        Debug.Log("Dropped " + playerCard.name);
+    }
+
+    private Vector3 GetTopCardPosition()
+    {
+        return !cards.Any() ? transform.position : cards.Last().transform.position;
+    }
+
 
 #if UNITY_EDITOR
     [CustomEditor(typeof(Deck))]
