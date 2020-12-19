@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cards;
+using Cards.Data;
 using Extensions;
 using UnityEditor;
 using UnityEngine;
@@ -12,13 +13,13 @@ public class Deck : MonoBehaviour
     [Header("Prefabs and co.")] [SerializeField]
     private CardTypeGameObjectDictionary cardPrefabs = new CardTypeGameObjectDictionary();
 
-    [SerializeField] private Cards.Data.CardList availableCards;
-
+    private CardList _availableCards;
     private int _startedWithCards = 1;
     private bool _hasDoor;
 
-    public int InitWithCards(int numberCards, bool hasDoor)
+    public int InitWithCards(CardList availableCards, int numberCards, bool hasDoor)
     {
+        _availableCards = availableCards;
         _startedWithCards = numberCards;
         _hasDoor = hasDoor;
 
@@ -43,12 +44,12 @@ public class Deck : MonoBehaviour
         CardData cardVariant;
         if (type != null)
         {
-            (cardType, cardVariant) = availableCards.GetRandom();
+            (cardType, cardVariant) = _availableCards.GetRandom();
         }
         else
         {
             cardType = CardTypes.FreelySpawnable.RandomEntry();
-            cardVariant = availableCards.GetRandomVariantForType(cardType);
+            cardVariant = _availableCards.GetRandomVariantForType(cardType);
         }
 
         var prefab = cardPrefabs[cardType];
@@ -75,7 +76,7 @@ public class Deck : MonoBehaviour
             cards.Clear();
         }
 
-        InitWithCards(_startedWithCards, _hasDoor);
+        InitWithCards(_availableCards, _startedWithCards, _hasDoor);
     }
 
 #if UNITY_EDITOR

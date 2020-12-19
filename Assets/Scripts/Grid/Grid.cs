@@ -17,6 +17,9 @@ public class Grid : MonoBehaviour
 
     [Header("Prefabs")] [SerializeField] private GameObject deckPrefab;
 
+    [SerializeField] private Cards.Data.CardList availableCards;
+
+
     void Awake()
     {
         grid = new Deck[sizeX, sizeY];
@@ -35,7 +38,7 @@ public class Grid : MonoBehaviour
             for (var y = 0; y < grid.GetLength(1); y++)
             {
                 var pos = transform.position + new Vector3(
-                    (x -(sizeX - 1) / 2f) * cardSpacingX,
+                    (x - (sizeX - 1) / 2f) * cardSpacingX,
                     ((sizeY - 1) / 2f - y) * cardSpacingY,
                     0);
                 grid[x, y] = SpawnDeck(x, y, pos);
@@ -50,7 +53,7 @@ public class Grid : MonoBehaviour
         spawned.transform.position = position;
 
         var deck = spawned.GetComponent<Deck>();
-        deck.InitWithCards(cardsPerDeck, Random.value <= 0.5f);
+        deck.InitWithCards(availableCards, cardsPerDeck, Random.value <= 0.5f);
         return deck;
     }
 
