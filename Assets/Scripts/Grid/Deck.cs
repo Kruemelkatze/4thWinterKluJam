@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Deck : MonoBehaviour, IDropHandler
+public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private SpriteRenderer notAvailableHover;
     [SerializeField] private float fadeTime = 0.3f;
@@ -126,6 +126,48 @@ public class Deck : MonoBehaviour, IDropHandler
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        SetPreview(eventData.pointerDrag, true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        SetPreview(eventData.pointerDrag, false);
+    }
+
+    private void SetPreview(GameObject draggedObj, bool value)
+    {
+        if (!IsValidDropForPlayer())
+            return;
+
+        if (!draggedObj)
+            return;
+
+        var playerCard = draggedObj.GetComponent<PlayerCard>();
+        if (!playerCard)
+            return;
+
+        var topCard = cards.LastOrDefault();
+
+        if (!topCard)
+            return;
+
+        if (value)
+        {
+            var (previewCardStats, previewPlayerStats) = topCard.GetPreviewStats();
+            topCard.ShowPreview(previewCardStats);
+            playerCard.ShowPreview(previewPlayerStats);
+        }
+        else
+        {
+            topCard.ResetPreview();
+            playerCard.ResetPreview();
+        }
+
+        Debug.Log("set preview: " + topCard + ", " + value);
+    }
+
 
     public void ResetDropValidity(bool instant = false)
     {
@@ -150,7 +192,8 @@ public class Deck : MonoBehaviour, IDropHandler
         if (!notAvailableHover)
             return;
 
-        notAvailableHover.DOFade(valid ? 0 : GameController.Instance.playGrid.notAvailableAlpha, instant ? 0 : fadeTime);
+        notAvailableHover.DOFade(valid ? 0 : GameController.Instance.playGrid.notAvailableAlpha,
+            instant ? 0 : fadeTime);
     }
 
     private Vector3 GetTopCardPosition()

@@ -1,3 +1,4 @@
+using Logics;
 using UnityEngine;
 
 namespace Cards
@@ -6,15 +7,27 @@ namespace Cards
     {
         public override (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
+            var playerStats = GetPlayerStatsAfterPickup();
+            GameController.Instance.playerCard.UpdateStats(playerStats);
+
+            return (true, canBeDestroyed);
+        }
+
+        private Stats GetPlayerStatsAfterPickup()
+        {
             var playerStats = GameController.Instance.playerCard.stats;
 
             playerStats.attack = Mathf.Max(1, playerStats.attack + stats.attack);
             playerStats.health = Mathf.Max(0, playerStats.health + stats.health);
             playerStats.armor = Mathf.Max(0, playerStats.armor + stats.armor);
 
-            GameController.Instance.playerCard.UpdateStats(playerStats);
+            return playerStats;
+        }
 
-            return (true, canBeDestroyed);
+        public override (Stats ownStats, Stats playerStats) GetPreviewStats()
+        {
+            var playerStats = GetPlayerStatsAfterPickup();
+            return (stats, playerStats);
         }
     }
 }

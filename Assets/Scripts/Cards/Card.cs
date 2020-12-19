@@ -1,4 +1,3 @@
-using System;
 using Extensions;
 using Logics;
 using UnityEngine;
@@ -60,6 +59,21 @@ namespace Cards
         public void DestroyCard()
         {
             Destroy(gameObject);
+        }
+
+        public void ResetPreview()
+        {
+            cardDisplay.UpdateFields();
+        }
+
+        public void ShowPreview(Stats previewStats)
+        {
+            cardDisplay.ShowPreview(previewStats);
+        }
+
+        public virtual (Stats ownStats, Stats playerStats) GetPreviewStats()
+        {
+            return (stats, GameController.Instance.playerCard.stats);
         }
     }
 }

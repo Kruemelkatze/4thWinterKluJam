@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using Logics;
 using TMPro;
 using UnityEngine;
@@ -17,18 +19,19 @@ namespace Cards
         [SerializeField] private TextMeshProUGUI armorField;
         [SerializeField] private TextMeshProUGUI healthField;
 
+        [SerializeField] private Image attackUp;
+        [SerializeField] private Image attackDown;
+        [SerializeField] private Image armorUp;
+        [SerializeField] private Image armorDown;
+        [SerializeField] private Image healthUp;
+        [SerializeField] private Image healthDown;
+
         [Header("Backside")] [SerializeField] private Image cardBackBody;
         [SerializeField] private TextMeshProUGUI cardBackDescription;
 
-
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
+            ResetPreview();
         }
 
         public void ShowFields(bool attack, bool armor, bool health)
@@ -45,14 +48,73 @@ namespace Cards
 
         public void UpdateFields()
         {
+            UpdateFields(card.stats);
+        }
+
+        public void UpdateFields(Stats stats)
+        {
+            ResetPreview();
+            SetFields(stats);
+        }
+
+        private void SetFields(Stats stats)
+        {
             if (attackField)
-                attackField.SetText(card.stats.attack.ToString());
+                attackField.SetText(stats.attack.ToString());
 
             if (armorField)
-                armorField.SetText(card.stats.armor.ToString());
+                armorField.SetText(stats.armor.ToString());
 
             if (healthField)
-                healthField.SetText(card.stats.health.ToString());
+                healthField.SetText(stats.health.ToString());
+        }
+
+        public void ResetPreview(bool instant = false)
+        {
+            if (attackUp)
+                attackUp.DOFade(0, instant ? 0 : 0.3f);
+
+            if (attackDown)
+                attackDown.DOFade(0, instant ? 0 : 0.3f);
+
+            if (armorUp)
+                armorUp.DOFade(0, instant ? 0 : 0.3f);
+
+            if (armorDown)
+                armorDown.DOFade(0, instant ? 0 : 0.3f);
+
+            if (healthUp)
+                healthUp.DOFade(0, instant ? 0 : 0.3f);
+
+            if (healthDown)
+                healthDown.DOFade(0, instant ? 0 : 0.3f);
+        }
+
+        public void ShowPreview(Stats previewStats)
+        {
+            var attackDiff = previewStats.attack - card.stats.attack;
+            var armorDiff = previewStats.armor - card.stats.armor;
+            var healthDiff = previewStats.health - card.stats.health;
+
+            SetFields(previewStats);
+
+            if (attackUp && attackDiff > 0)
+                attackUp.DOFade(1, 0.3f);
+
+            if (attackDown && attackDiff < 0)
+                attackDown.DOFade(1, 0.3f);
+
+            if (armorUp && armorDiff > 0)
+                armorUp.DOFade(1, 0.3f);
+
+            if (armorDown && armorDiff < 0)
+                armorDown.DOFade(1, 0.3f);
+
+            if (healthUp && healthDiff > 0)
+                healthUp.DOFade(1, 0.3f);
+
+            if (healthDown && healthDiff < 0)
+                healthDown.DOFade(1, 0.3f);
         }
 
         public void Init()
@@ -87,10 +149,6 @@ namespace Cards
 
             if (frontDescription)
                 frontDescription.SetText(data.text);
-        }
-
-        public void PreviewStats(Stats stats)
-        {
         }
     }
 }
