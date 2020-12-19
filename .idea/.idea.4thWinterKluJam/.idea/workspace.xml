@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="61761842-170c-4868-9375-956c597cb3b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero/hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2D/Cards/Hero/hero.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/HealthCard Variant.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PlayerCard Variant.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PlayerCard Variant.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cards/Player Card.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cards/Player Card.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/DoorCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/DoorCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/EnemyCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/EnemyCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/EventCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/EventCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/PickupCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/PickupCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card/TrapCard Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card/TrapCard Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grid/Deck.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Fabian/Dev.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/HealthCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Grid/Deck.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/CardType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Data/PlayerCardData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/PlayerCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cards/DragDrop/DragDrop.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lsBTTrKqFLcmyku4x4A4G8GluY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29176">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="29176" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61761842-170c-4868-9375-956c597cb3b7" name="Default Changelist" comment="" />
+      <created>1608375928172</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608375928172</updated>
+      <workItem from="1608375937074" duration="2117000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1577" height="534" key="GridCell.Tab.0.bottom" timestamp="1608377950287">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="534" key="GridCell.Tab.0.bottom/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
+    <state width="1577" height="534" key="GridCell.Tab.0.center" timestamp="1608377950287">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="534" key="GridCell.Tab.0.center/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
+    <state width="1577" height="534" key="GridCell.Tab.0.left" timestamp="1608377950286">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="534" key="GridCell.Tab.0.left/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950286" />
+    <state width="1577" height="534" key="GridCell.Tab.0.right" timestamp="1608377950287">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state width="1577" height="534" key="GridCell.Tab.0.right/194.0.3246.1440@194.0.3246.1440" timestamp="1608377950287" />
+    <state x="2435" y="440" key="RiderGenerateDialog" timestamp="1608377540388">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state x="2435" y="440" key="RiderGenerateDialog/194.0.3246.1440@194.0.3246.1440" timestamp="1608377540388" />
+    <state x="1478" y="453" width="678" height="534" key="find.popup" timestamp="1608376033981">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state x="1478" y="453" width="678" height="534" key="find.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608376033981" />
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608376851229">
+      <screen x="194" y="0" width="3246" height="1440" />
+    </state>
+    <state x="1480" y="325" width="672" height="678" key="search.everywhere.popup/194.0.3246.1440@194.0.3246.1440" timestamp="1608376851229" />
+  </component>
+</project>

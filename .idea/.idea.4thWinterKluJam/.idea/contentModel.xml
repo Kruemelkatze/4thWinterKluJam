@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\schob\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\schob\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_4thWinterKluJam.1831521923.00" t="ExcludeRecursive" />
+    <e p="C:\Users\schob\Projects\Games\4thWinterKluJam" t="IncludeRecursive">
+      <e p="4thWinterKluJam.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Hellmade" t="Include">
+          <e p="Eazy Sound Manager" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Audio.cs" t="Include" />
+              <e p="EazySoundManager.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Audio" t="Include">
+            <e p="Audio.cs" t="Include" />
+            <e p="AudioController.cs" t="Include" />
+            <e p="VolumeSlider.cs" t="Include" />
+          </e>
+          <e p="Camera" t="Include">
+            <e p="Parallax.cs" t="Include" />
+            <e p="SmoothRandomMovement.cs" t="Include" />
+          </e>
+          <e p="Cards" t="Include">
+            <e p="Card.cs" t="Include" />
+            <e p="CardDisplay.cs" t="Include" />
+            <e p="CardType.cs" t="Include" />
+            <e p="Data" t="Include">
+              <e p="CardData.cs" t="Include" />
+              <e p="CardList.cs" t="Include" />
+              <e p="DoorCardData.cs" t="Include" />
+              <e p="EnemyCardData.cs" t="Include" />
+              <e p="EventCardData.cs" t="Include" />
+              <e p="PickupCardData.cs" t="Include" />
+              <e p="PlayerCardData.cs" t="Include" />
+              <e p="TrapData.cs" t="Include" />
+            </e>
+            <e p="DoorCard.cs" t="Include" />
+            <e p="DragDrop" t="Include">
+              <e p="DragDrop.cs" t="Include" />
+            </e>
+            <e p="EnemyCard.cs" t="Include" />
+            <e p="EventCard.cs" t="Include" />
+            <e p="HealthCard.cs" t="Include" />
+            <e p="PickupCard.cs" t="Include" />
+            <e p="PlayerCard.cs" t="Include" />
+            <e p="TrapCard.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="AnimatorControllerEditor.cs" t="Include" />
+            <e p="CustomDictionaryEditors.cs" t="Include" />
+          </e>
+          <e p="Extensions" t="Include">
+            <e p="CameraExtensions.cs" t="Include" />
+            <e p="Dictionaries.cs" t="Include" />
+            <e p="EnumerableExtensions.cs" t="Include" />
+            <e p="LayerExtensions.cs" t="Include" />
+            <e p="MathfExtensions.cs" t="Include" />
+            <e p="RandomExtensions.cs" t="Include" />
+            <e p="ReadOnlyAttribute.cs" t="Include" />
+            <e p="RelativePosition.cs" t="Include" />
+            <e p="SerializableDictionary" t="Include">
+              <e p="Editor" t="Include">
+                <e p="SerializableDictionaryPropertyDrawer.cs" t="Include" />
+              </e>
+              <e p="SerializableDictionary.cs" t="Include" />
+            </e>
+            <e p="VectorExt.cs" t="Include" />
+          </e>
+          <e p="GameController.cs" t="Include" />
+          <e p="General" t="Include">
+            <e p="Hub.cs" t="Include" />
+            <e p="PersistentSingleton.cs" t="Include" />
+            <e p="SceneController.cs" t="Include" />
+            <e p="Screenshot.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
+          </e>
+          <e p="Grid" t="Include">
+            <e p="Deck.cs" t="Include" />
+            <e p="Grid.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="BaseMenuManager.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
