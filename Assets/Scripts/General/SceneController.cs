@@ -128,6 +128,15 @@ public class SceneController : PersistentSingleton<SceneController>
     }
 
     [UsedImplicitly]
+    public void LoadSceneWithId(int id)
+    {
+        var scene = SceneManager.GetSceneAt(id);
+        // todo: stop sound effect bus
+        Time.timeScale = 1f;
+        Instance.StartCoroutine(Instance.FadeOut(scene.name));
+    }
+
+    [UsedImplicitly]
     public void RestartScene()
     {
         LoadScene(SceneManager.GetActiveScene().name);
