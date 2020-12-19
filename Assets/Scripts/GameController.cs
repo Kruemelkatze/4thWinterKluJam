@@ -77,6 +77,7 @@ public class GameController : Singleton<GameController>
 
     public void DoorReached(int x, int y)
     {
+        Debug.Log($"Door reached: {x},{y}");
         ChangeLevel();
     }
 

@@ -12,6 +12,7 @@ namespace Cards
 
         [ReadOnly] public int cardNumber;
         [ReadOnly] public CardData cardData;
+        [ReadOnly] public Deck deck;
 
         public bool canBeDestroyed = true;
 
@@ -37,11 +38,13 @@ namespace Cards
             }
         }
 
-        public virtual void Init(CardData data, int cn, bool destroyable = true)
+        public virtual void Init(Deck deck, CardData data, int cn, bool destroyable = true)
         {
             if (isPreviewCard)
                 return;
 
+            this.deck = deck;
+            
             cardData = data;
             cardNumber = cn;
 

@@ -17,6 +17,7 @@ public class Grid : MonoBehaviour
     [SerializeField] private int playerSpawnY = 1;
 
     [SerializeField] private int cardsPerDeck = 4;
+    [SerializeField] [Min(0)] private int numberOfDoors = 4;
 
     [SerializeField] private bool seeOnlyEnvironment = true;
     public float notAvailableAlpha = 0.7f;
@@ -100,17 +101,32 @@ public class Grid : MonoBehaviour
 
     private void SpawnDecks()
     {
-        for (var x = 0; x < grid.GetLength(0); x++)
+        var xl = grid.GetLength(0);
+        var yl = grid.GetLength(1);
+
+        var doorPositions = new HashSet<(int x, int y)>();
+        var tries = xl * yl;
+        while (tries-- > 0 && doorPositions.Count < numberOfDoors)
         {
-            for (var y = 0; y < grid.GetLength(1); y++)
+            var rx = Random.Range(0, xl);
+            var ry = Random.Range(0, yl);
+
+            doorPositions.Add((rx, ry));
+        }
+
+
+        for (var x = 0; x < xl; x++)
+        {
+            for (var y = 0; y < yl; y++)
             {
                 var pos = GetPosition(x, y);
-                grid[x, y] = SpawnDeck(x, y, pos);
+                var hasDoor = doorPositions.Contains((x, y));
+                grid[x, y] = SpawnDeck(x, y, pos, hasDoor);
             }
         }
     }
 
-    private Deck SpawnDeck(int x, int y, Vector3 position)
+    private Deck SpawnDeck(int x, int y, Vector3 position, bool hasDoor)
     {
         var spawned = Instantiate(deckPrefab, transform, false);
         spawned.name = $"Deck {y + 1}-{x + 1}";
@@ -119,7 +135,7 @@ public class Grid : MonoBehaviour
         var deck = spawned.GetComponent<Deck>();
         deck.x = x;
         deck.y = y;
-        deck.InitWithCards(availableCards, cardsPerDeck, Random.value <= 0.5f);
+        deck.InitWithCards(availableCards, cardsPerDeck, hasDoor);
         return deck;
     }
 

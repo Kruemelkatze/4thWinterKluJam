@@ -19,7 +19,7 @@ namespace Cards
             x = -1000;
             y = -1000;
 
-            Init(playerCardData, 0, false);
+            Init(null, playerCardData, 0, false);
 
             Show(false, true);
         }
@@ -36,8 +36,9 @@ namespace Cards
             transform.position = pos;
         }
 
-        public override void Init(CardData data, int cn, bool destroyable = true)
+        public override void Init(Deck deck, CardData data, int cn, bool destroyable = true)
         {
+            this.deck = deck;
             cardData = data;
 
             canBeDestroyed = false;

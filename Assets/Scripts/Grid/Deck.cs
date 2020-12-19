@@ -67,7 +67,7 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
 
         var cardGo = Instantiate(prefab, transform, false);
         var card = cardGo.GetComponent<Card>();
-        card.Init(cardVariant, number + 1, destroyable);
+        card.Init(this, cardVariant, number + 1, destroyable);
 
         card.transform.position += new Vector3(-offset, -offset, 0);
 

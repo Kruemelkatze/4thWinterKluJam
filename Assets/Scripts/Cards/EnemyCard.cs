@@ -40,9 +40,9 @@ namespace Cards
             return output;
         }
 
-        public override void Init(CardData data, int cn, bool destroyable = true)
+        public override void Init(Deck deck, CardData data, int cn, bool destroyable = true)
         {
-            base.Init(data, cn, destroyable);
+            base.Init(deck, data, cn, destroyable);
             cardDisplay.ShowFields(true, true, true);
         }
 
