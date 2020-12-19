@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlayerCard
+    uniqueID: 3835141719
+    locked: 0
+  - name: CardHighlight
+    uniqueID: 917172191
+    locked: 0
