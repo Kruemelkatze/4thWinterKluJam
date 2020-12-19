@@ -13,5 +13,6 @@ public class CardData : ScriptableObject
 
     public int pointsOnSolve = 10;
 
+    public Audio[] interactSounds;
     public Audio[] narratorLines;
 }
