@@ -203,9 +203,11 @@ MonoBehaviour:
   cardSpacingY: 2.5
   sizeX: 4
   sizeY: 3
-  playerSpawnX: -1
+  playerSpawnX: 0
   playerSpawnY: 1
   cardsPerDeck: 4
+  seeOnlyEnvironment: 1
+  notAvailableAlpha: 1
   deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}
   availableCards: {fileID: 11400000, guid: 1e61227b13ce06846b0182281934842a, type: 2}
 --- !u!1 &352556859
