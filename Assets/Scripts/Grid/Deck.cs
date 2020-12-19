@@ -28,7 +28,7 @@ public class Deck : MonoBehaviour
         for (var i = 0; i < numberCards; i++)
         {
             CardType? type = i != 0 ? (CardType?) null : (hasDoor ? CardType.Door : CardType.Trap);
-            var card = SpawnCard(i, type);
+            var card = SpawnCard(i, type, i == 0);
             cards.Add(card);
         }
 
@@ -36,9 +36,9 @@ public class Deck : MonoBehaviour
         return numberCards;
     }
 
-    private Card SpawnCard(int number, CardType? type = null)
+    private Card SpawnCard(int number, CardType? type = null, bool destroyable = true)
     {
-        var offset = number * cardOffset;
+        var offset = (_startedWithCards - number) * cardOffset;
 
         CardType cardType;
         CardData cardVariant;
@@ -56,9 +56,9 @@ public class Deck : MonoBehaviour
 
         var cardGo = Instantiate(prefab, transform, false);
         var card = cardGo.GetComponent<Card>();
-        card.Init(cardVariant, number + 1);
+        card.Init(cardVariant, number + 1, destroyable);
 
-        card.transform.position += new Vector3(-offset, -offset, 0);
+        card.transform.position -= new Vector3(-offset, -offset, 0);
 
 
         return card;

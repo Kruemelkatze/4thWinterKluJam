@@ -8,6 +8,7 @@
         Health,
         Trap,
         Door,
+        Player,
     }
 
     public static class CardTypes

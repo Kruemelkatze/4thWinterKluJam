@@ -11,26 +11,32 @@ namespace Cards
         [ReadOnly] public int cardNumber;
         [ReadOnly] public CardData cardData;
 
+        public bool canBeDestroyed = true;
+
         public int attack;
         public int armor;
         public int health;
 
-
-        // Start is called before the first frame update
-        void Start()
+        protected virtual void Awake()
         {
+            SetupCanvases();
         }
 
-        // Update is called once per frame
-        void Update()
+        protected void SetupCanvases()
         {
+            var canvases = GetComponentsInChildren<Canvas>();
+            foreach (var canvas in canvases)
+            {
+                canvas.worldCamera = Camera.main;
+            }
         }
 
-        public void Init(CardData data, int cn)
+        public virtual void Init(CardData data, int cn, bool destroyable = true)
         {
             cardData = data;
             cardNumber = cn;
 
+            canBeDestroyed = destroyable;
             attack = cardData.attack;
             armor = cardData.armor;
             health = cardData.health;
