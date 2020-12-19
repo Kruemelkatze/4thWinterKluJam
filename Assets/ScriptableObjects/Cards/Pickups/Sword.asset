@@ -19,4 +19,5 @@ MonoBehaviour:
   armor: 0
   health: 0
   pointsOnSolve: 10
-  narratorLines: []
+  narratorLines:
+  - {fileID: 11400000, guid: 48c671053e5222e4eaa6e5577a4ac605, type: 2}
