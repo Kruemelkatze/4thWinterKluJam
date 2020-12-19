@@ -12,7 +12,8 @@ using UnityEngine.EventSystems;
 public class Deck : MonoBehaviour, IDropHandler
 {
     [SerializeField] private SpriteRenderer notAvailableHover;
-    [SerializeField] private float notAvailableAlpha = 0.7f;
+    [SerializeField] private float fadeTime = 0.3f;
+
     [SerializeField] private float cardOffset = 0.05f;
     [SerializeField] private List<Card> cards; // down-top
 
@@ -126,15 +127,15 @@ public class Deck : MonoBehaviour, IDropHandler
     }
 
 
-    public void ResetDropValidity()
+    public void ResetDropValidity(bool instant = false)
     {
-        SetNotAvailableHover(true);
+        SetNotAvailableHover(true, instant);
     }
 
-    public void UpdateDropValidity()
+    public void UpdateDropValidity(bool instant = false)
     {
         var valid = IsValidDropForPlayer();
-        SetNotAvailableHover(valid);
+        SetNotAvailableHover(valid, instant);
     }
 
     public bool IsValidDropForPlayer()
@@ -144,12 +145,12 @@ public class Deck : MonoBehaviour, IDropHandler
         return distance == 1;
     }
 
-    private void SetNotAvailableHover(bool valid)
+    private void SetNotAvailableHover(bool valid, bool instant = false)
     {
         if (!notAvailableHover)
             return;
 
-        notAvailableHover.DOFade(valid ? 0 : notAvailableAlpha, 0.3f);
+        notAvailableHover.DOFade(valid ? 0 : GameController.Instance.playGrid.notAvailableAlpha, instant ? 0 : fadeTime);
     }
 
     private Vector3 GetTopCardPosition()

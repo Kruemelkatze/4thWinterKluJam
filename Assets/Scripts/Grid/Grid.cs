@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Grid : MonoBehaviour
 {
@@ -14,8 +16,10 @@ public class Grid : MonoBehaviour
     [SerializeField] private int playerSpawnX = -1;
     [SerializeField] private int playerSpawnY = 1;
 
-
     [SerializeField] private int cardsPerDeck = 4;
+
+    [SerializeField] private bool seeOnlyEnvironment = true;
+    public float notAvailableAlpha = 0.7f;
 
     [SerializeField] private Deck[,] grid;
 
@@ -28,6 +32,11 @@ public class Grid : MonoBehaviour
     {
         grid = new Deck[sizeX, sizeY];
         SpawnDecks();
+    }
+
+    private void Start()
+    {
+        ResetDeckDropValidites(true);
     }
 
     // Update is called once per frame
@@ -51,26 +60,32 @@ public class Grid : MonoBehaviour
         return pos;
     }
 
-    public void UpdateDeckDropValidities()
+    public void UpdateDeckDropValidities(bool instant = false)
     {
         for (var x = 0; x < grid.GetLength(0); x++)
         {
             for (var y = 0; y < grid.GetLength(1); y++)
             {
                 var deck = grid[x, y];
-                deck.UpdateDropValidity();
+                deck.UpdateDropValidity(instant);
             }
         }
     }
-    
-    public void ResetDeckDropValidites()
+
+    public void ResetDeckDropValidites(bool instant = false)
     {
+        if (seeOnlyEnvironment)
+        {
+            UpdateDeckDropValidities(instant);
+            return;
+        }
+
         for (var x = 0; x < grid.GetLength(0); x++)
         {
             for (var y = 0; y < grid.GetLength(1); y++)
             {
                 var deck = grid[x, y];
-                deck.ResetDropValidity();
+                deck.ResetDropValidity(instant);
             }
         }
     }
