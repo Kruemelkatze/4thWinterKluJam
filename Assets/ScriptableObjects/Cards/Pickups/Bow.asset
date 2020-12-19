@@ -15,5 +15,8 @@ MonoBehaviour:
   name: Bow
   text: Robert hath a swift hand.
   icon: {fileID: 21300000, guid: a464916b7b0eda64abeea9354f969b33, type: 3}
+  attack: 2
+  armor: 0
+  health: 0
   pointsOnSolve: 10
   narratorLines: []

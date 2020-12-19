@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cards;
+using Extensions;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,9 +10,9 @@ public class Deck : MonoBehaviour
     [SerializeField] private float cardOffset = 0.05f;
 
     [Header("Prefabs and co.")] [SerializeField]
-    private GameObject cardPrefab;
+    private CardTypeGameObjectDictionary cardPrefabs = new CardTypeGameObjectDictionary();
 
-    [SerializeField] private Cards.Data.Cards availableCards;
+    [SerializeField] private Cards.Data.CardList availableCards;
 
     private int _startedWithCards = 1;
     private bool _hasDoor;
@@ -23,18 +24,43 @@ public class Deck : MonoBehaviour
 
         cards ??= new List<Card>();
 
-        for (int i = 0; i < numberCards - 1; i++)
+        for (var i = 0; i < numberCards; i++)
         {
-            var offset = i * cardOffset;
-            var cardGo = Instantiate(cardPrefab, transform, false);
-            cardGo.transform.position += new Vector3(-offset, -offset, 0);
-
-            var card = cardGo.GetComponent<Card>();
-            card.Init(i + 1);
+            CardType? type = i != 0 ? (CardType?) null : (hasDoor ? CardType.Door : CardType.Trap);
+            var card = SpawnCard(i, type);
             cards.Add(card);
         }
 
+
         return numberCards;
+    }
+
+    private Card SpawnCard(int number, CardType? type = null)
+    {
+        var offset = number * cardOffset;
+
+        CardType cardType;
+        CardData cardVariant;
+        if (type != null)
+        {
+            (cardType, cardVariant) = availableCards.GetRandom();
+        }
+        else
+        {
+            cardType = CardTypes.FreelySpawnable.RandomEntry();
+            cardVariant = availableCards.GetRandomVariantForType(cardType);
+        }
+
+        var prefab = cardPrefabs[cardType];
+
+        var cardGo = Instantiate(prefab, transform, false);
+        var card = cardGo.GetComponent<Card>();
+        card.Init(cardVariant, number + 1);
+
+        card.transform.position += new Vector3(-offset, -offset, 0);
+
+
+        return card;
     }
 
     private void ReShuffle()

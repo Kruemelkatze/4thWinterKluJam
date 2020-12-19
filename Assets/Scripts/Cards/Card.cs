@@ -1,3 +1,4 @@
+using System;
 using Extensions;
 using UnityEngine;
 
@@ -5,9 +6,14 @@ namespace Cards
 {
     public class Card : MonoBehaviour
     {
-        [SerializeField] private CardDisplay cardDisplay;
+        [SerializeField] protected CardDisplay cardDisplay;
 
         [ReadOnly] public int cardNumber;
+        [ReadOnly] public CardData cardData;
+
+        public int attack;
+        public int armor;
+        public int health;
 
 
         // Start is called before the first frame update
@@ -20,10 +26,19 @@ namespace Cards
         {
         }
 
-        public void Init(int cn)
+        public void Init(CardData data, int cn)
         {
+            cardData = data;
             cardNumber = cn;
+
+            attack = cardData.attack;
+            armor = cardData.armor;
+            health = cardData.health;
+
+
             cardDisplay.Init();
+
+            transform.name = $"({cn}) {data.name}";
         }
     }
 }

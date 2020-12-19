@@ -6,6 +6,10 @@ namespace Editor
     {
         [CustomPropertyDrawer(typeof(StringAudioDictionary))]
         //[CustomPropertyDrawer(typeof(StringStringDictionary))] // Also add here
-        public class AnySerializableDictionaryStoragePropertyDrawer: SerializableDictionaryPropertyDrawer {}
+        [CustomPropertyDrawer(typeof(CardTypeCardDataListDictionary))]
+        [CustomPropertyDrawer(typeof(CardTypeGameObjectDictionary))]
+        public class AnySerializableDictionaryStoragePropertyDrawer : SerializableDictionaryPropertyDrawer
+        {
+        }
     }
 }

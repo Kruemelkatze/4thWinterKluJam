@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCards:
   - {fileID: 11400000, guid: 4b8796a38b8ffb044b5a91349860a568, type: 2}
-  pickupCards: []
-  blankCards: []
-  doorCards: []
-  trapCards: []
+  - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
+  - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
+  pickupCards:
+  - {fileID: 11400000, guid: 59cebcbfa0543d146ac482b2d174e8ee, type: 2}
+  - {fileID: 11400000, guid: 8a9405487197cc34a905fdf347d2450e, type: 2}
+  healthCards:
+  - {fileID: 11400000, guid: a1d57985153e3bb4d8f3533021b28753, type: 2}
+  eventCards:
+  - {fileID: 11400000, guid: 907914ebab6df764e815708cbde7a521, type: 2}
+  doorCards:
+  - {fileID: 11400000, guid: cbdd2ffc839a2dd4993be789c18d52b3, type: 2}
+  trapCards:
+  - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
+  enemyCardRatio: 0.4
+  pickupCardRatio: 0.2
+  healthCardRatio: 0.2
+  eventCardRatio: 0.1
+  trapCardRatio: 0.1
+  doorCardRatio: 0
