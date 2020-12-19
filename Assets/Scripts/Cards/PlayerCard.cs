@@ -1,4 +1,5 @@
-﻿using Cards.Data;
+﻿using System;
+using Cards.Data;
 using UnityEngine;
 
 namespace Cards
@@ -7,18 +8,31 @@ namespace Cards
     {
         [SerializeField] private PlayerCardData playerCardData;
 
-        public int x;
-        public int y;
+        public int x = -1000;
+        public int y = -1000;
 
         protected override void Awake()
         {
             base.Awake();
+
+            x = -1000;
+            y = -1000;
+
             Init(playerCardData, 0, false);
 
-            var (pos, x, y) = GameController.Instance.playGrid.GetPlayerSpawnPosition();
-            transform.position = pos;
+            Show(false, true);
+        }
+
+        public void SetPosition(int x, int y, Vector3 pos)
+        {
             this.x = x;
             this.y = y;
+            SetPosition(pos);
+        }
+
+        public void SetPosition(Vector3 pos)
+        {
+            transform.position = pos;
         }
 
         public override void Init(CardData data, int cn, bool destroyable = true)

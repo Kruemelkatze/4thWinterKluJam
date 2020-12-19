@@ -60,6 +60,14 @@ public class Grid : MonoBehaviour
         return pos;
     }
 
+    public bool IsInBounds(int x, int y)
+    {
+        if (x >= grid.GetLength(0) || y >= grid.GetLength(1))
+            return false;
+
+        return grid[x, y];
+    }
+
     public void UpdateDeckDropValidities(bool instant = false)
     {
         for (var x = 0; x < grid.GetLength(0); x++)

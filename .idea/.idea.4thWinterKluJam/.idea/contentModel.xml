@@ -88,9 +88,11 @@
               </e>
               <e p="SerializableDictionary.cs" t="Include" />
             </e>
+            <e p="UIExtensions.cs" t="Include" />
             <e p="VectorExt.cs" t="Include" />
           </e>
           <e p="GameController.cs" t="Include" />
+          <e p="GameState.cs" t="Include" />
           <e p="General" t="Include">
             <e p="Hub.cs" t="Include" />
             <e p="PersistentSingleton.cs" t="Include" />

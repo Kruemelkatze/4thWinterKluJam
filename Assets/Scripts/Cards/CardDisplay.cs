@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Extensions;
 using Logics;
 using TMPro;
 using UnityEngine;
@@ -29,9 +30,17 @@ namespace Cards
         [Header("Backside")] [SerializeField] private Image cardBackBody;
         [SerializeField] private TextMeshProUGUI cardBackDescription;
 
+        private CanvasGroup _canvasGroup;
+
         private void Awake()
         {
+            _canvasGroup = GetComponent<CanvasGroup>();
             ResetPreview(true);
+        }
+
+        public void Show(bool value, bool instant = false)
+        {
+            _canvasGroup.Fade(value, instant);
         }
 
         public void ShowFields(bool attack, bool armor, bool health)
@@ -72,22 +81,22 @@ namespace Cards
         public void ResetPreview(bool instant = false)
         {
             if (attackUp)
-                attackUp.DOFade(0, instant ? 0 : 0.3f);
+                attackUp.Fade(false, instant);
 
             if (attackDown)
-                attackDown.DOFade(0, instant ? 0 : 0.3f);
+                attackDown.Fade(false, instant);
 
             if (armorUp)
-                armorUp.DOFade(0, instant ? 0 : 0.3f);
+                armorUp.Fade(false, instant);
 
             if (armorDown)
-                armorDown.DOFade(0, instant ? 0 : 0.3f);
+                armorDown.Fade(false, instant);
 
             if (healthUp)
-                healthUp.DOFade(0, instant ? 0 : 0.3f);
+                healthUp.Fade(false, instant);
 
             if (healthDown)
-                healthDown.DOFade(0, instant ? 0 : 0.3f);
+                healthDown.Fade(false, instant);
         }
 
         public void ShowPreview(Stats previewStats)
@@ -99,22 +108,22 @@ namespace Cards
             SetFields(previewStats);
 
             if (attackUp && attackDiff > 0)
-                attackUp.DOFade(1, 0.3f);
+                attackUp.Fade(true);
 
             if (attackDown && attackDiff < 0)
-                attackDown.DOFade(1, 0.3f);
+                attackDown.Fade(true);
 
             if (armorUp && armorDiff > 0)
-                armorUp.DOFade(1, 0.3f);
+                armorUp.Fade(true);
 
             if (armorDown && armorDiff < 0)
-                armorDown.DOFade(1, 0.3f);
+                armorDown.Fade(true);
 
             if (healthUp && healthDiff > 0)
-                healthUp.DOFade(1, 0.3f);
+                healthUp.Fade(true);
 
             if (healthDown && healthDiff < 0)
-                healthDown.DOFade(1, 0.3f);
+                healthDown.Fade(true);
         }
 
         public void Init()

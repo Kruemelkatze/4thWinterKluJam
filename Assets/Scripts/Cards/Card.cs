@@ -96,5 +96,10 @@ namespace Cards
         {
             return (stats, GameController.Instance.playerCard.stats);
         }
+
+        public void Show(bool value, bool instant = false)
+        {
+            cardDisplay.Show(value, instant);
+        }
     }
 }

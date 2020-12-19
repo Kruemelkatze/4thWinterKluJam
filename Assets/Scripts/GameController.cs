@@ -1,19 +1,38 @@
-﻿using Cards;
+﻿using System.Collections;
+using Cards;
 using UnityEditor;
 using UnityEngine;
 
 public class GameController : Singleton<GameController>
 {
     [Header("Game States")] [SerializeField]
-    private bool isPaused;
+    public int heroPoints = 0;
+
+    [SerializeField] private int level = 0;
+    private GameState gameState = GameState.Starting;
+    [SerializeField] private bool isPaused;
+
+    public Grid playGrid;
+
 
     [Header("UI")] [SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
 
-    public int heroPoints = 0;
+    [Header("Prefabs and Stuff")] public PlayerCard playerCard;
+    public GameObject[] levels;
+    public GameObject gridPrefab;
 
-    public Grid playGrid;
-    public PlayerCard playerCard;
+    public GameState GameState => gameState;
+
+    private GameState _prePauseState = GameState.Starting;
+
+    private void Awake()
+    {
+        if (!ThisIsTheSingletonInstance())
+        {
+            return;
+        }
+    }
 
     private void Start()
     {
@@ -22,7 +41,15 @@ public class GameController : Singleton<GameController>
             AudioController.Instance.PlayDefaultMusic();
         }
 
+        gameState = GameState.Starting;
+        if (!playGrid)
+        {
+            ChangeLevel();
+        }
+
+        _prePauseState = gameState;
         SetPause(false);
+        gameState = GameState.Playing;
     }
 
     private void Update()
@@ -42,9 +69,31 @@ public class GameController : Singleton<GameController>
     public void PauseGame() => SetPause(true);
     public void ContinueGame() => SetPause(false);
 
+    public void PlayerHealthReachedZero()
+    {
+        gameState = GameState.PlayerDied;
+    }
+
+    public void DoorReached(int x, int y)
+    {
+        gameState = GameState.Changing;
+        ChangeLevel();
+    }
+
+
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PRIVATE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private void SetPause(bool paused)
     {
+        if (paused)
+        {
+            _prePauseState = gameState;
+            gameState = GameState.Paused;
+        }
+        else
+        {
+            gameState = _prePauseState;
+        }
+
         isPaused = paused;
 
         if (gameUi != null)
@@ -63,20 +112,91 @@ public class GameController : Singleton<GameController>
         // Whatever else there is to do...
         // Deactivate other UI, etc.
     }
-}
+
+    private void ChangeLevel()
+    {
+        StartCoroutine(ChangeLevelCoroutine());
+    }
+
+    private IEnumerator ChangeLevelCoroutine()
+    {
+        level++;
+        var newGrid = GetGrid(level);
+        if (playGrid)
+        {
+            Destroy(playGrid.gameObject);
+        }
+
+        playGrid = newGrid;
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (level == 1 || !playGrid.IsInBounds(playerCard.x, playerCard.y))
+        {
+            var (pos, x, y) = playGrid.GetPlayerSpawnPosition();
+            playerCard.SetPosition(x, y, pos);
+        }
+        else
+        {
+            var pos = playGrid.GetPosition(playerCard.x, playerCard.y);
+            playerCard.SetPosition(pos);
+        }
+
+        playerCard.Show(true);
+
+        playGrid.ResetDeckDropValidites();
+
+        yield break;
+    }
+
+    private Grid GetGrid(int forLevel)
+    {
+        GameObject prefabForGrid;
+        if (levels != null && forLevel < levels.Length)
+        {
+            prefabForGrid = levels[forLevel];
+        }
+        else
+        {
+            prefabForGrid = gridPrefab;
+        }
+
+        var gridObj = Instantiate(prefabForGrid);
+        var grid = gridObj.GetComponent<Grid>();
+
+        if (!grid)
+        {
+            Destroy(gridObj);
+        }
+
+        return grid;
+    }
+
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(GameController))]
-public class GameControlTestEditor : Editor
-{
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(GameController))]
+    public class GameControlTestEditor : Editor
     {
-        DrawDefaultInspector();
-        var gct = target as GameController;
-
-        if (GUILayout.Button("Restart"))
+        public override void OnInspectorGUI()
         {
-            SceneController.Instance.RestartScene();
+            DrawDefaultInspector();
+            var gct = target as GameController;
+
+            if (gct == null)
+                return;
+
+            if (!Application.isPlaying)
+                return;
+
+            if (GUILayout.Button("Restart"))
+            {
+                SceneController.Instance.RestartScene();
+            }
+
+            if (GUILayout.Button("Next Level"))
+            {
+                gct.ChangeLevel();
+            }
         }
     }
 }
