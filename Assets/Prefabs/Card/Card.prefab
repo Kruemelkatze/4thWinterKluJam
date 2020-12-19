@@ -294,7 +294,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1125409573
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &5034484590513923929
@@ -1201,7 +1201,7 @@ RectTransform:
   m_GameObject: {fileID: 5766504231857696181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_Children:
   - {fileID: 7306922637827875813}
   - {fileID: 8403729528952116746}
@@ -1231,7 +1231,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1125409573
   m_SortingOrder: -5
   m_TargetDisplay: 0
 --- !u!114 &1485119808509470568
@@ -1530,7 +1530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca854782baea5949b929dcf0dc5b668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontSideVisible: 1
+  flipDuration: 0.3
   card: {fileID: 4068153846768127239}
+  frontCanvas: {fileID: 2843030713891835698}
   cardBody: {fileID: 6193530909232455856}
   cardIcon: {fileID: 6475913694080925088}
   cardName: {fileID: 7194659251920695384}
@@ -1544,6 +1547,7 @@ MonoBehaviour:
   armorDown: {fileID: 8818194488816078266}
   healthUp: {fileID: 8493305579818234707}
   healthDown: {fileID: 7541538485238549935}
+  backCanvas: {fileID: 4187829291787968731}
   cardBackBody: {fileID: 4312558583090919227}
   cardBackDescription: {fileID: 6167951905565273515}
 --- !u!225 &7675872699758555707
@@ -1570,14 +1574,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c26ee0662c39e94085bf71493a1dd1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPreviewCard: 0
   cardDisplay: {fileID: 7508218202644794161}
   cardNumber: 0
   cardData: {fileID: 0}
+  deck: {fileID: 0}
   canBeDestroyed: 1
   stats:
     attack: 0
     armor: 0
     health: 0
+  visited: 0
 --- !u!1 &7686121834046262287
 GameObject:
   m_ObjectHideFlags: 0

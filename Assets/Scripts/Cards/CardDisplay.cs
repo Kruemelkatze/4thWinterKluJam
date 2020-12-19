@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using Extensions;
 using Logics;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +12,14 @@ namespace Cards
 {
     public class CardDisplay : MonoBehaviour
     {
+        [SerializeField] private bool frontSideVisible = true;
+        [SerializeField] private float flipDuration = 0.3f;
+
         [SerializeField] private Card card;
 
-        [Header("Frontside")] [SerializeField] private Image cardBody;
+        [Header("Frontside")] [SerializeField] private RectTransform frontCanvas;
+
+        [SerializeField] private Image cardBody;
         [SerializeField] private Image cardIcon;
         [SerializeField] private TextMeshProUGUI cardName;
         [SerializeField] private TextMeshProUGUI frontDescription;
@@ -27,7 +34,9 @@ namespace Cards
         [SerializeField] private Image healthUp;
         [SerializeField] private Image healthDown;
 
-        [Header("Backside")] [SerializeField] private Image cardBackBody;
+        [Header("Backside")] [SerializeField] private RectTransform backCanvas;
+
+        [SerializeField] private Image cardBackBody;
         [SerializeField] private TextMeshProUGUI cardBackDescription;
 
         private CanvasGroup _canvasGroup;
@@ -41,6 +50,43 @@ namespace Cards
         public void Show(bool value, bool instant = false)
         {
             _canvasGroup.Fade(value, instant);
+        }
+
+        public IEnumerator ShowFrontSide(bool toFront, bool instant = false)
+        {
+            if (toFront == frontSideVisible)
+                yield break;
+
+            frontSideVisible = toFront;
+
+            if (toFront)
+            {
+                backCanvas.ScaleX(false, instant, flipDuration);
+                if (!instant)
+                {
+                    yield return new WaitForSeconds(flipDuration);
+                }
+
+                frontCanvas.ScaleX(true, instant, flipDuration);
+                if (!instant)
+                {
+                    yield return new WaitForSeconds(flipDuration);
+                }
+            }
+            else
+            {
+                frontCanvas.ScaleX(false, instant, flipDuration);
+                if (!instant)
+                {
+                    yield return new WaitForSeconds(flipDuration);
+                }
+
+                backCanvas.ScaleX(true, instant, flipDuration);
+                if (!instant)
+                {
+                    yield return new WaitForSeconds(flipDuration);
+                }
+            }
         }
 
         public void ShowFields(bool attack, bool armor, bool health)
@@ -159,5 +205,27 @@ namespace Cards
             if (frontDescription)
                 frontDescription.SetText(data.text);
         }
+
+#if UNITY_EDITOR
+        [CustomEditor(typeof(CardDisplay))]
+        private class CardDisplayEditor : Editor
+        {
+            public override void OnInspectorGUI()
+            {
+                base.OnInspectorGUI();
+
+                if (!(target is CardDisplay script))
+                    return;
+
+                if (!Application.isPlaying)
+                    return;
+
+                if (GUILayout.Button("Flip"))
+                {
+                    script.StartCoroutine(script.ShowFrontSide(!script.frontSideVisible));
+                }
+            }
+        }
+#endif
     }
 }

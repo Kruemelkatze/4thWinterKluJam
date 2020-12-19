@@ -26,5 +26,20 @@ namespace Extensions
                 grp.DOFade(value ? 1 : 0, delay);
             }
         }
+
+        public static void ScaleX(this RectTransform rectTransform, bool value, bool instant = false,
+            float delay = 0.3f)
+        {
+            if (instant)
+            {
+                var scale = rectTransform.localScale;
+                scale.x = value ? 1 : 0;
+                rectTransform.localScale = scale;
+            }
+            else
+            {
+                rectTransform.DOScaleX(value ? 1 : 0, delay);
+            }
+        }
     }
 }
