@@ -16,7 +16,7 @@ MonoBehaviour:
   text: With many legs comes many responsibility.
   icon: {fileID: 21300000, guid: e7500766b84ec0f42b1216f9d18ef1fa, type: 3}
   attack: 1
-  armor: 3
+  armor: 2
   health: 1
   pointsOnSolve: 10
   narratorLines: []

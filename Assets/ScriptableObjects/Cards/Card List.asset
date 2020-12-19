@@ -27,9 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbdd2ffc839a2dd4993be789c18d52b3, type: 2}
   trapCards:
   - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
-  enemyCardRatio: 0.4
-  pickupCardRatio: 0.2
-  healthCardRatio: 0.2
-  eventCardRatio: 0.1
-  trapCardRatio: 0.1
+  enemyCardRatio: 0.51028
+  pickupCardRatio: 0.16724038
+  healthCardRatio: 0.10767767
+  eventCardRatio: 0.10067592
+  trapCardRatio: 0.11412601
   doorCardRatio: 0
