@@ -167,8 +167,6 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
             topCard.ResetPreview();
             playerCard.ResetPreview();
         }
-
-        Debug.Log("set preview: " + topCard + ", " + value);
     }
 
 
@@ -180,7 +178,7 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public void UpdateDropValidity(bool instant = false)
     {
         var valid = IsValidDropForPlayer();
-        SetNotAvailableHover(valid, instant);
+        UpdateCardVisibilities(valid, instant);
     }
 
     public bool IsValidDropForPlayer()
@@ -188,6 +186,17 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         var p = GameController.Instance.playerCard;
         var distance = Mathf.Abs(x - p.x) + Mathf.Abs(y - p.y);
         return distance == 1;
+    }
+
+    private void UpdateCardVisibilities(bool deckValid, bool instant = false)
+    {
+        var cnt = cards.Count;
+        for (var i = 0; i < cnt; i++)
+        {
+            var card = cards[i];
+            var valid = i == cnt - 1 && deckValid;
+            card.ShowFrontSide(valid, instant);
+        }
     }
 
     private void SetNotAvailableHover(bool valid, bool instant = false)

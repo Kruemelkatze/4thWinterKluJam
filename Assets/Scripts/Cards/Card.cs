@@ -44,7 +44,7 @@ namespace Cards
                 return;
 
             this.deck = deck;
-            
+
             cardData = data;
             cardNumber = cn;
 
@@ -103,6 +103,11 @@ namespace Cards
         public void Show(bool value, bool instant = false)
         {
             cardDisplay.Show(value, instant);
+        }
+
+        public void ShowFrontSide(bool value, bool instant = false)
+        {
+            StartCoroutine(cardDisplay.ShowFrontSide(value, instant));
         }
     }
 }
