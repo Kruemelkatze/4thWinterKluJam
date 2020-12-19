@@ -2,17 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cards;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
     [Header("Game States")] [SerializeField]
     private bool isPaused;
 
     [Header("UI")] [SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
+
+    public Grid playGrid;
+    public PlayerCard playerCard;
 
     private void Start()
     {

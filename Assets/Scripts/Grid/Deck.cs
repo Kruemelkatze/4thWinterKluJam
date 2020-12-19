@@ -3,6 +3,7 @@ using System.Linq;
 using Cards;
 using Cards.Data;
 using Cards.DragDrop;
+using DG.Tweening;
 using Extensions;
 using UnityEditor;
 using UnityEngine;
@@ -10,8 +11,14 @@ using UnityEngine.EventSystems;
 
 public class Deck : MonoBehaviour, IDropHandler
 {
-    [SerializeField] private List<Card> cards; // down-top
+    [SerializeField] private SpriteRenderer notAvailableHover;
+    [SerializeField] private float notAvailableAlpha = 0.7f;
     [SerializeField] private float cardOffset = 0.05f;
+    [SerializeField] private List<Card> cards; // down-top
+
+
+    public int x;
+    public int y;
 
     [Header("Prefabs and co.")] [SerializeField]
     private CardTypeGameObjectDictionary cardPrefabs = new CardTypeGameObjectDictionary();
@@ -88,17 +95,48 @@ public class Deck : MonoBehaviour, IDropHandler
         if (!draggedObj)
             return;
 
-        var dndScript = draggedObj.GetComponent<DragDrop>();
-        dndScript.SetValidDrop();
-        
         var playerCard = draggedObj.GetComponent<PlayerCard>();
 
         if (!playerCard)
             return;
 
+        var valid = IsValidDropForPlayer();
+        if (!valid)
+            return;
+
+        var dndScript = draggedObj.GetComponent<DragDrop>();
+
         var pos = GetTopCardPosition();
         playerCard.transform.position = pos;
+
+        dndScript.SetValidDrop(x, y, pos);
         Debug.Log("Dropped " + playerCard.name);
+    }
+
+    public void ResetDropValidity()
+    {
+        SetNotAvailableHover(true);
+    }
+
+    public void UpdateDropValidity()
+    {
+        var valid = IsValidDropForPlayer();
+        SetNotAvailableHover(valid);
+    }
+
+    private void SetNotAvailableHover(bool valid)
+    {
+        if (!notAvailableHover)
+            return;
+
+        notAvailableHover.DOFade(valid ? 0 : notAvailableAlpha, 0.3f);
+    }
+
+    public bool IsValidDropForPlayer()
+    {
+        var p = GameController.Instance.playerCard;
+        var distance = Mathf.Abs(x - p.x) + Mathf.Abs(y - p.y);
+        return distance == 1;
     }
 
     private Vector3 GetTopCardPosition()

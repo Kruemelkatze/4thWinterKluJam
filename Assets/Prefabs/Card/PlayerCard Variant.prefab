@@ -20,7 +20,9 @@ MonoBehaviour:
   armor: 0
   health: 0
   playerCardData: {fileID: 11400000, guid: 6b9e2fb756694c548b1c63c0bf5d2de7, type: 2}
---- !u!114 &71317313474935527
+  x: 0
+  y: 0
+--- !u!114 &1694731510547914433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,11 +31,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7009751144138951494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a881ee98006a433ebcbe4af872f9fa31, type: 3}
+  m_Script: {fileID: 11500000, guid: f5763ee4c06649f2b608cf8d2f110544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dragAlpha: 0.7
   dragging: 0
+  hadValidDrop: 0
+  dragStartPosition: {x: 0, y: 0, z: 0}
+  playerCard: {fileID: 1800080215}
 --- !u!1001 &681502777906135158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7508218202644794160, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_Name
-      value: PlayerCard Variant
+      value: PlayerCard
       objectReference: {fileID: 0}
     - target: {fileID: 7508218202644794161, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: card
@@ -99,11 +104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7508218202644794163, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7508218202644794163, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7508218202644794163, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_LocalPosition.z

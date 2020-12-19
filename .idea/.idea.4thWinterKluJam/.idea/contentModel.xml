@@ -60,6 +60,7 @@
             <e p="DoorCard.cs" t="Include" />
             <e p="DragDrop" t="Include">
               <e p="DragDrop.cs" t="Include" />
+              <e p="PlayerDragDrop.cs" t="Include" />
             </e>
             <e p="EnemyCard.cs" t="Include" />
             <e p="EventCard.cs" t="Include" />

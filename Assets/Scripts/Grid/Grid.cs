@@ -11,6 +11,10 @@ public class Grid : MonoBehaviour
     [SerializeField] private int sizeX = 4;
     [SerializeField] private int sizeY = 3;
 
+    [SerializeField] private int playerSpawnX = -1;
+    [SerializeField] private int playerSpawnY = 1;
+
+
     [SerializeField] private int cardsPerDeck = 4;
 
     [SerializeField] private Deck[,] grid;
@@ -31,28 +35,67 @@ public class Grid : MonoBehaviour
     {
     }
 
+    public (Vector3 pos, int x, int y) GetPlayerSpawnPosition()
+    {
+        var pos = GetPosition(playerSpawnX, playerSpawnY);
+        return (pos, playerSpawnX, playerSpawnY);
+    }
+
+    public Vector3 GetPosition(int x, int y)
+    {
+        var pos = transform.position + new Vector3(
+            (x - (sizeX - 1) / 2f) * cardSpacingX,
+            ((sizeY - 1) / 2f - y) * cardSpacingY,
+            0);
+
+        return pos;
+    }
+
+    public void UpdateDeckDropValidities()
+    {
+        for (var x = 0; x < grid.GetLength(0); x++)
+        {
+            for (var y = 0; y < grid.GetLength(1); y++)
+            {
+                var deck = grid[x, y];
+                deck.UpdateDropValidity();
+            }
+        }
+    }
+    
+    public void ResetDeckDropValidites()
+    {
+        for (var x = 0; x < grid.GetLength(0); x++)
+        {
+            for (var y = 0; y < grid.GetLength(1); y++)
+            {
+                var deck = grid[x, y];
+                deck.ResetDropValidity();
+            }
+        }
+    }
+
     private void SpawnDecks()
     {
         for (var x = 0; x < grid.GetLength(0); x++)
         {
             for (var y = 0; y < grid.GetLength(1); y++)
             {
-                var pos = transform.position + new Vector3(
-                    (x - (sizeX - 1) / 2f) * cardSpacingX,
-                    ((sizeY - 1) / 2f - y) * cardSpacingY,
-                    0);
+                var pos = GetPosition(x, y);
                 grid[x, y] = SpawnDeck(x, y, pos);
             }
         }
     }
 
-    private Deck SpawnDeck(int a, int b, Vector3 position)
+    private Deck SpawnDeck(int x, int y, Vector3 position)
     {
         var spawned = Instantiate(deckPrefab, transform, false);
-        spawned.name = $"Deck {b + 1}-{a + 1}";
+        spawned.name = $"Deck {y + 1}-{x + 1}";
         spawned.transform.position = position;
 
         var deck = spawned.GetComponent<Deck>();
+        deck.x = x;
+        deck.y = y;
         deck.InitWithCards(availableCards, cardsPerDeck, Random.value <= 0.5f);
         return deck;
     }

@@ -203,6 +203,8 @@ MonoBehaviour:
   cardSpacingY: 2.5
   sizeX: 4
   sizeY: 3
+  playerSpawnX: -1
+  playerSpawnY: 1
   cardsPerDeck: 4
   deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}
   availableCards: {fileID: 11400000, guid: 1e61227b13ce06846b0182281934842a, type: 2}
@@ -648,6 +650,39 @@ Transform:
   m_Father: {fileID: 86015367}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1800080214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7009751144138951494, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
+  m_PrefabInstance: {fileID: 681502776148265763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800080215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800080214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5763ee4c06649f2b608cf8d2f110544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAlpha: 0.7
+  dragging: 0
+  hadValidDrop: 0
+  dragStartPosition: {x: 0, y: 0, z: 0}
+  playerCard: {fileID: 1800080218}
+--- !u!114 &1800080218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1800080215, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
+  m_PrefabInstance: {fileID: 681502776148265763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800080214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca52ba0b882a4a52981e1e45888ce5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1880168266
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +729,8 @@ MonoBehaviour:
   isPaused: 0
   gameUi: {fileID: 920992608}
   pauseUi: {fileID: 2061289879}
+  playGrid: {fileID: 141435881}
+  playerCard: {fileID: 1800080218}
 --- !u!1 &2061289879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6424184023996284785, guid: a60007b992704b848afb90e7beb72c9a, type: 3}
@@ -717,11 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009751144138951493, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7009751144138951493, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7009751144138951493, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -759,7 +796,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 71317313474935527, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4eea6890b9cf74691d7e402e526de7, type: 3}
 --- !u!1001 &1212594850787549226
 PrefabInstance:

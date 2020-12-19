@@ -7,24 +7,23 @@ namespace Cards.DragDrop
 {
     public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
-        [SerializeField] private float dragAlpha = 0.7f;
-        [ReadOnly] [SerializeField] private bool dragging;
-        [ReadOnly] [SerializeField] private bool hadValidDrop;
-        [ReadOnly] [SerializeField] private Vector3 dragStartPosition;
-
+        [SerializeField] protected float dragAlpha = 0.7f;
+        [ReadOnly] [SerializeField] protected bool dragging;
+        [ReadOnly] [SerializeField] protected bool hadValidDrop;
+        [ReadOnly] [SerializeField] protected Vector3 dragStartPosition;
 
         protected CanvasGroup canvasGroup;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public virtual void OnPointerDown(PointerEventData eventData)
         {
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
+        public virtual void OnBeginDrag(PointerEventData eventData)
         {
             dragStartPosition = transform.position;
 
@@ -34,7 +33,7 @@ namespace Cards.DragDrop
             canvasGroup.alpha = dragAlpha;
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public virtual void OnEndDrag(PointerEventData eventData)
         {
             dragging = false;
             canvasGroup.blocksRaycasts = true;
@@ -48,7 +47,7 @@ namespace Cards.DragDrop
             hadValidDrop = false;
         }
 
-        public void OnDrag(PointerEventData eventData)
+        public virtual void OnDrag(PointerEventData eventData)
         {
             dragging = true;
 
@@ -63,9 +62,13 @@ namespace Cards.DragDrop
             transform.position += delta;
         }
 
-        public void SetValidDrop()
+        public virtual void SetValidDrop(int x, int y, Vector3? pos = null)
         {
             hadValidDrop = true;
+            if (pos != null)
+            {
+                transform.position = pos.Value;
+            }
         }
     }
 }
