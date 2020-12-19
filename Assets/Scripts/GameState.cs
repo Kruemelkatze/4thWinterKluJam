@@ -1,4 +1,7 @@
-﻿public enum GameState
+﻿using System;
+
+[Serializable]
+public enum GameState
 {
     Starting = 0,
     Playing = 5,

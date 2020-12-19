@@ -9,7 +9,7 @@ public class GameController : Singleton<GameController>
     public int heroPoints = 0;
 
     [SerializeField] private int level = 0;
-    private GameState gameState = GameState.Starting;
+    [SerializeField] private GameState gameState = GameState.Starting;
     [SerializeField] private bool isPaused;
 
     public Grid playGrid;
@@ -72,11 +72,11 @@ public class GameController : Singleton<GameController>
     public void PlayerHealthReachedZero()
     {
         gameState = GameState.PlayerDied;
+        Debug.Log(nameof(PlayerHealthReachedZero));
     }
 
     public void DoorReached(int x, int y)
     {
-        gameState = GameState.Changing;
         ChangeLevel();
     }
 
@@ -120,6 +120,8 @@ public class GameController : Singleton<GameController>
 
     private IEnumerator ChangeLevelCoroutine()
     {
+        gameState = GameState.Changing;
+
         level++;
         var newGrid = GetGrid(level);
         if (playGrid)
@@ -145,8 +147,7 @@ public class GameController : Singleton<GameController>
         playerCard.Show(true);
 
         playGrid.ResetDeckDropValidites();
-
-        yield break;
+        gameState = GameState.Playing;
     }
 
     private Grid GetGrid(int forLevel)

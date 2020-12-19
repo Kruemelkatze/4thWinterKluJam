@@ -92,6 +92,9 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (GameController.Instance.GameState != GameState.Playing)
+            return;
+
         var draggedObj = eventData.pointerDrag;
         if (!draggedObj)
             return;

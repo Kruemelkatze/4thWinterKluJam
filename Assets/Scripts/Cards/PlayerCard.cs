@@ -1,5 +1,6 @@
 ﻿using System;
 using Cards.Data;
+using Logics;
 using UnityEngine;
 
 namespace Cards
@@ -46,6 +47,15 @@ namespace Cards
 
             cardDisplay.Init();
             cardDisplay.ShowFields(true, true, true);
+        }
+
+        public override void UpdateStats(Stats newStats)
+        {
+            base.UpdateStats(newStats);
+            if (stats.health <= 0)
+            {
+                GameController.Instance.PlayerHealthReachedZero();
+            }
         }
     }
 }

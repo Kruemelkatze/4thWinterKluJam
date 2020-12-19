@@ -24,6 +24,9 @@ namespace Cards.DragDrop
 
         public override void OnDrag(PointerEventData eventData)
         {
+            if (GameController.Instance.GameState != GameState.Playing)
+                return;
+
             base.OnDrag(eventData);
         }
 
