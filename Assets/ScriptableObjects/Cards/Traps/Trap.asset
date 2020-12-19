@@ -15,5 +15,8 @@ MonoBehaviour:
   name: Trap
   text: Swiggity swooty, I'm blasting up your booty.
   icon: {fileID: 21300000, guid: f9b2b565a80488542b37753263abaf72, type: 3}
+  attack: 0
+  armor: 0
+  health: -1
   pointsOnSolve: 10
   narratorLines: []

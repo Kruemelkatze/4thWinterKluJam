@@ -11,6 +11,7 @@ namespace Cards
         [Header("Frontside")] [SerializeField] private Image cardBody;
         [SerializeField] private Image cardIcon;
         [SerializeField] private TextMeshProUGUI cardName;
+        [SerializeField] private TextMeshProUGUI frontDescription;
         [SerializeField] private TextMeshProUGUI attackField;
         [SerializeField] private TextMeshProUGUI armorField;
         [SerializeField] private TextMeshProUGUI healthField;
@@ -77,6 +78,9 @@ namespace Cards
 
             if (cardBackDescription)
                 cardBackDescription.SetText(data.text);
+
+            if (frontDescription)
+                frontDescription.SetText(data.text);
         }
     }
 }
