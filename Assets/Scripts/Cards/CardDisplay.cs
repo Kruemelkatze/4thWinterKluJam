@@ -1,3 +1,4 @@
+using Logics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +29,18 @@ namespace Cards
         // Update is called once per frame
         void Update()
         {
+        }
+
+        public void ShowFields(bool attack, bool armor, bool health)
+        {
+            if (attackField)
+                attackField.enabled = attack;
+
+            if (armorField)
+                armorField.enabled = armor;
+
+            if (healthField)
+                healthField.enabled = health;
         }
 
         public void UpdateFields()
@@ -64,14 +77,7 @@ namespace Cards
                 cardName.SetText(data.name);
 
             UpdateFields();
-            if (attackField && card.stats.attack == 0)
-                attackField.enabled = false;
-
-            if (armorField && card.stats.armor == 0)
-                armorField.enabled = false;
-
-            if (healthField && card.stats.health == 0)
-                healthField.enabled = false;
+            ShowFields(card.stats.attack != 0, card.stats.armor != 0, card.stats.health != 0);
 
             // if (cardBackBody)
             //     cardBackBody.
@@ -81,6 +87,10 @@ namespace Cards
 
             if (frontDescription)
                 frontDescription.SetText(data.text);
+        }
+
+        public void PreviewStats(Stats stats)
+        {
         }
     }
 }

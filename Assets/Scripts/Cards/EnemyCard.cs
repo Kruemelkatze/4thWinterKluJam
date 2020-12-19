@@ -30,5 +30,11 @@ namespace Cards
                 _ => (false, false),
             };
         }
+
+        public override void Init(CardData data, int cn, bool destroyable = true)
+        {
+            base.Init(data, cn, destroyable);
+            cardDisplay.ShowFields(true, true, true);
+        }
     }
 }

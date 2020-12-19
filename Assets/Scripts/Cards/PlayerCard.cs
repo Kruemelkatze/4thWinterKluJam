@@ -31,6 +31,7 @@ namespace Cards
             stats.health = cardData.health;
 
             cardDisplay.Init();
+            cardDisplay.ShowFields(true, true, true);
         }
     }
 }
