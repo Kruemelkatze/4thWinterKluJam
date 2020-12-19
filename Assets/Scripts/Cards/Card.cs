@@ -6,6 +6,8 @@ namespace Cards
 {
     public class Card : MonoBehaviour
     {
+        [SerializeField] private bool isPreviewCard = false;
+
         [SerializeField] protected CardDisplay cardDisplay;
 
         [ReadOnly] public int cardNumber;
@@ -14,10 +16,16 @@ namespace Cards
         public bool canBeDestroyed = true;
 
         public Stats stats;
+        public int visited = 0;
 
         protected virtual void Awake()
         {
             SetupCanvases();
+
+            if (isPreviewCard)
+            {
+                cardDisplay.Init();
+            }
         }
 
         protected void SetupCanvases()
@@ -31,6 +39,9 @@ namespace Cards
 
         public virtual void Init(CardData data, int cn, bool destroyable = true)
         {
+            if (isPreviewCard)
+                return;
+
             cardData = data;
             cardNumber = cn;
 
@@ -53,7 +64,17 @@ namespace Cards
 
         public virtual (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
+            visited++;
+            AddPointsAfterSolved();
             return (true, canBeDestroyed);
+        }
+
+        protected void AddPointsAfterSolved(bool always = false)
+        {
+            if (always || visited == 1)
+            {
+                GameController.Instance.heroPoints += cardData.pointsOnSolve;
+            }
         }
 
         public void DestroyCard()

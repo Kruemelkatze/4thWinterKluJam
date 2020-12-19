@@ -20,15 +20,24 @@ namespace Cards
 
         public override (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
+            visited++;
+
             var result = FightTurn();
 
-            return result switch
+            var output = result switch
             {
                 FightResult.PlayerWon => (true, canBeDestroyed),
                 FightResult.EnemyWon => (false, false),
                 FightResult.Draw => (false, false),
                 _ => (false, false),
             };
+
+            if (result == FightResult.PlayerWon && canBeDestroyed)
+            {
+                AddPointsAfterSolved(true);
+            }
+
+            return output;
         }
 
         public override void Init(CardData data, int cn, bool destroyable = true)

@@ -10,6 +10,8 @@ public class GameController : Singleton<GameController>
     [Header("UI")] [SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
 
+    public int heroPoints = 0;
+
     public Grid playGrid;
     public PlayerCard playerCard;
 

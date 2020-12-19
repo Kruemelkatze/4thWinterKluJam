@@ -7,8 +7,12 @@ namespace Cards
     {
         public override (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
+            visited++;
+
             var playerStats = GetPlayerStatsAfterPickup();
             GameController.Instance.playerCard.UpdateStats(playerStats);
+
+            AddPointsAfterSolved();
 
             return (true, canBeDestroyed);
         }
