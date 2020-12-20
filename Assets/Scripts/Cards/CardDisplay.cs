@@ -21,8 +21,12 @@ namespace Cards
 
         [SerializeField] private Image cardBody;
         [SerializeField] private Image cardIcon;
+
         [SerializeField] private TextMeshProUGUI cardName;
         [SerializeField] private TextMeshProUGUI frontDescription;
+
+        [SerializeField] private TextMeshProUGUI cardPointsField;
+
         [SerializeField] private TextMeshProUGUI attackField;
         [SerializeField] private TextMeshProUGUI armorField;
         [SerializeField] private TextMeshProUGUI healthField;
@@ -204,6 +208,12 @@ namespace Cards
 
             if (frontDescription)
                 frontDescription.SetText(data.text);
+
+            if (cardPointsField)
+            {
+                cardPointsField.SetText(data.pointsOnSolve.ToString());
+                cardPointsField.enabled = data.pointsOnSolve != 0;
+            }
         }
 
 #if UNITY_EDITOR
