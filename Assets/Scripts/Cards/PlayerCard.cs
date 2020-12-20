@@ -20,7 +20,10 @@ namespace Cards
             y = -1000;
 
             Init(null, playerCardData, 0, false);
+        }
 
+        private void Start()
+        {
             Show(false, true);
         }
 

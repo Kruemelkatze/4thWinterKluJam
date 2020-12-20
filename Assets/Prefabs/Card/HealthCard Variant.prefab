@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9227462ab274387917000c69c6894b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPreviewCard: 0
   cardDisplay: {fileID: 652384374058667519}
   cardNumber: 0
   cardData: {fileID: 0}
+  deck: {fileID: 0}
   canBeDestroyed: 1
-  attack: 0
-  armor: 0
-  health: 0
+  stats:
+    attack: 0
+    armor: 0
+    health: 0
+  visited: 0
 --- !u!1001 &6240132372424741629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,9 +30,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 264634764828728261, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a46e021e6b237c43b28791b9bf37627, type: 3}
+    - target: {fileID: 536620780405470580, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188468750153427851, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.447
+      objectReference: {fileID: 0}
     - target: {fileID: 2199058407262898994, guid: fae3466360097ec43af067135e9b3032, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218006638373287045, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088523244169897067, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_text
+      value: Schinken
       objectReference: {fileID: 0}
     - target: {fileID: 6887371027744202496, guid: fae3466360097ec43af067135e9b3032, type: 3}
       propertyPath: m_RootOrder
@@ -87,13 +111,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7663152033497057150, guid: fae3466360097ec43af067135e9b3032, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 7663152033497057150, guid: fae3466360097ec43af067135e9b3032, type: 3}
       propertyPath: m_fontSizeBase
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7663152033497057150, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960471778768628115, guid: fae3466360097ec43af067135e9b3032, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cf3abcb460a132f4799764cd7a6103fb, type: 3}
     - target: {fileID: 8264994918451682954, guid: fae3466360097ec43af067135e9b3032, type: 3}
       propertyPath: m_IsActive
       value: 1

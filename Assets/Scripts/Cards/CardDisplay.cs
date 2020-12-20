@@ -30,6 +30,10 @@ namespace Cards
         [SerializeField] private TextMeshProUGUI attackField;
         [SerializeField] private TextMeshProUGUI armorField;
         [SerializeField] private TextMeshProUGUI healthField;
+        [SerializeField] private Image attackBG;
+        [SerializeField] private Image armorBG;
+        [SerializeField] private Image healthBG;
+
 
         [SerializeField] private Image attackUp;
         [SerializeField] private Image attackDown;
@@ -103,6 +107,15 @@ namespace Cards
 
             if (healthField)
                 healthField.enabled = health;
+
+            if (attackBG)
+                attackBG.enabled = attack;
+
+            if (armorBG)
+                armorBG.enabled = armor;
+
+            if (healthBG)
+                healthBG.enabled = health;
         }
 
         public void UpdateFields()
