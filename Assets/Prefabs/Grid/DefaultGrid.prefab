@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557ecc5f469f80940aaed09ae55a00d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpacingX: 2.5
-  cardSpacingY: 3
+  cardSpacingX: 2.4
+  cardSpacingY: 3.2
   sizeX: 4
   sizeY: 3
   playerSpawnX: 0
