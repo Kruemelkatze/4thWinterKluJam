@@ -109,6 +109,10 @@
             <e p="FightResult.cs" t="Include" />
             <e p="Stats.cs" t="Include" />
           </e>
+          <e p="Narrator" t="Include">
+            <e p="Narrator.cs" t="Include" />
+            <e p="NarratorUI.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="BaseMenuManager.cs" t="Include" />
           </e>

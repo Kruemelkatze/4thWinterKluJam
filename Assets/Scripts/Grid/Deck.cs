@@ -34,7 +34,7 @@ public class Deck : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         _startedWithCards = numberCards;
         _hasDoor = hasDoor;
 
-        cards ??= new List<Card>();
+        cards = cards != null ? cards : new List<Card>();
 
         for (var i = 0; i < numberCards; i++)
         {

@@ -25,13 +25,18 @@ namespace Cards
 
             var result = FightTurn();
 
-            var output = result switch
+            (bool, bool) output;
+            switch (result)
             {
-                FightResult.PlayerWon => (true, canBeDestroyed),
-                FightResult.EnemyWon => (false, false),
-                FightResult.Draw => (false, false),
-                _ => (false, false),
-            };
+                case FightResult.PlayerWon:
+                    output = (true, canBeDestroyed);
+                    break;
+                case FightResult.EnemyWon:
+                case FightResult.Draw:
+                default:
+                    output = (false, false);
+                    break;
+            }
 
             switch (result)
             {

@@ -63,29 +63,44 @@ namespace Cards.Data
             };
             var index = GetWeightedRandomEntry(percentages);
 
-            return index switch
+            switch (index)
             {
-                0 when enemyCards.Length > 0 => CardType.Enemy,
-                1 when pickupCards.Length > 0 => CardType.Pickup,
-                2 when healthCards.Length > 0 => CardType.Health,
-                3 when eventCards.Length > 0 => CardType.Event,
-                4 when trapCards.Length > 0 => CardType.Trap,
-                5 when doorCards.Length > 0 => CardType.Door,
-                _ => CardType.Enemy
-            };
+                case 0 when enemyCards.Length > 0:
+                    return CardType.Enemy;
+                case 1 when pickupCards.Length > 0:
+                    return CardType.Pickup;
+                case 2 when healthCards.Length > 0:
+                    return CardType.Health;
+                case 3 when eventCards.Length > 0:
+                    return CardType.Event;
+                case 4 when trapCards.Length > 0:
+                    return CardType.Trap;
+                case 5 when doorCards.Length > 0:
+                    return CardType.Door;
+                default:
+                    return CardType.Enemy;
+            }
         }
 
         public CardData GetRandomVariantForType(CardType type)
         {
-            return type switch
+            switch (type)
             {
-                CardType.Enemy => enemyCards.RandomEntry(),
-                CardType.Event => eventCards.RandomEntry(),
-                CardType.Pickup => pickupCards.RandomEntry(),
-                CardType.Health => healthCards.RandomEntry(),
-                CardType.Trap => trapCards.RandomEntry(),
-                CardType.Door => doorCards.RandomEntry(),
-            };
+                case CardType.Enemy:
+                    return enemyCards.RandomEntry();
+                case CardType.Event:
+                    return eventCards.RandomEntry();
+                case CardType.Pickup:
+                    return pickupCards.RandomEntry();
+                case CardType.Health:
+                    return healthCards.RandomEntry();
+                case CardType.Trap:
+                    return trapCards.RandomEntry();
+                case CardType.Door:
+                    return doorCards.RandomEntry();
+                default:
+                    return eventCards.RandomEntry();
+            }
         }
 
         #region HELPERS
