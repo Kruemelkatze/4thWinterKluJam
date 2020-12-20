@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2bacebd5ce457c863e8c147fcca57a, type: 3}
+  m_Name: DragonEvent
+  m_EditorClassIdentifier: 
+  name: Mighty Chicken
+  text: Uphold your honor by slaying him!
+  icon: {fileID: 21300000, guid: 37b5669b8f5d5394698b23944e6d9168, type: 3}
+  attack: 0
+  armor: 0
+  health: 0
+  pointsOnSolve: 10
+  interactSounds:
+  - {fileID: 11400000, guid: 7d4605d0693a36a40b736f9eadc32ca4, type: 2}
+  - {fileID: 11400000, guid: bdd18abe77740304284ee9bb92d513a0, type: 2}
+  - {fileID: 11400000, guid: c8e8f73b6d79f6e409420649992d7c49, type: 2}
+  narratorLines:
+  - {fileID: 11400000, guid: 3f022480ac78ede4fba25bf9845b9380, type: 2}
+  - {fileID: 11400000, guid: 41c8fb32bb935b7418b036712442a2b1, type: 2}
+  - {fileID: 11400000, guid: 41c8fb32bb935b7418b036712442a2b1, type: 2}

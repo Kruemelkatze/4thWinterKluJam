@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ef539cd10b842a8a013de620984b58f, type: 3}
-  m_Name: Bat
+  m_Name: Shrimp
   m_EditorClassIdentifier: 
-  name: Bat
-  text: My hat, my bat, my pumpkin and my cat.
-  icon: {fileID: 21300000, guid: d387b60dc959e78458c3aea75245b206, type: 3}
+  name: Combat Shrimp
+  text: A trained killer
+  icon: {fileID: 21300000, guid: 2208b329e4459f94f94c94f67674bbd2, type: 3}
   attack: 2
   armor: 1
   health: 1
-  pointsOnSolve: 10
+  pointsOnSolve: 5
   interactSounds:
   - {fileID: 11400000, guid: 214b4aecb2e366343932030202baf40a, type: 2}
   - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}

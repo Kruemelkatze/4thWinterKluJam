@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   name: Shield
-  text: A knight in shiny armor has never had his armor truly tested.
-  icon: {fileID: 21300000, guid: d40f67f8e0468f34a8126c719c7a91d8, type: 3}
+  text: 
+  icon: {fileID: 21300000, guid: ca9a69783ea5d9b40ba6cb902fbfd7ab, type: 3}
   attack: 0
   armor: 1
   health: 0
-  pointsOnSolve: 10
+  pointsOnSolve: 0
   interactSounds:
   - {fileID: 11400000, guid: fb69ee8086624a54bb4047aa836b3a93, type: 2}
   - {fileID: 11400000, guid: 07f981b0e46b644449a313dc0defba0a, type: 2}

@@ -50,7 +50,7 @@ MonoBehaviour:
   playerSpawnX: 0
   playerSpawnY: 1
   cardsPerDeck: 4
-  numberOfDoors: 4
+  numberOfDoors: 6
   seeOnlyEnvironment: 1
   notAvailableAlpha: 1
   deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3be7813f8ec4a749cce4459ec450f6f, type: 3}
   m_Name: Ham
   m_EditorClassIdentifier: 
-  name: Ham
+  name: Schinken
   text: What is there to say?
   icon: {fileID: 21300000, guid: cf3abcb460a132f4799764cd7a6103fb, type: 3}
   attack: 0
   armor: 0
   health: 2
-  pointsOnSolve: 10
+  pointsOnSolve: 0
   interactSounds:
   - {fileID: 11400000, guid: 871ee2a15d22ff54788c3ad9a3f0850c, type: 2}
   - {fileID: 11400000, guid: 79f3e9cb9b3b38049b7d268a512ccdce, type: 2}
