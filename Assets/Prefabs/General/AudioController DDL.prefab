@@ -66,6 +66,16 @@ MonoBehaviour:
     - win_1-4
     - win_1-5
     - click
+    - card_swipe_1-1
+    - card_swipe_1-2
+    - card_swipe_1-3
+    - card_swipe_1-4
+    - card_swipe_1-5
+    - card_flip_1-1
+    - card_flip_1-2
+    - card_flip_1-3
+    - card_flip_1-4
+    - card_flip_1-5
     m_values:
     - {fileID: 11400000, guid: 0034f432a71e1fe4793e59822a506a0a, type: 2}
     - {fileID: 11400000, guid: 3fc7b808088e75049adaed08c2c440ce, type: 2}
@@ -88,6 +98,16 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8d69654b58c6af64f8003b0d5e6a99e4, type: 2}
     - {fileID: 11400000, guid: 527a1cb88f34e454c9c2d8ff577f009e, type: 2}
     - {fileID: 11400000, guid: e76765177d96f5d478a844c9bb626444, type: 2}
+    - {fileID: 11400000, guid: 9193a3c920eb8d147b01fca0b9d46021, type: 2}
+    - {fileID: 11400000, guid: 7d8b7b1a62af604488c219bd37eb8711, type: 2}
+    - {fileID: 11400000, guid: 5e9302892742730489a6dccea4c9b356, type: 2}
+    - {fileID: 11400000, guid: 080b4285f55cf8444a25233674841816, type: 2}
+    - {fileID: 11400000, guid: 9eec1d2ad1289c54281d87a03ee67353, type: 2}
+    - {fileID: 11400000, guid: 6338837e32593b84a95553bb55dc060c, type: 2}
+    - {fileID: 11400000, guid: 269db40ad58748f4884a3bdc8f2426db, type: 2}
+    - {fileID: 11400000, guid: b89d0edfbc862b34da83482ff3f0fd9b, type: 2}
+    - {fileID: 11400000, guid: d9c037a1a1d664742a359f594f23706a, type: 2}
+    - {fileID: 11400000, guid: df9f804138161eb4f9d244bfccd65df2, type: 2}
   musicClips:
     m_keys:
     - standard
