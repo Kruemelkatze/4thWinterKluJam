@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
-  m_Name: door 1- 1
+  m_Name: pick 1- 4
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: a5e2c46064a95014c9296e51f9b22e47, type: 3}
+  audioClip: {fileID: 8300000, guid: ba2f8a90eebf1f94ea07bc09ef9089b7, type: 3}
   subtitle: 
   uiSound: 0
   loop: 0
