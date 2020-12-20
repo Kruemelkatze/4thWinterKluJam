@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Defence 3- 3
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: c71abf5de889e3241a19467747b87f58, type: 3}
-  subtitle: You think, this will help?
+  subtitle: "This won\u2019t last you long, probably."
   uiSound: 0
   loop: 0
   volume: 1

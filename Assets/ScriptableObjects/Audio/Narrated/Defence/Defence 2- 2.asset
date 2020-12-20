@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Defence 2- 2
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 05dbbd5cea07ca146add674c3d211b73, type: 3}
-  subtitle: You think, this will help?
+  subtitle: Ohh, shiny!
   uiSound: 0
   loop: 0
   volume: 1
