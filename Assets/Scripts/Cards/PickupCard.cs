@@ -12,6 +12,8 @@ namespace Cards
             var playerStats = GetPlayerStatsAfterPickup();
             GameController.Instance.playerCard.UpdateStats(playerStats);
 
+            PlayAudioLine();
+
             AddPointsAfterSolved();
 
             return (true, canBeDestroyed);

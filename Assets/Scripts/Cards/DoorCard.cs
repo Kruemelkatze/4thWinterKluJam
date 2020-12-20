@@ -10,6 +10,7 @@ namespace Cards
             visited++;
             AddPointsAfterSolved();
             GameController.Instance.DoorReached(deck.x, deck.y);
+            PlayAudioLine();
 
             return (true, false);
         }

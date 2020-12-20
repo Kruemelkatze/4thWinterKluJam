@@ -1,3 +1,4 @@
+using System;
 using Logics;
 
 namespace Cards
@@ -31,6 +32,19 @@ namespace Cards
                 FightResult.Draw => (false, false),
                 _ => (false, false),
             };
+
+            switch (result)
+            {
+                case FightResult.Draw:
+                    AudioController.Instance.PlayRandomSound("attack");
+                    break;
+                case FightResult.PlayerWon:
+                    PlayAudioLine();
+                    break;
+                case FightResult.EnemyWon:
+                    AudioController.Instance.PlayRandomSound("player_die");
+                    break;
+            }
 
             if (result == FightResult.PlayerWon && canBeDestroyed)
             {

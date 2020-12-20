@@ -124,7 +124,11 @@ public class GameController : Singleton<GameController>
     {
         gameState = GameState.Changing;
 
-        level++;
+        if (level == 0)
+        {
+            AudioController.Instance.PlayRandomSound("door");
+        }
+
         var newGrid = GetGrid(level);
         if (playGrid)
         {
@@ -135,7 +139,7 @@ public class GameController : Singleton<GameController>
 
         yield return new WaitForSeconds(0.5f);
 
-        if (level == 1 || !playGrid.IsInBounds(playerCard.x, playerCard.y))
+        if (level == 0 || !playGrid.IsInBounds(playerCard.x, playerCard.y))
         {
             var (pos, x, y) = playGrid.GetPlayerSpawnPosition();
             playerCard.SetPosition(x, y, pos);
@@ -149,6 +153,7 @@ public class GameController : Singleton<GameController>
         playerCard.Show(true);
 
         playGrid.ResetDeckDropValidites();
+        level++;
         gameState = GameState.Playing;
     }
 
@@ -166,6 +171,8 @@ public class GameController : Singleton<GameController>
 
         var gridObj = Instantiate(prefabForGrid);
         var grid = gridObj.GetComponent<Grid>();
+
+        grid.Init();
 
         if (!grid)
         {

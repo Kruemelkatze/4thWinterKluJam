@@ -13,13 +13,13 @@ namespace Cards.DragDrop
         public override void OnBeginDrag(PointerEventData eventData)
         {
             base.OnBeginDrag(eventData);
-            GameController.Instance.playGrid.UpdateDeckDropValidities();
+            GameController.Instance.playGrid.UpdateDeckDropValidities(false, true);
         }
 
         public override void OnEndDrag(PointerEventData eventData)
         {
             base.OnEndDrag(eventData);
-            GameController.Instance.playGrid.ResetDeckDropValidites();
+            GameController.Instance.playGrid.ResetDeckDropValidites(false, !hadValidDrop);
         }
 
         public override void OnDrag(PointerEventData eventData)
@@ -39,6 +39,8 @@ namespace Cards.DragDrop
             {
                 transform.position = GameController.Instance.playGrid.GetPosition(x, y);
             }
+
+            AudioController.Instance.PlayRandomSound("card_swipe");
         }
     }
 }

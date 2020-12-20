@@ -69,7 +69,15 @@ namespace Cards
         {
             visited++;
             AddPointsAfterSolved();
+            PlayAudioLine();
+
             return (true, canBeDestroyed);
+        }
+
+        protected void PlayAudioLine()
+        {
+            var audioEntry = cardData.GetRandomInteractSound();
+            AudioController.Instance.PlaySound(audioEntry);
         }
 
         protected void AddPointsAfterSolved(bool always = false)

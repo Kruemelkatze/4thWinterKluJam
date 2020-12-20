@@ -28,21 +28,11 @@ public class Grid : MonoBehaviour
 
     [SerializeField] private Cards.Data.CardList availableCards;
 
-
-    void Awake()
+    public void Init()
     {
         grid = new Deck[sizeX, sizeY];
         SpawnDecks();
-    }
-
-    private void Start()
-    {
         ResetDeckDropValidites(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public (Vector3 pos, int x, int y) GetPlayerSpawnPosition()
@@ -69,7 +59,7 @@ public class Grid : MonoBehaviour
         return grid[x, y];
     }
 
-    public void UpdateDeckDropValidities(bool instant = false)
+    public void UpdateDeckDropValidities(bool instant = false, bool noAudio = false)
     {
         for (var x = 0; x < grid.GetLength(0); x++)
         {
@@ -79,13 +69,18 @@ public class Grid : MonoBehaviour
                 deck.UpdateDropValidity(instant);
             }
         }
+
+        if (!instant && !noAudio)
+        {
+            AudioController.Instance.PlayRandomSound("card_flip");
+        }
     }
 
-    public void ResetDeckDropValidites(bool instant = false)
+    public void ResetDeckDropValidites(bool instant = false, bool noAudio = true)
     {
         if (seeOnlyEnvironment)
         {
-            UpdateDeckDropValidities(instant);
+            UpdateDeckDropValidities(instant, noAudio);
             return;
         }
 
