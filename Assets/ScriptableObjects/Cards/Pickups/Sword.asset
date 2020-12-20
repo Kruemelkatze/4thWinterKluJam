@@ -21,10 +21,10 @@ MonoBehaviour:
   pointsOnSolve: 10
   interactSounds:
   - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
-  - {fileID: 11400000, guid: 81354c5804286a146af8758728be4963, type: 2}
-  - {fileID: 11400000, guid: bc9ff570a874ce84b807ff1865fa58ce, type: 2}
-  - {fileID: 11400000, guid: 53c72bc5d8648644bb88afc94cb9ddd4, type: 2}
-  - {fileID: 11400000, guid: 33392a76f53e5f8488c44d3841ff66c1, type: 2}
+  - {fileID: 11400000, guid: 7d6a4cc8c84b81148aea856667f9f876, type: 2}
+  - {fileID: 11400000, guid: 4a123cc96c300af45bf34e37b4900964, type: 2}
+  - {fileID: 11400000, guid: 5eb06c46654aa1a4a96d0be8c4b74557, type: 2}
+  - {fileID: 11400000, guid: 796099bbe6808d045b256a8057327c19, type: 2}
   narratorLines:
   - {fileID: 11400000, guid: c2bc6196f808eeb4b87cef4e2c99a468, type: 2}
   - {fileID: 11400000, guid: a027a558ef6a46e439efc07f59b02bc7, type: 2}
@@ -37,7 +37,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 571aaa1bc95afb446ba473d45e691556, type: 2}
   - {fileID: 11400000, guid: 1faf022930029cd409cbb3aa84d0b124, type: 2}
   - {fileID: 11400000, guid: 9589077acdc178040a63358c7b3d3f55, type: 2}
-  - {fileID: 11400000, guid: a484e496f6dfe95478d65533ba70b69c, type: 2}
   - {fileID: 11400000, guid: c17fb060a8aa7664eb6b2d814e094d9b, type: 2}
   - {fileID: 11400000, guid: 27d989da1e280ff4b84b22a08fea688e, type: 2}
-  - {fileID: 11400000, guid: e95c6efef25f32d4c97457fb3a8d4229, type: 2}

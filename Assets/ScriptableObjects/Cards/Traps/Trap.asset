@@ -23,8 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e81d5163784b154ea64709ce0a6295b, type: 2}
   - {fileID: 11400000, guid: 506212ab70d9b78448deaf92a07d9f79, type: 2}
   - {fileID: 11400000, guid: 6f0cc1e6aed5bc34d9fa09b39609514c, type: 2}
-  - {fileID: 11400000, guid: a7e4a6d87cef95149943c6bac1b910b7, type: 2}
-  - {fileID: 11400000, guid: 1222a00e1bfa5c741b9fbc1edde8fc33, type: 2}
   narratorLines:
   - {fileID: 11400000, guid: 5ed4ddd0b95091e4ba48b5d3a523ce60, type: 2}
   - {fileID: 11400000, guid: b62cf89ce04846849afbad796944fa8d, type: 2}

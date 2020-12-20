@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Sword 5-1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: b0883f1978423f540a2f4748c4a20b35, type: 3}
+  audioClip: {fileID: 8300000, guid: 3f6cf37f41215a24fbaab94d3719cbc5, type: 3}
   subtitle: Are you even strong enough to wield this?
   uiSound: 0
   loop: 0
