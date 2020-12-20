@@ -15,5 +15,14 @@ MonoBehaviour:
   name: Door
   text: Next level stuff.
   icon: {fileID: 21300000, guid: a7b0c21ba11575f4ba37c184f2f77a24, type: 3}
+  attack: 0
+  armor: 0
+  health: 0
   pointsOnSolve: 10
+  interactSounds:
+  - {fileID: 11400000, guid: f815f9a352f50924594ffb04215ced48, type: 2}
+  - {fileID: 11400000, guid: 0b9b713597f676d46a105640ed5a5758, type: 2}
+  - {fileID: 11400000, guid: 9596204ad31d8f046a05b43afca4bb27, type: 2}
+  - {fileID: 11400000, guid: bca7c71937689ff49b424b255d50ed31, type: 2}
+  - {fileID: 11400000, guid: eb28b55fb58556642a36e4999651ccc5, type: 2}
   narratorLines: []

@@ -19,4 +19,10 @@ MonoBehaviour:
   armor: 1
   health: 0
   pointsOnSolve: 10
+  interactSounds:
+  - {fileID: 11400000, guid: fb69ee8086624a54bb4047aa836b3a93, type: 2}
+  - {fileID: 11400000, guid: 07f981b0e46b644449a313dc0defba0a, type: 2}
+  - {fileID: 11400000, guid: 3bb59d08445b71c44bfd41b584c47af6, type: 2}
+  - {fileID: 11400000, guid: 1eabc0b1e7066f045b54d6fd4cbb4959, type: 2}
+  - {fileID: 11400000, guid: 8a349804492c81a43a78a670209a26b5, type: 2}
   narratorLines: []
