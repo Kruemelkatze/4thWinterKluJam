@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Exit 3- 1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 8e7682a76c22c40438f94c017d64d7cc, type: 3}
+  audioClip: {fileID: 8300000, guid: b73294a50bdd7cd478cd610c42c570d2, type: 3}
   subtitle: Are you sure this is the exit?
   uiSound: 0
   loop: 0
