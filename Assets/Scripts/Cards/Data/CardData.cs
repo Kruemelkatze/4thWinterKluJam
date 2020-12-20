@@ -1,4 +1,6 @@
-﻿using General;
+﻿using System;
+using Extensions;
+using General;
 using UnityEngine;
 
 public class CardData : ScriptableObject
@@ -15,4 +17,24 @@ public class CardData : ScriptableObject
 
     public Audio[] interactSounds;
     public Audio[] narratorLines;
+
+    public Audio GetRandomNarratorLine()
+    {
+        if (narratorLines == null || narratorLines.Length == 0)
+        {
+            return null;
+        }
+
+        return narratorLines.RandomEntry();
+    }
+
+    public Audio GetRandomInteractSound()
+    {
+        if (interactSounds == null || interactSounds.Length == 0)
+        {
+            return null;
+        }
+
+        return interactSounds.RandomEntry();
+    }
 }

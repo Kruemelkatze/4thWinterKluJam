@@ -88,6 +88,14 @@ public class AudioController : PersistentSingleton<AudioController>
         return PlaySound(key, null, null, null, null, null, null);
     }
 
+    public int PlaySound(Audio audio, Transform t = null)
+    {
+        var clip = audio.audioClip;
+        var options = UnifyAudioOptions(audio);
+        var playOptions = ApplyVariations(options);
+        return PlaySound(clip, playOptions.volume, options.Loop, playOptions.pitch, t);
+    }
+
     public void PlaySoundFromUI(string key)
     {
         PlaySound(key);
