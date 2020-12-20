@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715857c44271425ebec6129319be3b05, type: 3}
   m_Name: Player Card
   m_EditorClassIdentifier: 
-  name: The Player
-  text: 
+  name: Your Hero
+  text: This is you on your quest to seek eternal glory and fame.
   icon: {fileID: 21300000, guid: 778f0b3a984c17f4295b8a03dcba5fad, type: 3}
   attack: 3
   armor: 1
   health: 3
   pointsOnSolve: 0
+  interactSounds: []
   narratorLines: []

@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e034ee9f1b79405aba6ffdbc4002ac20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPreviewCard: 0
   cardDisplay: {fileID: 152178282235158148}
   cardNumber: 0
   cardData: {fileID: 0}
+  deck: {fileID: 0}
   canBeDestroyed: 1
-  attack: 0
-  armor: 0
-  health: 0
+  stats:
+    attack: 0
+    armor: 0
+    health: 0
+  visited: 0
 --- !u!1001 &7651098978047759797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,21 +31,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4701830717052528745, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
-      propertyPath: m_fontAsset
+      propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 4162615051673825236, guid: 79e9027aab4d82046ab0f00c24354473, type: 2}
     - target: {fileID: 6167951905565273515, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6773039961750295373, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
-      propertyPath: m_fontAsset
+      propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 7194659251920695384, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 4162615051673825236, guid: 79e9027aab4d82046ab0f00c24354473, type: 2}
     - target: {fileID: 7508218202644794160, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
       propertyPath: m_Name
       value: EnemyCard Variant
@@ -95,9 +95,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7518178527831882118, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
-      propertyPath: m_fontAsset
+      propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 4162615051673825236, guid: 79e9027aab4d82046ab0f00c24354473, type: 2}
     m_RemovedComponents:
     - {fileID: 7508218202644794162, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}
     - {fileID: 4068153846768127239, guid: 9791e217736586c4fb12e13f85b3999a, type: 3}

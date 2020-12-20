@@ -43,13 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557ecc5f469f80940aaed09ae55a00d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpacingX: 2
-  cardSpacingY: 2.5
+  cardSpacingX: 2.5
+  cardSpacingY: 3
   sizeX: 4
   sizeY: 3
   playerSpawnX: 0
   playerSpawnY: 1
   cardsPerDeck: 4
+  numberOfDoors: 4
   seeOnlyEnvironment: 1
   notAvailableAlpha: 1
   deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}
