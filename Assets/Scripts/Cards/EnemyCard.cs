@@ -48,7 +48,7 @@ namespace Cards
 
             if (result == FightResult.PlayerWon && canBeDestroyed)
             {
-                AddPointsAfterSolved(true);
+                CardSolved(true);
             }
 
             return output;

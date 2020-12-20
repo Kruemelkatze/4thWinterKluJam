@@ -14,7 +14,7 @@ namespace Cards
 
             PlayAudioLine();
 
-            AddPointsAfterSolved();
+            CardSolved();
 
             return (true, canBeDestroyed);
         }

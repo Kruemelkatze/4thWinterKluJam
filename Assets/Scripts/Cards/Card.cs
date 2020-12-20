@@ -68,7 +68,7 @@ namespace Cards
         public virtual (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
             visited++;
-            AddPointsAfterSolved();
+            CardSolved();
             PlayAudioLine();
 
             return (true, canBeDestroyed);
@@ -80,11 +80,18 @@ namespace Cards
             AudioController.Instance.PlaySound(audioEntry);
         }
 
-        protected void AddPointsAfterSolved(bool always = false)
+        protected void PlayNarratorLine()
+        {
+            var audioEntry = cardData.GetRandomNarratorLine();
+            GameController.Instance.narrator.PlayLine(audioEntry);
+        }
+
+        protected void CardSolved(bool always = false)
         {
             if (always || visited == 1)
             {
                 GameController.Instance.heroPoints += cardData.pointsOnSolve;
+                PlayNarratorLine();
             }
         }
 

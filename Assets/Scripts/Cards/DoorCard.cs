@@ -8,7 +8,7 @@ namespace Cards
         public override (bool playerCanEnter, bool deleteThisCard) ExecuteCardAction()
         {
             visited++;
-            AddPointsAfterSolved();
+            CardSolved();
             GameController.Instance.DoorReached(deck.x, deck.y);
             PlayAudioLine();
 

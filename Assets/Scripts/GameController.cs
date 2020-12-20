@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class GameController : Singleton<GameController>
 {
-    [SerializeField] private Narrator.Narrator narrator;
-
     [Header("Game States")] [SerializeField]
     public int heroPoints = 0;
 
@@ -20,6 +18,8 @@ public class GameController : Singleton<GameController>
     [SerializeField] private GameObject pauseUi;
 
     [Header("Prefabs and Stuff")] public PlayerCard playerCard;
+    public Narrator.Narrator narrator;
+
     public GameObject[] levels;
     public GameObject gridPrefab;
 
