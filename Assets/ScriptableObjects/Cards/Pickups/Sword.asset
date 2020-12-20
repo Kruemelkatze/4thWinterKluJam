@@ -19,5 +19,20 @@ MonoBehaviour:
   armor: 0
   health: 0
   pointsOnSolve: 10
+  interactSounds: []
   narratorLines:
-  - {fileID: 11400000, guid: 48c671053e5222e4eaa6e5577a4ac605, type: 2}
+  - {fileID: 11400000, guid: c2bc6196f808eeb4b87cef4e2c99a468, type: 2}
+  - {fileID: 11400000, guid: a027a558ef6a46e439efc07f59b02bc7, type: 2}
+  - {fileID: 11400000, guid: 528af1c7675d83c45acb49a7a6e311b9, type: 2}
+  - {fileID: 11400000, guid: 064b98948de2f4040b081d01cf4d2ace, type: 2}
+  - {fileID: 11400000, guid: dd19cbcb6b1655c4089edf25e2b26a1f, type: 2}
+  - {fileID: 11400000, guid: 1369117d1b76b334eb593362e8f2c917, type: 2}
+  - {fileID: 11400000, guid: c1e456ca4425e8840abcbcf2ed3ffce7, type: 2}
+  - {fileID: 11400000, guid: 4904ebc848d01e74b8b4dbab9aa3f550, type: 2}
+  - {fileID: 11400000, guid: 571aaa1bc95afb446ba473d45e691556, type: 2}
+  - {fileID: 11400000, guid: 1faf022930029cd409cbb3aa84d0b124, type: 2}
+  - {fileID: 11400000, guid: 9589077acdc178040a63358c7b3d3f55, type: 2}
+  - {fileID: 11400000, guid: a484e496f6dfe95478d65533ba70b69c, type: 2}
+  - {fileID: 11400000, guid: c17fb060a8aa7664eb6b2d814e094d9b, type: 2}
+  - {fileID: 11400000, guid: 27d989da1e280ff4b84b22a08fea688e, type: 2}
+  - {fileID: 11400000, guid: e95c6efef25f32d4c97457fb3a8d4229, type: 2}
