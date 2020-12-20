@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Sword 4-1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 4d1b2b591eacc694c8a1c90bef843521, type: 3}
+  audioClip: {fileID: 8300000, guid: cc848d70292fdb04db7041c3f54799e7, type: 3}
   subtitle: Like this will make any difference.
   uiSound: 0
   loop: 0

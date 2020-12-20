@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Sword 2-2
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 3c4eb668513df7b46a1123a9aa2a955c, type: 3}
+  audioClip: {fileID: 8300000, guid: bdae2223ae9ee5f4190271e24730c79a, type: 3}
   subtitle: 'You will need this. '
   uiSound: 0
   loop: 0

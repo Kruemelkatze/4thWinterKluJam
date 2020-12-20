@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: events 1- 2
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: c29630e7d02698247a75eeee43d09c31, type: 3}
+  audioClip: {fileID: 8300000, guid: 726c60ab11240fa4186b9b79e140f25d, type: 3}
   subtitle: 
   uiSound: 0
   loop: 0
