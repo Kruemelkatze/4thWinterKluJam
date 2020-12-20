@@ -13,19 +13,26 @@ MonoBehaviour:
   m_Name: Card List
   m_EditorClassIdentifier: 
   enemyCards:
-  - {fileID: 11400000, guid: 4b8796a38b8ffb044b5a91349860a568, type: 2}
-  - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
   - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
+  - {fileID: 11400000, guid: cd88cc278dd78b74cb1bab6ae2591cb8, type: 2}
+  - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
+  - {fileID: 11400000, guid: 13edc9713364aaa4f884b1c6962af118, type: 2}
+  - {fileID: 11400000, guid: 4b8796a38b8ffb044b5a91349860a568, type: 2}
+  - {fileID: 11400000, guid: e13876decdbafe64ba20a949399bd0e3, type: 2}
   pickupCards:
   - {fileID: 11400000, guid: 59cebcbfa0543d146ac482b2d174e8ee, type: 2}
   - {fileID: 11400000, guid: 8a9405487197cc34a905fdf347d2450e, type: 2}
   healthCards:
   - {fileID: 11400000, guid: a1d57985153e3bb4d8f3533021b28753, type: 2}
   eventCards:
+  - {fileID: 11400000, guid: 94356df839a929a4a844d52953e17467, type: 2}
+  - {fileID: 11400000, guid: 6d0744ec34c9be64f8c5455e7da7af7e, type: 2}
   - {fileID: 11400000, guid: 907914ebab6df764e815708cbde7a521, type: 2}
+  - {fileID: 11400000, guid: b0a31f03001074f4385cc6d83698522f, type: 2}
   doorCards:
   - {fileID: 11400000, guid: cbdd2ffc839a2dd4993be789c18d52b3, type: 2}
   trapCards:
+  - {fileID: 11400000, guid: df87ba3f928e56e4ba6ffd9aec2de19f, type: 2}
   - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
   enemyCardRatio: 0.50738984
   pickupCardRatio: 0.16822739

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3be7813f8ec4a749cce4459ec450f6f, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  name: Sword
-  text: Magic is impressive but now Minsc leads. Swords for everyone!
-  icon: {fileID: 21300000, guid: bbd524d330902f645b40ceaddd6e3948, type: 3}
+  name: Halberd
+  text: 
+  icon: {fileID: 21300000, guid: 484336fdc504d96499575ae56a4f10e6, type: 3}
   attack: 2
   armor: 0
   health: 0
-  pointsOnSolve: 10
+  pointsOnSolve: 0
   interactSounds:
   - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
   - {fileID: 11400000, guid: 7d6a4cc8c84b81148aea856667f9f876, type: 2}

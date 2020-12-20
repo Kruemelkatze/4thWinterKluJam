@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ef539cd10b842a8a013de620984b58f, type: 3}
-  m_Name: Spider
+  m_Name: Shrimp
   m_EditorClassIdentifier: 
-  name: Spider
-  text: With many legs comes many responsibility.
-  icon: {fileID: 21300000, guid: e7500766b84ec0f42b1216f9d18ef1fa, type: 3}
-  attack: 1
-  armor: 2
+  name: Combat Shrimp
+  text: A trained killer
+  icon: {fileID: 21300000, guid: 2208b329e4459f94f94c94f67674bbd2, type: 3}
+  attack: 2
+  armor: 1
   health: 1
-  pointsOnSolve: 10
+  pointsOnSolve: 5
   interactSounds:
   - {fileID: 11400000, guid: 214b4aecb2e366343932030202baf40a, type: 2}
   - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
@@ -30,9 +30,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e5511267f7243840ae16f2d64bcd63f, type: 2}
   - {fileID: 11400000, guid: fa46bf2dd8cad3940be2c4642646c1dc, type: 2}
   - {fileID: 11400000, guid: dd6f6fde9a80ffd4c9427dcdc158aa44, type: 2}
-  - {fileID: 11400000, guid: ac937e7c42de7c246ae93efbb85cade6, type: 2}
+  - {fileID: 11400000, guid: dd6f6fde9a80ffd4c9427dcdc158aa44, type: 2}
   - {fileID: 11400000, guid: f528108fbd7ff434a91badf7b7da97ef, type: 2}
   - {fileID: 11400000, guid: 40e9ef30c5fba3241851ee8ed9273fd4, type: 2}
+  - {fileID: 11400000, guid: 91eb38442a936e94a964be68eb95d350, type: 2}
   narratorLines:
   - {fileID: 11400000, guid: 82c2063ebb18bde42861d8978084f101, type: 2}
   - {fileID: 11400000, guid: 76cfcf83bfdf4dc43b6d93aa05878a49, type: 2}

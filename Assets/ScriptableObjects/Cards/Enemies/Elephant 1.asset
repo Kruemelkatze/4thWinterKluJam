@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ef539cd10b842a8a013de620984b58f, type: 3}
-  m_Name: Snake
+  m_Name: Elephant 1
   m_EditorClassIdentifier: 
-  name: Snake
-  text: Sssssssssss goes the snek.
-  icon: {fileID: 21300000, guid: 2e22090e01b01394291871d36f210e99, type: 3}
+  name: Elepahnt
+  text: Watch out for his mighty trunk!
+  icon: {fileID: 21300000, guid: 928936e4ff3715f4f8c4439c5beb5c90, type: 3}
   attack: 1
-  armor: 0
-  health: 2
-  pointsOnSolve: 10
+  armor: 2
+  health: 1
+  pointsOnSolve: 5
   interactSounds:
   - {fileID: 11400000, guid: 214b4aecb2e366343932030202baf40a, type: 2}
   - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
