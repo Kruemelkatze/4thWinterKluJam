@@ -14,8 +14,15 @@ public class BaseMenuManager : MonoBehaviour
     [Tooltip("Image that is shown when any child menu is open to capture backdrop clicks.")] [SerializeField]
     private RectTransform backDropImage;
 
+    [SerializeField] private string music;
+
     private void Start()
     {
+        if (music != null)
+        {
+            AudioController.Instance.PlayMusic(music);
+        }
+
         foreach (var childMenuElement in childMenuUiElements)
         {
             var c = childMenuElement.GetComponent<Canvas>();
@@ -26,8 +33,8 @@ public class BaseMenuManager : MonoBehaviour
                 c.sortingOrder = 5;
             }
         }
+
         DisableChildMenus();
-        
     }
 
     void Update()

@@ -121,8 +121,10 @@ MonoBehaviour:
   musicClips:
     m_keys:
     - standard
+    - menumusic
     m_values:
     - {fileID: 11400000, guid: d0d19d11a45206346b31603e93ae09ba, type: 2}
+    - {fileID: 11400000, guid: 999dd55d32f376d49be4b76c381b0758, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5
   defaultMusic: standard

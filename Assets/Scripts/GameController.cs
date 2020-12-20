@@ -54,10 +54,7 @@ public class GameController : Singleton<GameController>
 
     private void Start()
     {
-        if (!AudioController.Instance.IsMusicPlaying)
-        {
-            AudioController.Instance.PlayDefaultMusic();
-        }
+        AudioController.Instance.PlayDefaultMusic();
 
         gameState = GameState.Starting;
         if (!playGrid)
