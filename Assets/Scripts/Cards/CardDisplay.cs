@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using DG.Tweening;
 using Extensions;
 using Logics;
 using TMPro;

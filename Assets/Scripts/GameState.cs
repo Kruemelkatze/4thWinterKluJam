@@ -8,4 +8,5 @@ public enum GameState
     Paused = 10,
     Changing = 15,
     PlayerDied = 20,
+    Finished = 30,
 }

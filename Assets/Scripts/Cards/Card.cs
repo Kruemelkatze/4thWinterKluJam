@@ -90,7 +90,7 @@ namespace Cards
         {
             if (always || visited == 1)
             {
-                GameController.Instance.heroPoints += cardData.pointsOnSolve;
+                GameController.Instance.AddHeroPoints(cardData.pointsOnSolve);
                 PlayNarratorLine();
             }
         }

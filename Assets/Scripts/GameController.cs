@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Cards;
+using Extensions;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
@@ -9,6 +13,8 @@ public class GameController : Singleton<GameController>
     public int heroPoints = 0;
 
     [SerializeField] private int level = 0;
+    [SerializeField] private int maxLevel = 5;
+
     [SerializeField] private GameState gameState = GameState.Starting;
     [SerializeField] private bool isPaused;
 
@@ -16,6 +22,17 @@ public class GameController : Singleton<GameController>
 
     [Header("UI")] [SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
+
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI gloryText;
+
+    [SerializeField] private TextMeshProUGUI ventureForthText;
+    [SerializeField] private TextMeshProUGUI diedText;
+    [SerializeField] private TextMeshProUGUI finishedText;
+
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private Image fadeImage;
+
 
     [Header("Prefabs and Stuff")] public PlayerCard playerCard;
     public Narrator.Narrator narrator;
@@ -48,6 +65,8 @@ public class GameController : Singleton<GameController>
             ChangeLevel();
         }
 
+        UpdateUI();
+
         _prePauseState = gameState;
         SetPause(false);
         gameState = GameState.Playing;
@@ -74,12 +93,29 @@ public class GameController : Singleton<GameController>
     {
         gameState = GameState.PlayerDied;
         Debug.Log(nameof(PlayerHealthReachedZero));
+        UpdateUI();
     }
 
     public void DoorReached(int x, int y)
     {
         Debug.Log($"Door reached: {x},{y}");
         ChangeLevel();
+    }
+
+    public void AddHeroPoints(int diff)
+    {
+        heroPoints += diff;
+        if (gloryText)
+        {
+            gloryText.SetText(heroPoints.ToString());
+        }
+    }
+
+    public void Finished()
+    {
+        gameState = GameState.Finished;
+        Debug.Log("Finished");
+        UpdateUI();
     }
 
 
@@ -135,26 +171,78 @@ public class GameController : Singleton<GameController>
             Destroy(playGrid.gameObject);
         }
 
-        playGrid = newGrid;
-
-        yield return new WaitForSeconds(0.5f);
-
-        if (level == 0 || !playGrid.IsInBounds(playerCard.x, playerCard.y))
+        if (level < maxLevel)
         {
-            var (pos, x, y) = playGrid.GetPlayerSpawnPosition();
-            playerCard.SetPosition(x, y, pos);
+            if (level != 0)
+            {
+                fadeImage.Fade(true);
+            }
+
+            level++;
+            UpdateUI();
+
+            playGrid = newGrid;
+
+            yield return new WaitForSeconds(0.5f);
+
+            if (level != 1)
+            {
+                fadeImage.Fade(false);
+            }
+
+            if (level == 1 || !playGrid.IsInBounds(playerCard.x, playerCard.y))
+            {
+                var (pos, x, y) = playGrid.GetPlayerSpawnPosition();
+                playerCard.SetPosition(x, y, pos);
+            }
+            else
+            {
+                var pos = playGrid.GetPosition(playerCard.x, playerCard.y);
+                playerCard.SetPosition(pos);
+            }
+
+            playerCard.Show(true);
+
+            playGrid.ResetDeckDropValidites();
+            gameState = GameState.Playing;
+            UpdateUI();
         }
         else
         {
-            var pos = playGrid.GetPosition(playerCard.x, playerCard.y);
-            playerCard.SetPosition(pos);
+            Finished();
         }
+    }
 
-        playerCard.Show(true);
+    private void UpdateUI()
+    {
+        levelText.SetText($"{level} / {maxLevel}");
+        gloryText.SetText(heroPoints.ToString());
 
-        playGrid.ResetDeckDropValidites();
-        level++;
-        gameState = GameState.Playing;
+        switch (GameState)
+        {
+            case GameState.PlayerDied:
+                ventureForthText.gameObject.SetActive(false);
+                diedText.gameObject.SetActive(true);
+                finishedText.gameObject.SetActive(false);
+                restartButton.SetActive(true);
+                break;
+            case GameState.Finished:
+                ventureForthText.gameObject.SetActive(false);
+                diedText.gameObject.SetActive(false);
+                finishedText.gameObject.SetActive(true);
+                restartButton.SetActive(true);
+                break;
+            case GameState.Starting:
+            case GameState.Playing:
+            case GameState.Paused:
+            case GameState.Changing:
+            default:
+                ventureForthText.gameObject.SetActive(true);
+                diedText.gameObject.SetActive(false);
+                finishedText.gameObject.SetActive(false);
+                restartButton.SetActive(false);
+                break;
+        }
     }
 
     private Grid GetGrid(int forLevel)
