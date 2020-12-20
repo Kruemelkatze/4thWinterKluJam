@@ -18,7 +18,7 @@ MonoBehaviour:
   attack: 0
   armor: 0
   health: 0
-  pointsOnSolve: 20
+  pointsOnSolve: 10
   interactSounds:
   - {fileID: 11400000, guid: 7d4605d0693a36a40b736f9eadc32ca4, type: 2}
   - {fileID: 11400000, guid: bdd18abe77740304284ee9bb92d513a0, type: 2}
