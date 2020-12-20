@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Win 1- 3
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 8e7682a76c22c40438f94c017d64d7cc, type: 3}
-  subtitle: Well done [sarcastic]
+  subtitle: "Even my cat could do that\u2026if it wanted. "
   uiSound: 0
   loop: 0
   volume: 1
