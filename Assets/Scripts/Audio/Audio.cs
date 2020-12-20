@@ -10,7 +10,7 @@ namespace General
 
         public bool uiSound = false;
         public bool loop = false;
-        [Range(0f, 1f)] public float volume = 1f;
+        [Range(0f, 3f)] public float volume = 1f;
         [Range(0.1f, 3f)] public float pitch = 1f;
         [Range(0, 1f)] public float volumeVariation = 0f;
         [Range(0, 1f)] public float pitchVariation = 0f;
