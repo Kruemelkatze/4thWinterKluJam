@@ -15,5 +15,14 @@ MonoBehaviour:
   name: Crown
   text: It' so shiny!
   icon: {fileID: 21300000, guid: 7c3342ed2e35abf49b8a1a114fa18d16, type: 3}
+  attack: 0
+  armor: 0
+  health: 0
   pointsOnSolve: 10
+  interactSounds:
+  - {fileID: 11400000, guid: 7d4605d0693a36a40b736f9eadc32ca4, type: 2}
+  - {fileID: 11400000, guid: bdd18abe77740304284ee9bb92d513a0, type: 2}
+  - {fileID: 11400000, guid: c8e8f73b6d79f6e409420649992d7c49, type: 2}
+  - {fileID: 11400000, guid: a13991522a5941f4d996c91c6f8d220e, type: 2}
+  - {fileID: 11400000, guid: 8e583778ac1ddcc498ead9db3de153be, type: 2}
   narratorLines: []
