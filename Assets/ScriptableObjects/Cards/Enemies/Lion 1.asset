@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef539cd10b842a8a013de620984b58f, type: 3}
   m_Name: Lion 1
   m_EditorClassIdentifier: 
-  name: Lion
+  name: Lionheart
   text: A ferocious beast with sharp fangs
   icon: {fileID: 21300000, guid: 8c0b1b3f9a360124a83edd36d442bb3c, type: 3}
   attack: 1

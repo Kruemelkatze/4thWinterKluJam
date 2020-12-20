@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef539cd10b842a8a013de620984b58f, type: 3}
   m_Name: Elephant 1
   m_EditorClassIdentifier: 
-  name: Elepahnt
+  name: Elephant
   text: Watch out for his mighty trunk!
   icon: {fileID: 21300000, guid: 928936e4ff3715f4f8c4439c5beb5c90, type: 3}
   attack: 1
