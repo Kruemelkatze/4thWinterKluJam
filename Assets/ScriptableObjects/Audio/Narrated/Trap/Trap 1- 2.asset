@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Trap 1- 2
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 8e7682a76c22c40438f94c017d64d7cc, type: 3}
+  audioClip: {fileID: 8300000, guid: 54601f07972272945b66d7af9c5ec7b3, type: 3}
   subtitle: 'Will you stop hurting yourself! '
   uiSound: 0
   loop: 0
