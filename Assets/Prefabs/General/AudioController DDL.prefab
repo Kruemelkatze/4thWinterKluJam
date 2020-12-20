@@ -45,8 +45,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundClips:
     m_keys:
+    - attack_1-1
+    - attack_1-2
+    - attack_1-3
+    - attack_1-4
+    - attack_1-5
+    - player_die_1-1
+    - player_die_1-2
+    - player_die_1-3
+    - player_die_1-4
+    - player_die_1-5
+    - door_1-1
+    - door_1-2
+    - door_1-3
+    - door_1-4
+    - door_1-5
+    - win_1-1
+    - win_1-2
+    - win_1-3
+    - win_1-4
+    - win_1-5
     - click
     m_values:
+    - {fileID: 11400000, guid: 0034f432a71e1fe4793e59822a506a0a, type: 2}
+    - {fileID: 11400000, guid: 3fc7b808088e75049adaed08c2c440ce, type: 2}
+    - {fileID: 11400000, guid: 078dd329770bf8546939c7b7a549d3d3, type: 2}
+    - {fileID: 11400000, guid: 85911ba092126274ea5ed7c11270c118, type: 2}
+    - {fileID: 11400000, guid: 7d6a4cc8c84b81148aea856667f9f876, type: 2}
+    - {fileID: 11400000, guid: 29beef0c419636348988babbb52bf5f4, type: 2}
+    - {fileID: 11400000, guid: edb39bf937e18434888bbeb8d2a8344f, type: 2}
+    - {fileID: 11400000, guid: 9579d2195951f604c9d21798853fb811, type: 2}
+    - {fileID: 11400000, guid: ad87244a2dc6c994988b262e69816528, type: 2}
+    - {fileID: 11400000, guid: aa4a161ac7ca62942a5b166364ce9ede, type: 2}
+    - {fileID: 11400000, guid: f815f9a352f50924594ffb04215ced48, type: 2}
+    - {fileID: 11400000, guid: 0b9b713597f676d46a105640ed5a5758, type: 2}
+    - {fileID: 11400000, guid: 9596204ad31d8f046a05b43afca4bb27, type: 2}
+    - {fileID: 11400000, guid: bca7c71937689ff49b424b255d50ed31, type: 2}
+    - {fileID: 11400000, guid: eb28b55fb58556642a36e4999651ccc5, type: 2}
+    - {fileID: 11400000, guid: 92f2e9fc33efa464384c73bf67442e1e, type: 2}
+    - {fileID: 11400000, guid: 2a4715fefe6f4a34ab782a653042168d, type: 2}
+    - {fileID: 11400000, guid: cdb6af3d68771184687b469bceebe7b8, type: 2}
+    - {fileID: 11400000, guid: 8d69654b58c6af64f8003b0d5e6a99e4, type: 2}
+    - {fileID: 11400000, guid: 527a1cb88f34e454c9c2d8ff577f009e, type: 2}
     - {fileID: 11400000, guid: e76765177d96f5d478a844c9bb626444, type: 2}
   musicClips:
     m_keys:
