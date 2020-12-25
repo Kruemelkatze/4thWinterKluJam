@@ -20,19 +20,8 @@ MonoBehaviour:
   health: 1
   pointsOnSolve: 5
   interactSounds:
-  - {fileID: 11400000, guid: 214b4aecb2e366343932030202baf40a, type: 2}
   - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
-  - {fileID: 11400000, guid: 2fae4936804788e42be61cc5a1613098, type: 2}
-  - {fileID: 11400000, guid: e0d6f8cf9f89e0b4782f95aaa96f05c9, type: 2}
-  - {fileID: 11400000, guid: ba361586410562c43953accd8e4d96a4, type: 2}
-  - {fileID: 11400000, guid: 801628f087e3154419e4d659a064f243, type: 2}
-  - {fileID: 11400000, guid: 1f9b3eb82f8b9da47a2d171a56e6983f, type: 2}
-  - {fileID: 11400000, guid: 9e5511267f7243840ae16f2d64bcd63f, type: 2}
-  - {fileID: 11400000, guid: fa46bf2dd8cad3940be2c4642646c1dc, type: 2}
-  - {fileID: 11400000, guid: dd6f6fde9a80ffd4c9427dcdc158aa44, type: 2}
-  - {fileID: 11400000, guid: ac937e7c42de7c246ae93efbb85cade6, type: 2}
-  - {fileID: 11400000, guid: f528108fbd7ff434a91badf7b7da97ef, type: 2}
-  - {fileID: 11400000, guid: 40e9ef30c5fba3241851ee8ed9273fd4, type: 2}
+  - {fileID: 11400000, guid: 7deb69b0f249aef4098d7d1a601ea5d7, type: 2}
   narratorLines:
   - {fileID: 11400000, guid: e4b5f5ed1797fa04fba33ad8019d9fcd, type: 2}
   - {fileID: 11400000, guid: 83b265e22609f274e8e501bedadfa943, type: 2}

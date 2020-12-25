@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
+  m_Name: card pack down
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 5e1d9c64a67d8dd4485933c5a02883f5, type: 3}
+  - {fileID: 8300000, guid: 1efa100fb6fc1784585765ac8f0d2994, type: 3}
+  - {fileID: 8300000, guid: e24aecc53a19308488fdd900b38bc4ca, type: 3}
+  - {fileID: 8300000, guid: 036d4a9c7dd54a547a4574143a79b245, type: 3}
+  - {fileID: 8300000, guid: 5a4f827265d650e478f63472207bdb64, type: 3}
+  - {fileID: 8300000, guid: 7080b9fa10518ac4ea78fafdecdd852e, type: 3}
+  - {fileID: 8300000, guid: 38266b802e7f36248881fe328d117ff3, type: 3}
+  - {fileID: 8300000, guid: 4123f1d6a4443ef4f8c718fa4da931ed, type: 3}
+  - {fileID: 8300000, guid: afe4f93d279fcd4479e3a77b81b02f2b, type: 3}
+  subtitle: 
+  uiSound: 0
+  loop: 0
+  volume: 1
+  pitch: 1
+  volumeVariation: 0
+  pitchVariation: 0

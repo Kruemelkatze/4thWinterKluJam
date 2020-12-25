@@ -47,7 +47,7 @@ namespace Cards
                     PlayAudioLine();
                     break;
                 case FightResult.EnemyWon:
-                    AudioController.Instance.PlayRandomSound("player_die");
+                    //AudioController.Instance.PlayRandomSound("player-die");
                     break;
             }
 

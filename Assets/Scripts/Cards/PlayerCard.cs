@@ -58,6 +58,7 @@ namespace Cards
             base.UpdateStats(newStats);
             if (stats.health <= 0)
             {
+                AudioController.Instance.PlayRandomSound("player-die");
                 GameController.Instance.PlayerHealthReachedZero();
             }
         }

@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
-  m_Name: block 2
+  m_Name: lion
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 50b494636b50c5440a76d46ebdcd1516, type: 3}
-  audioClips: []
+  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: a25eda2ffff673d4c85b722483aee0e0, type: 3}
+  - {fileID: 8300000, guid: eef9ccf9824ec1240a7fd5f26ea7adfa, type: 3}
+  - {fileID: 8300000, guid: 8c66fec6d00daeb4092c7b754035c683, type: 3}
   subtitle: 
   uiSound: 0
   loop: 0

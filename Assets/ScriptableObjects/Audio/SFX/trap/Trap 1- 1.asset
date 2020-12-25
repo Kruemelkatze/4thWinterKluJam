@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: Trap 1- 1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 73aef4b0987e5a640a568946b6cb7dbe, type: 3}
+  audioClip: {fileID: 8300000, guid: 6e1c93a01bf94fd4aac1a3ebbe9f8fbc, type: 3}
+  audioClips: []
   subtitle: 
   uiSound: 0
   loop: 0

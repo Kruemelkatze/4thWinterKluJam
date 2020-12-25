@@ -182,7 +182,6 @@ public class AudioController : PersistentSingleton<AudioController>
     public int PlayRandomSound(string key, float? volume = null, float? pitch = null, float? volumeVariation = null,
         float? pitchVariation = null, bool? loop = null, Transform sourceTransform = null)
     {
-        Debug.Log(key);
         var soundEntries = soundClips.Where(kvp => kvp.Key.StartsWith(key)).ToList();
         if (soundEntries.Any())
         {

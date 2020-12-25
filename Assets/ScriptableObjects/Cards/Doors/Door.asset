@@ -21,10 +21,6 @@ MonoBehaviour:
   pointsOnSolve: 50
   interactSounds:
   - {fileID: 11400000, guid: f815f9a352f50924594ffb04215ced48, type: 2}
-  - {fileID: 11400000, guid: 0b9b713597f676d46a105640ed5a5758, type: 2}
-  - {fileID: 11400000, guid: 9596204ad31d8f046a05b43afca4bb27, type: 2}
-  - {fileID: 11400000, guid: bca7c71937689ff49b424b255d50ed31, type: 2}
-  - {fileID: 11400000, guid: eb28b55fb58556642a36e4999651ccc5, type: 2}
   narratorLines:
   - {fileID: 11400000, guid: 92970bd10e2d5d74f856db14c3810789, type: 2}
   - {fileID: 11400000, guid: f3b5ca1a19c57524ea9790f5ad28a20f, type: 2}
