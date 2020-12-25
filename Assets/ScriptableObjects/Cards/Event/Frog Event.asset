@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2bacebd5ce457c863e8c147fcca57a, type: 3}
   m_Name: Frog Event
   m_EditorClassIdentifier: 
-  name: Strange-looking Frog
+  name: Strange Frog
   text: Do you dare to kiss this creature?
   icon: {fileID: 21300000, guid: c83f50c7772aa9f4e9f43bfe2d462270, type: 3}
   attack: 0
