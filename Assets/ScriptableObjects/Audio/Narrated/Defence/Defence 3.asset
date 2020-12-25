@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
+  m_Name: Defence 3
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 533166f48828b3547b82c9bc3cb829bc, type: 3}
+  - {fileID: 8300000, guid: b8a38dd2dec4c0349899053d8863990d, type: 3}
+  - {fileID: 8300000, guid: c71abf5de889e3241a19467747b87f58, type: 3}
+  subtitle: "This won\u2019t last you long, probably."
+  uiSound: 0
+  loop: 0
+  volume: 1
+  pitch: 1
+  volumeVariation: 0
+  pitchVariation: 0

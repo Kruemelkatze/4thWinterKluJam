@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e2bacebd5ce457c863e8c147fcca57a, type: 3}
-  m_Name: DragonEvent
+  m_Name: StrangerEvent 1
   m_EditorClassIdentifier: 
-  name: Mighty Chicken
-  text: Uphold your honor by slaying him!
-  icon: {fileID: 21300000, guid: 37b5669b8f5d5394698b23944e6d9168, type: 3}
+  name: Sneering Dunce
+  text: Wanted in the whole kingdom for his foolery.
+  icon: {fileID: 21300000, guid: 2833696e6b2d2bc4a97cc65e0686b057, type: 3}
   attack: 0
   armor: 0
   health: 0
-  pointsOnSolve: 10
+  pointsOnSolve: 15
   interactSounds:
   - {fileID: 11400000, guid: 7d4605d0693a36a40b736f9eadc32ca4, type: 2}
   - {fileID: 11400000, guid: bdd18abe77740304284ee9bb92d513a0, type: 2}
   - {fileID: 11400000, guid: c8e8f73b6d79f6e409420649992d7c49, type: 2}
   narratorLines:
-  - {fileID: 11400000, guid: 3f022480ac78ede4fba25bf9845b9380, type: 2}
+  - {fileID: 11400000, guid: 881855d5849d0d84db1f79ec90d7dddb, type: 2}
