@@ -8,6 +8,8 @@ namespace Narrator
     public class Narrator : Singleton<Narrator>
     {
         [SerializeField] private NarratorUI narratorUI;
+        [SerializeField] private float audioLengthOffset = -0.6f;
+
         [SerializeField] private Audio currentLine;
 
         [Header("Testing only")] [SerializeField]
@@ -55,7 +57,8 @@ namespace Narrator
 
         private IEnumerator ResetAfterLineFinished(float clipLength)
         {
-            yield return new WaitForSecondsRealtime(clipLength);
+            var waitTime = Mathf.Max(0, clipLength + audioLengthOffset);
+            yield return new WaitForSecondsRealtime(waitTime);
             ResetCurrentLine();
         }
 
