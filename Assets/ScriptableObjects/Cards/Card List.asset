@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Card List
   m_EditorClassIdentifier: 
   enemyCards:
-  - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
   - {fileID: 11400000, guid: cd88cc278dd78b74cb1bab6ae2591cb8, type: 2}
+  - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
   - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
-  - {fileID: 11400000, guid: 13edc9713364aaa4f884b1c6962af118, type: 2}
   - {fileID: 11400000, guid: 4b8796a38b8ffb044b5a91349860a568, type: 2}
   - {fileID: 11400000, guid: e13876decdbafe64ba20a949399bd0e3, type: 2}
   pickupCards:
