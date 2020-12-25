@@ -37,7 +37,7 @@ namespace Narrator
             if (Busy || line == null)
                 return false;
 
-            if (line.audioClip == null)
+            if (line.AudioClip == null)
             {
                 Debug.LogWarning("No Audioclip on Audio asset: " + line.name);
                 return false;
@@ -48,7 +48,7 @@ namespace Narrator
 
             AudioController.Instance.PlaySound(line);
 
-            var clipLength = currentLine.audioClip.length;
+            var clipLength = currentLine.AudioClip.length;
             StartCoroutine(ResetAfterLineFinished(clipLength));
             return true;
         }

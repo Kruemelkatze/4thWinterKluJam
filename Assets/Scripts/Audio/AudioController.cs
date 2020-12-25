@@ -90,7 +90,7 @@ public class AudioController : PersistentSingleton<AudioController>
 
     public int PlaySound(Audio audio, Transform t = null)
     {
-        var clip = audio.audioClip;
+        var clip = audio.AudioClip;
         var options = UnifyAudioOptions(audio);
         var playOptions = ApplyVariations(options);
         return PlaySound(clip, playOptions.volume, options.Loop, playOptions.pitch, t);
@@ -157,7 +157,7 @@ public class AudioController : PersistentSingleton<AudioController>
         if (musicEntry == null)
             return -1;
 
-        var clip = musicEntry.audioClip;
+        var clip = musicEntry.AudioClip;
         var options = UnifyAudioOptions(musicEntry, loop, volume, pitch);
         var (f, pitch1) = ApplyVariations(options);
         return PlayMusic(clip, f, options.Loop, pitch1);
@@ -202,7 +202,7 @@ public class AudioController : PersistentSingleton<AudioController>
         if (soundEntry == null)
             return -1;
 
-        var clip = soundEntry.audioClip;
+        var clip = soundEntry.AudioClip;
         var options = UnifyAudioOptions(soundEntry, loop, volume, pitch, volumeVariation, pitchVariation);
         var playOptions = ApplyVariations(options);
         return PlaySound(clip, playOptions.volume, options.Loop, playOptions.pitch, sourceTransform);
