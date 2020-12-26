@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4a28a1d9612d545978ad087c7e6812, type: 3}
-  m_Name: ShieldEnemy Card
+  m_Script: {fileID: 11500000, guid: 5601146ed04794449ba00abf23e4a2a1, type: 3}
+  m_Name: BossEnemy Card
   m_EditorClassIdentifier: 
   name: 
   text: 
@@ -19,5 +19,7 @@ MonoBehaviour:
   armor: 0
   health: 0
   pointsOnSolve: 10
-  interactSounds: []
-  narratorLines: []
+  interactSounds:
+  - {fileID: 11400000, guid: 0716ddbc5d25cec4fb36f8fcc35952b9, type: 2}
+  narratorLines:
+  - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
