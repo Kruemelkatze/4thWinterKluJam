@@ -9,11 +9,12 @@
         Trap,
         Door,
         Player,
+        Sharpness,
     }
 
     public static class CardTypes
     {
         public static readonly CardType[] FreelySpawnable =
-            new[] {CardType.Enemy, CardType.Event, CardType.Pickup, CardType.Health};
+            new[] {CardType.Enemy, CardType.Event, CardType.Pickup, CardType.Health, CardType.Sharpness};
     }
 }

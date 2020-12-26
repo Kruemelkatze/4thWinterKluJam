@@ -15,6 +15,7 @@ namespace Cards.Data
         public EventCardData[] eventCards;
         public DoorCardData[] doorCards;
         public TrapData[] trapCards;
+        public SharpnessCardData[] sharpnessCards;
 
         [Range(0, 1f)] public float enemyCardRatio = 0.4f;
         [Range(0, 1f)] public float pickupCardRatio = 0.2f;
@@ -22,11 +23,12 @@ namespace Cards.Data
         [Range(0, 1f)] public float eventCardRatio = 0.1f;
         [Range(0, 1f)] public float trapCardRatio = 0.1f;
         [Range(0, 1f)] public float doorCardRatio = 0;
+        [Range(0, 1f)] public float sharpnessCardRatio = 0;
 
         private void OnValidate()
         {
             var pSum = enemyCardRatio + pickupCardRatio + healthCardRatio + eventCardRatio + doorCardRatio +
-                       trapCardRatio;
+                       trapCardRatio + sharpnessCardRatio;
             if (pSum == 0)
             {
                 enemyCardRatio = 0.4f;
@@ -35,6 +37,7 @@ namespace Cards.Data
                 eventCardRatio = 0.1f;
                 doorCardRatio = 0.1f;
                 trapCardRatio = 0;
+                sharpnessCardRatio = 0;
             }
             else
             {
@@ -44,6 +47,7 @@ namespace Cards.Data
                 eventCardRatio /= pSum;
                 doorCardRatio /= pSum;
                 trapCardRatio /= pSum;
+                sharpnessCardRatio /= pSum;
             }
         }
 
@@ -59,7 +63,7 @@ namespace Cards.Data
             var percentages = new[]
             {
                 enemyCardRatio, pickupCardRatio, healthCardRatio,
-                eventCardRatio, trapCardRatio, doorCardRatio,
+                eventCardRatio, trapCardRatio, doorCardRatio, sharpnessCardRatio,
             };
             var index = GetWeightedRandomEntry(percentages);
 
@@ -77,6 +81,8 @@ namespace Cards.Data
                     return CardType.Trap;
                 case 5 when doorCards.Length > 0:
                     return CardType.Door;
+                case 6 when sharpnessCards.Length > 0:
+                    return CardType.Sharpness;
                 default:
                     return CardType.Enemy;
             }
@@ -98,6 +104,8 @@ namespace Cards.Data
                     return trapCards.RandomEntry();
                 case CardType.Door:
                     return doorCards.RandomEntry();
+                case CardType.Sharpness:
+                    return sharpnessCards.RandomEntry();
                 default:
                     return eventCards.RandomEntry();
             }

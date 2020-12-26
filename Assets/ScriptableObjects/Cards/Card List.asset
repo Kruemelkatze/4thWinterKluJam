@@ -34,9 +34,12 @@ MonoBehaviour:
   trapCards:
   - {fileID: 11400000, guid: df87ba3f928e56e4ba6ffd9aec2de19f, type: 2}
   - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
-  enemyCardRatio: 0.49562135
-  pickupCardRatio: 0.17224634
-  healthCardRatio: 0.11090075
-  eventCardRatio: 0.103689425
-  trapCardRatio: 0.11754211
+  sharpnessCards:
+  - {fileID: 11400000, guid: b4ee45c055cf1cf4daa9b4346c4c4fce, type: 2}
+  enemyCardRatio: 0.0085738525
+  pickupCardRatio: 0.10548675
+  healthCardRatio: 0.067917615
+  eventCardRatio: 0.063501276
+  trapCardRatio: 0.0719849
   doorCardRatio: 0
+  sharpnessCardRatio: 0.68253565

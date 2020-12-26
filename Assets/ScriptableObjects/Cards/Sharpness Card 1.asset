@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48f6955164eb4b4582f37d53958e841, type: 3}
+  m_Name: Sharpness Card 1
+  m_EditorClassIdentifier: 
+  name: test
+  text: test
+  icon: {fileID: 21300000, guid: a464916b7b0eda64abeea9354f969b33, type: 3}
+  attack: 3
+  armor: 0
+  health: 0
+  pointsOnSolve: 0
+  interactSounds:
+  - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
+  narratorLines:
+  - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
