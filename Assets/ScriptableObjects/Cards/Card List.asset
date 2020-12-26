@@ -36,6 +36,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
   sharpnessCards:
   - {fileID: 11400000, guid: b4ee45c055cf1cf4daa9b4346c4c4fce, type: 2}
+  shieldEnemyCards:
+  - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
+  bossEnemyCards:
+  - {fileID: 11400000, guid: 75ca49f04bc8323438da65ff460c173b, type: 2}
   enemyCardRatio: 0.0085738525
   pickupCardRatio: 0.10548675
   healthCardRatio: 0.067917615
@@ -43,3 +47,5 @@ MonoBehaviour:
   trapCardRatio: 0.0719849
   doorCardRatio: 0
   sharpnessCardRatio: 0.68253565
+  shieldEnemyCardRatio: 0
+  bossEnemyCardRatio: 0

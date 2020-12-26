@@ -16,6 +16,8 @@ namespace Cards.Data
         public DoorCardData[] doorCards;
         public TrapData[] trapCards;
         public SharpnessCardData[] sharpnessCards;
+        public ShieldEnemyCardData[] shieldEnemyCards;
+        public BossEnemyCardData[] bossEnemyCards;
 
         [Range(0, 1f)] public float enemyCardRatio = 0.4f;
         [Range(0, 1f)] public float pickupCardRatio = 0.2f;
@@ -24,11 +26,13 @@ namespace Cards.Data
         [Range(0, 1f)] public float trapCardRatio = 0.1f;
         [Range(0, 1f)] public float doorCardRatio = 0;
         [Range(0, 1f)] public float sharpnessCardRatio = 0;
+        [Range(0, 1f)] public float shieldEnemyCardRatio = 0;
+        [Range(0, 1f)] public float bossEnemyCardRatio = 0;
 
         private void OnValidate()
         {
             var pSum = enemyCardRatio + pickupCardRatio + healthCardRatio + eventCardRatio + doorCardRatio +
-                       trapCardRatio + sharpnessCardRatio;
+                       trapCardRatio + sharpnessCardRatio + shieldEnemyCardRatio + bossEnemyCardRatio;
             if (pSum == 0)
             {
                 enemyCardRatio = 0.4f;
@@ -38,6 +42,8 @@ namespace Cards.Data
                 doorCardRatio = 0.1f;
                 trapCardRatio = 0;
                 sharpnessCardRatio = 0;
+                shieldEnemyCardRatio = 0;
+                bossEnemyCardRatio = 0;
             }
             else
             {
@@ -48,6 +54,8 @@ namespace Cards.Data
                 doorCardRatio /= pSum;
                 trapCardRatio /= pSum;
                 sharpnessCardRatio /= pSum;
+                shieldEnemyCardRatio /= pSum;
+                bossEnemyCardRatio /= pSum;
             }
         }
 
@@ -63,7 +71,7 @@ namespace Cards.Data
             var percentages = new[]
             {
                 enemyCardRatio, pickupCardRatio, healthCardRatio,
-                eventCardRatio, trapCardRatio, doorCardRatio, sharpnessCardRatio,
+                eventCardRatio, trapCardRatio, doorCardRatio, sharpnessCardRatio, shieldEnemyCardRatio, bossEnemyCardRatio,
             };
             var index = GetWeightedRandomEntry(percentages);
 
@@ -83,6 +91,10 @@ namespace Cards.Data
                     return CardType.Door;
                 case 6 when sharpnessCards.Length > 0:
                     return CardType.Sharpness;
+                case 7 when sharpnessCards.Length > 0:
+                    return CardType.ShieldEnemy;
+                case 8 when sharpnessCards.Length > 0:
+                    return CardType.BossEnemy;
                 default:
                     return CardType.Enemy;
             }
@@ -106,6 +118,10 @@ namespace Cards.Data
                     return doorCards.RandomEntry();
                 case CardType.Sharpness:
                     return sharpnessCards.RandomEntry();
+                case CardType.ShieldEnemy:
+                    return shieldEnemyCards.RandomEntry();
+                case CardType.BossEnemy:
+                    return bossEnemyCards.RandomEntry();
                 default:
                     return eventCards.RandomEntry();
             }
