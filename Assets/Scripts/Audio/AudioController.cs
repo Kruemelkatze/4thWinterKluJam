@@ -16,11 +16,27 @@ public class AudioController : PersistentSingleton<AudioController>
 
     public string defaultMusic;
     [SerializeField] private bool loopMusicPerDefault = true;
+    [SerializeField] private bool cacheAudioListener = true;
 
     public bool IsMusicPlaying => _musicPlaying != -1;
 
-    private int _musicPlaying = -1;
+    public AudioListener AudioListener
+    {
+        get
+        {
+            if (!cacheAudioListener)
+                return FindObjectOfType<AudioListener>();
+
+            if (!_cachedAudioListener)
+                _cachedAudioListener = FindObjectOfType<AudioListener>();
+
+            return _cachedAudioListener;
+        }
+    }
+
     private bool _loaded;
+    private int _musicPlaying = -1;
+    private AudioListener _cachedAudioListener;
 
     public void Awake()
     {
@@ -171,6 +187,10 @@ public class AudioController : PersistentSingleton<AudioController>
         }
 
         var playOptions = UnifyAudioOptions(audioEntry, options);
+
+        if (!IsInRange(playOptions, playType))
+            return -1;
+
         playOptions = ApplyVariations(playOptions);
 
         return PlayAudioClipInternal(clip, playOptions, playType);
@@ -224,21 +244,38 @@ public class AudioController : PersistentSingleton<AudioController>
         options.Pitch = options.Pitch ?? audioEntry.pitch;
         options.VolumeVariation = options.VolumeVariation ?? audioEntry.volumeVariation;
         options.PitchVariation = options.PitchVariation ?? audioEntry.pitchVariation;
+        options.MaxRange = options.MaxRange ?? (audioEntry.useMaxRange ? audioEntry.maxRange : (float?) null);
 
         return options;
     }
 
     private AudioOptions ApplyVariations(AudioOptions options)
     {
+        var volume = options.Volume ?? 1;
         var volumeVariation = options.VolumeVariation ?? 0;
-        var volume = (options.Volume ?? 1) + Random.Range(-volumeVariation, volumeVariation);
+        if (volumeVariation > 0)
+        {
+            volume += Random.Range(-volumeVariation, volumeVariation);
+        }
 
+        var pitch = options.Pitch ?? 1;
         var pitchVariation = options.PitchVariation ?? 0;
-        var pitch = (options.Pitch ?? 1) + Random.Range(-pitchVariation, pitchVariation);
+        if (pitchVariation > 0)
+        {
+            pitch += Random.Range(-pitchVariation, pitchVariation);
+        }
 
         options.Volume = volume;
         options.Pitch = pitch;
         return options;
+    }
+
+    private bool IsInRange(AudioOptions options, PlayType playType)
+    {
+        if (playType != PlayType.Sound || !options.SourceTransform || options.MaxRange == null)
+            return true;
+
+        return Vector3.Distance(AudioListener.transform.position, options.SourceTransform.position) <= options.MaxRange;
     }
 
     #endregion
@@ -252,6 +289,7 @@ public class AudioController : PersistentSingleton<AudioController>
         public float? PitchVariation;
 
         public Transform SourceTransform;
+        public float? MaxRange;
     }
 
     public enum PlayType

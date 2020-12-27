@@ -23,6 +23,15 @@ namespace General
         [Range(0, 1f)] public float volumeVariation = 0f;
         [Range(0, 1f)] public float pitchVariation = 0f;
 
+        [Header("Positional Audio (Experimental)")]
+        [Tooltip("To take this into account, the sounds must be played with PlayPositionalSound(...)")]
+        public bool useMaxRange = false;
+
+        [Tooltip(
+            "For 2D games, the AudioListener component should be moved from the camera to your player object. Otherwise, the camera's z-position influences the range.")]
+        [Min(0)]
+        public float maxRange = 10;
+
         private AudioClip RandomEntry()
         {
             return audioClips != null && audioClips.Length > 0
