@@ -20,10 +20,10 @@ public class VolumeSlider : MonoBehaviour
         switch (sliderType)
         {
             case SliderType.MusicVolume:
-                _slider.SetValueWithoutNotify(AudioController.Instance.GetMusicVolume());
+                _slider.SetValueWithoutNotify(AudioController.Instance.MusicVolume);
                 break;
             case SliderType.SoundVolume:
-                _slider.SetValueWithoutNotify(AudioController.Instance.GetSoundVolume());
+                _slider.SetValueWithoutNotify(AudioController.Instance.SoundVolume);
                 break;
         }
     }

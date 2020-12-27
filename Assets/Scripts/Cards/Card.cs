@@ -77,7 +77,7 @@ namespace Cards
         protected void PlayAudioLine()
         {
             var audioEntry = cardData.GetRandomInteractSound();
-            AudioController.Instance.PlaySound(audioEntry);
+            AudioController.Instance.PlayAudio(audioEntry);
         }
 
         protected void PlayNarratorLine()

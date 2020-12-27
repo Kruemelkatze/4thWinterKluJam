@@ -48,7 +48,7 @@ namespace Narrator
             currentLine = line;
             narratorUI.UpdateUI();
 
-            AudioController.Instance.PlaySound(line);
+            AudioController.Instance.PlayAudio(line);
 
             var clipLength = currentLine.AudioClip.length;
             StartCoroutine(ResetAfterLineFinished(clipLength));
