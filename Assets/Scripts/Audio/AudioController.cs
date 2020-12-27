@@ -80,9 +80,14 @@ public class AudioController : PersistentSingleton<AudioController>
         return PlaySoundWithKey(key, options);
     }
 
+    public int PlayUISound(string key, AudioOptions options = default)
+    {
+        return PlaySoundWithKey(key, options, PlayType.UISound);
+    }
+
     public void PlaySoundFromUI(string key)
     {
-        PlaySound(key);
+        PlaySoundWithKey(key, default, PlayType.UISound);
     }
 
     public int PlayRandomSound(string key, AudioOptions options = default)
@@ -129,12 +134,17 @@ public class AudioController : PersistentSingleton<AudioController>
     #endregion
 
     // Basically wrappers for EazySoundManager's method, which fetch the Audio from the Dictionary
-    private int PlaySoundWithKey(string key, AudioOptions options)
+    private int PlaySoundWithKey(string key, AudioOptions options, PlayType playType = PlayType.Sound)
     {
         if (!soundClips.TryGetValue(key, out var soundEntry))
             return -1;
 
-        return PlayAudioEntry(soundEntry, options, PlayType.Sound);
+        if (playType == PlayType.Music)
+        {
+            playType = PlayType.Sound;
+        }
+
+        return PlayAudioEntry(soundEntry, options, playType);
     }
 
     private int PlayMusicWithKey(string key, AudioOptions options)
