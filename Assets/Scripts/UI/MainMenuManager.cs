@@ -18,6 +18,7 @@ namespace UI
         [Tooltip("Image that is shown when any child menu is open to capture backdrop clicks.")] [SerializeField]
         private RectTransform backDropImage;
 
+        [Header("Audio")]
         [Tooltip(
             "Music to play after start. Requires our AudioController to be available.")]
         [SerializeField]
