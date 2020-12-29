@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CardData : ScriptableObject
 {
-    public string name;
+    public new string name;
     public string text;
     public Sprite icon;
 
