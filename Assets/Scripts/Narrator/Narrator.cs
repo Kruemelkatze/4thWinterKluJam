@@ -8,6 +8,8 @@ namespace Narrator
     public class Narrator : Singleton<Narrator>
     {
         [SerializeField] private NarratorUI narratorUI;
+        [SerializeField] private float audioLengthOffset = -0.6f;
+
         [SerializeField] private Audio currentLine;
 
         [Header("Testing only")] [SerializeField]
@@ -37,7 +39,7 @@ namespace Narrator
             if (Busy || line == null)
                 return false;
 
-            if (line.audioClip == null)
+            if (line.AudioClip == null)
             {
                 Debug.LogWarning("No Audioclip on Audio asset: " + line.name);
                 return false;
@@ -46,16 +48,17 @@ namespace Narrator
             currentLine = line;
             narratorUI.UpdateUI();
 
-            AudioController.Instance.PlaySound(line);
+            AudioController.Instance.PlayAudio(line);
 
-            var clipLength = currentLine.audioClip.length;
+            var clipLength = currentLine.AudioClip.length;
             StartCoroutine(ResetAfterLineFinished(clipLength));
             return true;
         }
 
         private IEnumerator ResetAfterLineFinished(float clipLength)
         {
-            yield return new WaitForSecondsRealtime(clipLength);
+            var waitTime = Mathf.Max(0, clipLength + audioLengthOffset);
+            yield return new WaitForSecondsRealtime(waitTime);
             ResetCurrentLine();
         }
 

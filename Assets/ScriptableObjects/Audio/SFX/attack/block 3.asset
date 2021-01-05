@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: block 3
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: c64357d9cf6ba6f4198443c643b85526, type: 3}
+  audioClips: []
   subtitle: 
   uiSound: 0
   loop: 0
   volume: 1
   pitch: 1
   volumeVariation: 0
-  pitchVariation: 0.25
+  pitchVariation: 0

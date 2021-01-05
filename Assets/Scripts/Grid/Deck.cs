@@ -4,7 +4,7 @@ using Cards;
 using Cards.Data;
 using Cards.DragDrop;
 using DG.Tweening;
-using Extensions;
+using Extensions.SerializableDictionary;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;

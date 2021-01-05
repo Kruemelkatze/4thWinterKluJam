@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Extensions;
+using Extensions.SerializableDictionary;
 using Hellmade.Sound;
 using UnityEngine;
 using Audio = General.Audio;
@@ -15,11 +17,28 @@ public class AudioController : PersistentSingleton<AudioController>
     [SerializeField] [Range(0, MaxVolume)] private float soundVolume = MaxVolume / 2;
 
     public string defaultMusic;
+    [SerializeField] private bool loopMusicPerDefault = true;
+    [SerializeField] private bool cacheAudioListener = true;
 
-    private int _musicPlaying = -1;
     public bool IsMusicPlaying => _musicPlaying != -1;
 
+    public AudioListener AudioListener
+    {
+        get
+        {
+            if (!cacheAudioListener)
+                return FindObjectOfType<AudioListener>();
+
+            if (!_cachedAudioListener)
+                _cachedAudioListener = FindObjectOfType<AudioListener>();
+
+            return _cachedAudioListener;
+        }
+    }
+
     private bool _loaded;
+    private int _musicPlaying = -1;
+    private AudioListener _cachedAudioListener;
 
     public void Awake()
     {
@@ -61,189 +80,225 @@ public class AudioController : PersistentSingleton<AudioController>
         SetSoundVolume(soundVolume);
     }
 
-    public float GetMusicVolume() => musicVolume;
-    public float GetSoundVolume() => soundVolume;
+    public float MusicVolume => musicVolume;
+    public float SoundVolume => soundVolume;
 
-    public void StopAllSounds()
+    //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simple play functions  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    #region PLAY FUNCTIONS
+
+    public int PlaySound(string key, AudioOptions options = default)
     {
-        EazySoundManager.StopAllSounds();
+        return PlaySoundWithKey(key, options);
     }
 
-    //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simple functions  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    #region
-
-    public int PlayMusic(string key)
+    public int PlayPositionedSound(string key, Transform sourceTransform, AudioOptions options = default)
     {
-        return PlayMusic(key, null, null, null);
+        options.SourceTransform = sourceTransform;
+        return PlaySoundWithKey(key, options);
     }
 
-    public int PlaySound(string key, Transform t = null)
+    public int PlayUISound(string key, AudioOptions options = default)
     {
-        return PlaySound(key, null, null, null, null, null, t);
-    }
-
-    public int PlaySound(string key)
-    {
-        return PlaySound(key, null, null, null, null, null, null);
-    }
-
-    public int PlaySound(Audio audio, Transform t = null)
-    {
-        var clip = audio.audioClip;
-        var options = UnifyAudioOptions(audio);
-        var playOptions = ApplyVariations(options);
-        return PlaySound(clip, playOptions.volume, options.Loop, playOptions.pitch, t);
+        return PlaySoundWithKey(key, options, PlayType.UISound);
     }
 
     public void PlaySoundFromUI(string key)
     {
-        PlaySound(key);
+        PlaySoundWithKey(key, default, PlayType.UISound);
     }
 
-    public int PlaySoundClip(AudioClip clip)
+    public int PlayRandomSound(string key, AudioOptions options = default)
     {
-        return PlaySound(clip, EazySoundManager.GlobalSoundsVolume);
+        var soundEntries = soundClips.Where(kvp => kvp.Key.StartsWith(key)).ToList();
+        if (!soundEntries.Any())
+            return -1;
+
+        var entry = soundEntries[Random.Range(0, soundEntries.Count)];
+        return PlayAudioEntry(entry.Value, options, PlayType.Sound);
     }
 
-    // Default theme helper
-    public int PlayDefaultMusic(float? volume = null, bool? loop = null, float? pitch = null)
+    public int PlayMusic(string key, AudioOptions options = default)
     {
-        return PlayMusic(defaultMusic, volume, loop, pitch);
+        return PlayMusicWithKey(key, options);
+    }
+
+    public int PlayDefaultMusic(AudioOptions options = default)
+    {
+        return PlayMusicWithKey(defaultMusic, options);
+    }
+
+    public int PlayAudio(Audio clip, AudioOptions options = default, PlayType playType = PlayType.Sound)
+    {
+        return PlayAudioEntry(clip, options, playType);
+    }
+
+    public int PlayAudioClip(AudioClip clip, AudioOptions options = default, PlayType playType = PlayType.Sound)
+    {
+        return PlayAudioClipInternal(clip, options, playType);
+    }
+
+    public void StopAllSounds()
+    {
+        EazySoundManager.StopAllSounds();
+        EazySoundManager.StopAllUISounds();
+    }
+
+    public void StopMusic()
+    {
+        EazySoundManager.StopAllMusic();
     }
 
     #endregion
 
-    private AudioOptions UnifyAudioOptions(
-        Audio audioEntry,
-        bool? loop = null,
-        float? volume = null,
-        float? pitch = null,
-        float? volumeVariation = null,
-        float? pitchVariation = null)
-
-    {
-        var rLoop = loop ?? audioEntry.loop;
-        var rVolume = volume ?? audioEntry.volume;
-        var rPitch = pitch ?? audioEntry.pitch;
-        var rVolumeVariation = volumeVariation ?? audioEntry.volumeVariation;
-        var rPitchVariation = pitchVariation ?? audioEntry.pitchVariation;
-
-        return new AudioOptions
-        {
-            Loop = rLoop,
-            Volume = rVolume,
-            Pitch = rPitch,
-            VolumeVariation = rVolumeVariation,
-            PitchVariation = rPitchVariation,
-        };
-    }
-
-    private (float volume, float pitch) ApplyVariations(AudioOptions options)
-    {
-        var volume = options.Volume + Random.Range(-options.VolumeVariation, options.VolumeVariation);
-        var pitch = options.Pitch + Random.Range(-options.PitchVariation, options.PitchVariation);
-
-        return (volume, pitch);
-    }
-
-
     // Basically wrappers for EazySoundManager's method, which fetch the Audio from the Dictionary
-    public int PlayMusic(string key, float? volume, bool? loop = null, float? pitch = null)
-    {
-        if (!musicClips.TryGetValue(key, out var musicEntry))
-            return -1;
-
-        if (musicEntry == null)
-            return -1;
-
-        var clip = musicEntry.audioClip;
-        var options = UnifyAudioOptions(musicEntry, loop, volume, pitch);
-        var (f, pitch1) = ApplyVariations(options);
-        return PlayMusic(clip, f, options.Loop, pitch1);
-    }
-
-    public int PlayMusic(AudioClip clip, float volume = 0, bool loop = true, float pitch = 1)
-    {
-        if (!Application.isPlaying)
-        {
-            return -1;
-        }
-
-        var id = EazySoundManager.PlayMusic(clip, volume, loop, true);
-        var eazyAudio = EazySoundManager.GetMusicAudio(id);
-        eazyAudio.Pitch = pitch;
-
-        _musicPlaying = id;
-
-        return id;
-    }
-
-    public int PlayRandomSound(string key, float? volume = null, float? pitch = null, float? volumeVariation = null,
-        float? pitchVariation = null, bool? loop = null, Transform sourceTransform = null)
-    {
-        Debug.Log(key);
-        var soundEntries = soundClips.Where(kvp => kvp.Key.StartsWith(key)).ToList();
-        if (soundEntries.Any())
-        {
-            var entry = soundEntries[Random.Range(0, soundEntries.Count)];
-            return PlaySound(entry.Key, volume, pitch, volumeVariation, pitchVariation, loop, sourceTransform);
-        }
-
-        return -1;
-    }
-
-    public int PlaySound(string key, float? volume, float? pitch = null, float? volumeVariation = null,
-        float? pitchVariation = null, bool? loop = null, Transform sourceTransform = null)
+    private int PlaySoundWithKey(string key, AudioOptions options, PlayType playType = PlayType.Sound)
     {
         if (!soundClips.TryGetValue(key, out var soundEntry))
             return -1;
 
-        if (soundEntry == null)
-            return -1;
+        if (playType == PlayType.Music)
+        {
+            playType = PlayType.Sound;
+        }
 
-        var clip = soundEntry.audioClip;
-        var options = UnifyAudioOptions(soundEntry, loop, volume, pitch, volumeVariation, pitchVariation);
-        var playOptions = ApplyVariations(options);
-        return PlaySound(clip, playOptions.volume, options.Loop, playOptions.pitch, sourceTransform);
+        return PlayAudioEntry(soundEntry, options, playType);
     }
 
-    public int PlaySound(AudioClip clip, float volume, bool loop = true, float pitch = 1,
-        Transform sourceTransform = null)
+    private int PlayMusicWithKey(string key, AudioOptions options)
+    {
+        if (!musicClips.TryGetValue(key, out var musicEntry))
+            return -1;
+
+        return PlayAudioEntry(musicEntry, options, PlayType.Music);
+    }
+
+    private int PlayAudioEntry(Audio audioEntry, AudioOptions options, PlayType playType)
+    {
+        if (!audioEntry)
+            return -1;
+
+        var clip = audioEntry.AudioClip;
+        if (!clip)
+            return -1;
+
+        // Set music to looping if this is wanted and if the option is not overriden
+        if (playType == PlayType.Music && loopMusicPerDefault && options.Loop == null)
+        {
+            options.Loop = true;
+        }
+
+        var playOptions = UnifyAudioOptions(audioEntry, options);
+
+        if (!IsInRange(playOptions, playType))
+            return -1;
+
+        playOptions = ApplyVariations(playOptions);
+
+        return PlayAudioClipInternal(clip, playOptions, playType);
+    }
+
+    private int PlayAudioClipInternal(AudioClip clip, AudioOptions options, PlayType playType)
     {
         if (!Application.isPlaying)
         {
             return -1;
         }
 
-        var id = EazySoundManager.PlaySound(clip, volume, loop, sourceTransform);
-        var eazyAudio = EazySoundManager.GetSoundAudio(id);
-        eazyAudio.Pitch = pitch;
+        var volume = options.Volume ?? 1;
+        var pitch = options.Pitch ?? 1;
+        var loop = options.Loop ?? playType == PlayType.Music;
 
-        return id;
-    }
-
-    public int PlayUISound(AudioClip clip, float volume, float pitch = 1)
-    {
-        if (!Application.isPlaying)
+        int id;
+        Hellmade.Sound.Audio eazyAudio;
+        switch (playType)
         {
-            return -1;
+            case PlayType.Music:
+                id = EazySoundManager.PlayMusic(clip, volume, loop, true);
+                eazyAudio = EazySoundManager.GetMusicAudio(id);
+                _musicPlaying = id;
+                break;
+            case PlayType.UISound:
+                id = EazySoundManager.PlayUISound(clip, volume);
+                eazyAudio = EazySoundManager.GetUISoundAudio(id);
+                break;
+            case PlayType.Sound:
+            default:
+                id = EazySoundManager.PlaySound(clip, volume, loop, options.SourceTransform);
+                eazyAudio = EazySoundManager.GetSoundAudio(id);
+                break;
         }
 
-        var id = EazySoundManager.PlayUISound(clip, volume);
-        var eazyAudio = EazySoundManager.GetUISoundAudio(id);
-        eazyAudio.Pitch = pitch;
+        if (eazyAudio != null)
+        {
+            eazyAudio.Pitch = pitch;
+        }
 
         return id;
     }
 
-    private struct AudioOptions
+    #region OPTIONS PROCESSING
+
+    private AudioOptions UnifyAudioOptions(Audio audioEntry, AudioOptions options)
     {
-        public bool Loop;
-        public float Volume;
-        public float Pitch;
-        public float VolumeVariation;
-        public float PitchVariation;
+        options.Loop = options.Loop ?? audioEntry.loop;
+        options.Volume = options.Volume ?? audioEntry.volume;
+        options.Pitch = options.Pitch ?? audioEntry.pitch;
+        options.VolumeVariation = options.VolumeVariation ?? audioEntry.volumeVariation;
+        options.PitchVariation = options.PitchVariation ?? audioEntry.pitchVariation;
+        options.MaxRange = options.MaxRange ?? (audioEntry.useMaxRange ? audioEntry.maxRange : (float?) null);
+
+        return options;
+    }
+
+    private AudioOptions ApplyVariations(AudioOptions options)
+    {
+        var volume = options.Volume ?? 1;
+        var volumeVariation = options.VolumeVariation ?? 0;
+        if (volumeVariation > 0)
+        {
+            volume += Random.Range(-volumeVariation, volumeVariation);
+        }
+
+        var pitch = options.Pitch ?? 1;
+        var pitchVariation = options.PitchVariation ?? 0;
+        if (pitchVariation > 0)
+        {
+            pitch += Random.Range(-pitchVariation, pitchVariation);
+        }
+
+        options.Volume = volume;
+        options.Pitch = pitch;
+        return options;
+    }
+
+    private bool IsInRange(AudioOptions options, PlayType playType)
+    {
+        if (playType != PlayType.Sound || !options.SourceTransform || options.MaxRange == null)
+            return true;
+
+        return Vector3.Distance(AudioListener.transform.position, options.SourceTransform.position) <= options.MaxRange;
+    }
+
+    #endregion
+
+    public struct AudioOptions
+    {
+        public bool? Loop;
+        public float? Volume;
+        public float? Pitch;
+        public float? VolumeVariation;
+        public float? PitchVariation;
+
+        public Transform SourceTransform;
+        public float? MaxRange;
+    }
+
+    public enum PlayType
+    {
+        Sound,
+        Music,
+        UISound,
     }
 
     [Serializable]

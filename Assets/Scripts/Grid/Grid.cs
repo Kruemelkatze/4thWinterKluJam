@@ -72,7 +72,7 @@ public class Grid : MonoBehaviour
 
         if (!instant && !noAudio)
         {
-            AudioController.Instance.PlayRandomSound("card_flip");
+            AudioController.Instance.PlayRandomSound("card-flip");
         }
     }
 
