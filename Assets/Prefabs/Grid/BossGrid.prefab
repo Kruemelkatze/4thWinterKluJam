@@ -49,9 +49,9 @@ MonoBehaviour:
   sizeY: 3
   playerSpawnX: 0
   playerSpawnY: 1
-  cardsPerDeck: 1
+  cardsPerDeck: 4
   numberOfDoors: 6
   seeOnlyEnvironment: 1
   notAvailableAlpha: 1
-  deckPrefab: {fileID: 2350809292833342928, guid: aae4254e2bed3b24f881553f4b212eb2, type: 3}
-  availableCards: {fileID: 11400000, guid: 01b13de9057b7954384d30399c9863d3, type: 2}
+  deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}
+  availableCards: {fileID: 11400000, guid: d5cd56eda4f95a347803a33d3a726eb0, type: 2}
