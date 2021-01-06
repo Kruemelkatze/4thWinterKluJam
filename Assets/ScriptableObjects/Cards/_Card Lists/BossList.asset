@@ -37,12 +37,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c3d20b654bf2fa41ba550f0718d4d68, type: 2}
   bossEnemyCards:
   - {fileID: 11400000, guid: 75ca49f04bc8323438da65ff460c173b, type: 2}
-  enemyCardRatio: 0.18969004
+  enemyCardRatio: 0
   pickupCardRatio: 0
   healthCardRatio: 0
   eventCardRatio: 0
   trapCardRatio: 0
   doorCardRatio: 0
-  sharpnessCardRatio: 0.81030995
+  sharpnessCardRatio: 0
   shieldEnemyCardRatio: 0
-  bossEnemyCardRatio: 0
+  bossEnemyCardRatio: 1

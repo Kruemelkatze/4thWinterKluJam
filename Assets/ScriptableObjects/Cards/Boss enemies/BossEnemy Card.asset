@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BossEnemy Card
   m_EditorClassIdentifier: 
   name: The Dungeon Meowster
-  text: He who enslaves all humans
+  text: 
   icon: {fileID: 21300000, guid: 47d91eb839c49b342b5531b666f79515, type: 3}
-  attack: 3
+  attack: 2
   armor: 5
   health: 10
   pointsOnSolve: 100

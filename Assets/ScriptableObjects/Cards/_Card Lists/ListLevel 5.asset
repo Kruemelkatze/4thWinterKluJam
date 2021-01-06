@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8626763a8ecb42dbb1cde4985ec99dda, type: 3}
+  m_Name: ListLevel 5
+  m_EditorClassIdentifier: 
+  enemyCards:
+  - {fileID: 11400000, guid: cd88cc278dd78b74cb1bab6ae2591cb8, type: 2}
+  - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
+  - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
+  pickupCards:
+  - {fileID: 11400000, guid: 59cebcbfa0543d146ac482b2d174e8ee, type: 2}
+  healthCards:
+  - {fileID: 11400000, guid: a1d57985153e3bb4d8f3533021b28753, type: 2}
+  eventCards:
+  - {fileID: 11400000, guid: 94356df839a929a4a844d52953e17467, type: 2}
+  - {fileID: 11400000, guid: 2bac343ccc590474b83daf8668752d8a, type: 2}
+  - {fileID: 11400000, guid: 907914ebab6df764e815708cbde7a521, type: 2}
+  - {fileID: 11400000, guid: b0a31f03001074f4385cc6d83698522f, type: 2}
+  - {fileID: 11400000, guid: 6d0744ec34c9be64f8c5455e7da7af7e, type: 2}
+  - {fileID: 11400000, guid: 4c51d14a79c9feb4492b0e38cc121735, type: 2}
+  - {fileID: 11400000, guid: 2d9a205cb8596914592e15b247862b13, type: 2}
+  doorCards:
+  - {fileID: 11400000, guid: cbdd2ffc839a2dd4993be789c18d52b3, type: 2}
+  trapCards:
+  - {fileID: 11400000, guid: df87ba3f928e56e4ba6ffd9aec2de19f, type: 2}
+  - {fileID: 11400000, guid: df2beff392925fa42bccea7201b2c345, type: 2}
+  sharpnessCards:
+  - {fileID: 11400000, guid: b4ee45c055cf1cf4daa9b4346c4c4fce, type: 2}
+  shieldEnemyCards:
+  - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
+  - {fileID: 11400000, guid: 9c3d20b654bf2fa41ba550f0718d4d68, type: 2}
+  bossEnemyCards:
+  - {fileID: 11400000, guid: 75ca49f04bc8323438da65ff460c173b, type: 2}
+  enemyCardRatio: 0.40062374
+  pickupCardRatio: 0.032576595
+  healthCardRatio: 0.07497563
+  eventCardRatio: 0.083979085
+  trapCardRatio: 0.091975205
+  doorCardRatio: 0
+  sharpnessCardRatio: 0.09744339
+  shieldEnemyCardRatio: 0.21842638
+  bossEnemyCardRatio: 0

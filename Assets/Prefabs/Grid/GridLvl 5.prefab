@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2206000135378645410}
   - component: {fileID: 2206000135378645411}
   m_Layer: 0
-  m_Name: BossGrid
+  m_Name: GridLvl 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSpacingX: 2.4
   cardSpacingY: 3.2
-  sizeX: 1
-  sizeY: 2
+  sizeX: 4
+  sizeY: 3
   playerSpawnX: 0
   playerSpawnY: 1
-  cardsPerDeck: 2
-  numberOfDoors: 2
+  cardsPerDeck: 4
+  numberOfDoors: 6
   seeOnlyEnvironment: 1
   notAvailableAlpha: 1
   deckPrefab: {fileID: 2350809292833342928, guid: b04540567647e224a86f81364d0be334, type: 3}
-  availableCards: {fileID: 11400000, guid: d5cd56eda4f95a347803a33d3a726eb0, type: 2}
+  availableCards: {fileID: 11400000, guid: 03f609149d9ecf24f9ccf47d61dbd45d, type: 2}

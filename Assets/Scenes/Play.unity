@@ -2873,7 +2873,12 @@ MonoBehaviour:
   fadeImage: {fileID: 283467894}
   playerCard: {fileID: 1800080218}
   narrator: {fileID: 1590082746}
-  levels: []
+  levels:
+  - {fileID: 2206000135378645421, guid: d2c775d492b7c1a4e9b1708050039249, type: 3}
+  - {fileID: 2206000135378645421, guid: 331e0a0bc2708c84c808753e50d37af5, type: 3}
+  - {fileID: 2206000135378645421, guid: fc4d94ee2e94a3f4988cb0d3bf617157, type: 3}
+  - {fileID: 2206000135378645421, guid: 09ea694972497ad41b78bfac46d1bca3, type: 3}
+  - {fileID: 2206000135378645421, guid: 367ed5efa1c9a41458bcb03b7676f626, type: 3}
   gridPrefab: {fileID: 2206000135378645421, guid: dcb94057a4ef29848be34a5dafd8f4e8, type: 3}
 --- !u!1 &1909543625
 GameObject:
