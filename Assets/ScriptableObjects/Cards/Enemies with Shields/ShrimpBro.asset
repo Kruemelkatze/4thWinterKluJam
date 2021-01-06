@@ -12,14 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4a28a1d9612d545978ad087c7e6812, type: 3}
   m_Name: ShrimpBro
   m_EditorClassIdentifier: 
-  name: Shrimp
-  text: text
+  name: Shrimp Dog
+  text: A trained killer, like his brother
   icon: {fileID: 21300000, guid: 9256612b15a2b8542a5506566e5ad913, type: 3}
   attack: 1
   armor: 2
   health: 1
   pointsOnSolve: 10
   interactSounds:
-  - {fileID: 11400000, guid: 4889e1e24be0d864eb78f20abc215f08, type: 2}
+  - {fileID: 11400000, guid: 7deb69b0f249aef4098d7d1a601ea5d7, type: 2}
+  - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
   narratorLines:
-  - {fileID: 11400000, guid: 672a415c3a9ab7a4b870f9432425df03, type: 2}
+  - {fileID: 11400000, guid: 82c2063ebb18bde42861d8978084f101, type: 2}
+  - {fileID: 11400000, guid: e4b5f5ed1797fa04fba33ad8019d9fcd, type: 2}
+  - {fileID: 11400000, guid: 83b265e22609f274e8e501bedadfa943, type: 2}
+  - {fileID: 11400000, guid: a24c267462bf73d4a830408c4c761196, type: 2}
+  - {fileID: 11400000, guid: 8c857ed8a02f7764696e5a8f1af93832, type: 2}
+  - {fileID: 11400000, guid: e573590e2d9831c46a39bc0810650ec2, type: 2}
+  - {fileID: 11400000, guid: b4d738cc736b9104cadebeddda287cdf, type: 2}

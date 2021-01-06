@@ -16,8 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd88cc278dd78b74cb1bab6ae2591cb8, type: 2}
   - {fileID: 11400000, guid: 7af61443f3998334d82171bb10c4130f, type: 2}
   - {fileID: 11400000, guid: d901d918c2361d740861a411a5541a65, type: 2}
-  - {fileID: 11400000, guid: 4b8796a38b8ffb044b5a91349860a568, type: 2}
-  - {fileID: 11400000, guid: e13876decdbafe64ba20a949399bd0e3, type: 2}
   pickupCards:
   - {fileID: 11400000, guid: 59cebcbfa0543d146ac482b2d174e8ee, type: 2}
   healthCards:
@@ -39,7 +37,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4ee45c055cf1cf4daa9b4346c4c4fce, type: 2}
   shieldEnemyCards:
   - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
-  - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
+  - {fileID: 11400000, guid: 9c3d20b654bf2fa41ba550f0718d4d68, type: 2}
   bossEnemyCards:
   - {fileID: 11400000, guid: 75ca49f04bc8323438da65ff460c173b, type: 2}
   enemyCardRatio: 0.40062374

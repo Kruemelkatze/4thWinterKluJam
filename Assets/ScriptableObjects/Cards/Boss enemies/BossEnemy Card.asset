@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5601146ed04794449ba00abf23e4a2a1, type: 3}
   m_Name: BossEnemy Card
   m_EditorClassIdentifier: 
-  name: Boss
-  text: test
-  icon: {fileID: 21300000, guid: d387b60dc959e78458c3aea75245b206, type: 3}
+  name: The Dungeon Meowster
+  text: He who enslaves all humans
+  icon: {fileID: 21300000, guid: 47d91eb839c49b342b5531b666f79515, type: 3}
   attack: 3
   armor: 5
   health: 10
-  pointsOnSolve: 10
+  pointsOnSolve: 100
   interactSounds:
-  - {fileID: 11400000, guid: 0716ddbc5d25cec4fb36f8fcc35952b9, type: 2}
+  - {fileID: 11400000, guid: 7deb69b0f249aef4098d7d1a601ea5d7, type: 2}
   narratorLines:
-  - {fileID: 11400000, guid: 6b41ab367a9f86746be975318f4ab8fa, type: 2}
+  - {fileID: 11400000, guid: 82c2063ebb18bde42861d8978084f101, type: 2}
+  - {fileID: 11400000, guid: e4b5f5ed1797fa04fba33ad8019d9fcd, type: 2}
+  - {fileID: 11400000, guid: 83b265e22609f274e8e501bedadfa943, type: 2}
+  - {fileID: 11400000, guid: a24c267462bf73d4a830408c4c761196, type: 2}
+  - {fileID: 11400000, guid: 8c857ed8a02f7764696e5a8f1af93832, type: 2}
+  - {fileID: 11400000, guid: e573590e2d9831c46a39bc0810650ec2, type: 2}
+  - {fileID: 11400000, guid: b4d738cc736b9104cadebeddda287cdf, type: 2}

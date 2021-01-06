@@ -34,7 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4ee45c055cf1cf4daa9b4346c4c4fce, type: 2}
   shieldEnemyCards:
   - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
-  - {fileID: 11400000, guid: ced237e40fa4f6a4da8b6c397c99bb3a, type: 2}
+  - {fileID: 11400000, guid: 9c3d20b654bf2fa41ba550f0718d4d68, type: 2}
   bossEnemyCards:
   - {fileID: 11400000, guid: 75ca49f04bc8323438da65ff460c173b, type: 2}
   enemyCardRatio: 0.18969004

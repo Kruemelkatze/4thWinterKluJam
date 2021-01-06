@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sharpness Card
   m_EditorClassIdentifier: 
   name: Halberd
-  text: test
+  text: 
   icon: {fileID: 21300000, guid: 484336fdc504d96499575ae56a4f10e6, type: 3}
   attack: 1
   armor: 0
@@ -22,4 +22,8 @@ MonoBehaviour:
   interactSounds:
   - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
   narratorLines:
-  - {fileID: 11400000, guid: cd5a3c4cc8824184e907649e4a42e8d2, type: 2}
+  - {fileID: 11400000, guid: c2bc6196f808eeb4b87cef4e2c99a468, type: 2}
+  - {fileID: 11400000, guid: 064b98948de2f4040b081d01cf4d2ace, type: 2}
+  - {fileID: 11400000, guid: c1e456ca4425e8840abcbcf2ed3ffce7, type: 2}
+  - {fileID: 11400000, guid: 1faf022930029cd409cbb3aa84d0b124, type: 2}
+  - {fileID: 11400000, guid: c17fb060a8aa7664eb6b2d814e094d9b, type: 2}
