@@ -401,7 +401,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5728245550169283007, guid: 84c5626d08ba20e4aa24daae5caf1271,
           type: 3}
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundFromUI
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -589,7 +589,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5728245550169283007, guid: 84c5626d08ba20e4aa24daae5caf1271,
           type: 3}
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundFromUI
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2263,7 +2263,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5728245550169283007, guid: 84c5626d08ba20e4aa24daae5caf1271,
           type: 3}
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundFromUI
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
