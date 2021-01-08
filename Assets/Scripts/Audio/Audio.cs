@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
 
 namespace General
 {
@@ -38,5 +41,50 @@ namespace General
                 ? audioClips[Random.Range(0, audioClips.Length)]
                 : default;
         }
+
+#if UNITY_EDITOR
+        /// <summary>
+        /// Context Menu entry for creating Audio Asset from one or multiple AudioClips
+        /// </summary>
+        [MenuItem("Assets/Create/Template/Audio from Clip")]
+        public static void CreateAudioFromClip()
+        {
+            if (Selection.objects == null || Selection.objects.Length == 0)
+                return;
+
+            var clips = Selection.objects.Select(o => o as AudioClip).Where(o => o != null).ToArray();
+            if (clips.Length == 0)
+                return;
+
+            var firstClip = clips.First();
+            var path = AssetDatabase.GetAssetPath(firstClip);
+
+            var audioAsset = CreateInstance<Audio>();
+
+            if (clips.Length == 1)
+            {
+                audioAsset.audioClip = firstClip;
+            }
+            else
+            {
+                clips = clips.OrderBy(c => c.name).ToArray();
+                audioAsset.audioClips = clips;
+            }
+
+            var targetPath = Path.Combine(Path.GetDirectoryName(path) ?? "Assets/Audio", firstClip.name + ".asset");
+            AssetDatabase.CreateAsset(audioAsset, targetPath);
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.FocusProjectWindow();
+
+            Selection.activeObject = audioAsset;
+        }
+
+        [MenuItem("Assets/Create/Template/Audio from Clip", true)]
+        public static bool ValidateCreateAudioFromClip()
+        {
+            return Selection.objects != null && Selection.objects.Any(o => o is AudioClip);
+        }
+#endif
     }
 }
